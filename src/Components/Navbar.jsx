@@ -36,7 +36,7 @@ const Navbar = () => {
     }, [activeDropdown === 'resources']);
 
     return (
-        <nav className="pt-10 ml-36 right-0 z-100 ">
+        <nav className="pt-10 ml-24 right-0 z-100 ">
             <div className="py-5">
                 <div className="flex items-center justify-between">
                     <div className="flex items-end space-x-10">
@@ -45,7 +45,7 @@ const Navbar = () => {
                                 <path d="M12 2L8 10H16L12 2Z" fill="currentColor" />
                                 <path d="M8 10L4 18H20L16 10H8Z" fill="currentColor" opacity="0.7" />
                             </svg>
-                            <span className="text-white text-4xl font-medium tracking-wide">ALAQ Sol.</span>
+                            <span className="text-white text-4xl font-medium tracking-wide">ALAQ Solutions</span>
                         </div>
 
                         <div className="hidden md:flex items-center space-x-6 relative">

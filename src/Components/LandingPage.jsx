@@ -170,7 +170,7 @@ const HeroSection = () => {
 
     return (
         <div className=" flex ">
-            <div className="space-y-8 pt-24 pl-36">
+            <div className="space-y-8 pt-20 pl-24">
                 <div>
                     <div ref={titleRef}>
                         <div className="text-7xl lg:text-8xl font-light text-white leading-[0.95] tracking-tighter">
@@ -190,7 +190,7 @@ const HeroSection = () => {
                     </div>
                 </div>
 
-                <p ref={descriptionRef} className="text-xl text-gray-300 leading-relaxed max-w-[58rem] tracking-tighter">
+                <p ref={descriptionRef} className="text-xl text-gray-300 leading-relaxed  max-w-[50rem] tracking-tighter">
                     <span className="text-[#d4f4af]">ALAQ Solutions</span> is the AI-first ERP powering next-gen finance & accounting teams. General ledger,
                     revenue automation, close management, and so much more—all on one unified platform.
                 </p>
@@ -239,10 +239,10 @@ const TrustSection = () => {
     }, []);
 
     return (
-        <div className="mt-20  pl-36">
-            <p ref={trustRef} className="text-[#869B7F] text-sm mb-10">Trusted by mid-market and enterprise leaders</p>
+        <div className="mt-16  pl-24">
+            <p ref={trustRef} className="text-[#869B7F] text-sm mb-8">Trusted by mid-market and enterprise leaders</p>
 
-            <div ref={companiesRef} className="flex gap-5 items-center mb-14">
+            <div ref={companiesRef} className="flex gap-5 items-center mb-8">
                 {companies.map((company, i) => (
                     <div
                         key={i}

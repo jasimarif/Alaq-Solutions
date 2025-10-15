@@ -12,3 +12,34 @@ body, html {
 body {
   position: relative;
 }
+
+/* Collaboration Section Styles */
+.section-container {
+  @apply 2xl:container xl:px-20 md:px-12 px-4 mx-auto;
+}
+
+.text-strong {
+  background: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #ffffff 50%,
+    #d4f4af 51%,
+    #d4f4af 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.will-change-opacity {
+  will-change: opacity;
+}
+
+/* Tall screen modifier */
+@media (min-height: 900px) {
+  .tall\:py-36 {
+    padding-top: 9rem;
+    padding-bottom: 9rem;
+  }
+}

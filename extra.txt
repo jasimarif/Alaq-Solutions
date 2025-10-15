@@ -3,19 +3,18 @@ import ProductPage from './ProductsPage'
 import LandingPage from './LandingPage'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import FeaturesPage from './FeaturesPage'
+import HomePage from './HomePage'
 
 gsap.registerPlugin(ScrollTrigger)
 
 const MainPage = () => {
   const containerRef = useRef(null)
   const landingRef = useRef(null)
-  const productsRef = useRef(null)
+  const homeRef = useRef(null)
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Set initial state for products page
-      gsap.set(productsRef.current, {
+      gsap.set(homeRef.current, {
         y: '100vh',
         position: 'fixed',
         top: 0,
@@ -24,8 +23,7 @@ const MainPage = () => {
         zIndex: 10
       })
 
-      // Animate products page to slide up from bottom when scrolling
-      gsap.to(productsRef.current, {
+      gsap.to(homeRef.current, {
         y: '0vh',
         ease: 'none',
         scrollTrigger: {
@@ -49,8 +47,8 @@ const MainPage = () => {
         <LandingPage/>
       </div>
       <div className="h-screen w-full"></div>
-      <div ref={productsRef} className="w-full">
-        <ProductPage/>
+      <div ref={homeRef} className="w-full">
+        <HomePage/>
       </div>
 
     </div>
@@ -59,6 +57,8 @@ const MainPage = () => {
 }
 
 export default MainPage
+
+
 
 
 

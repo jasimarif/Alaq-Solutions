@@ -1,10 +1,12 @@
 import React from 'react'
 import ProductPage from './ProductsPage'
+import CollaborationSection from '../Components/Collaboration'
 
 const HomePage = () => {
   return (
-    <div className="min-h-screen">
+    <div >
         <ProductPage/>
+        <CollaborationSection/>
     </div>
   )
 }

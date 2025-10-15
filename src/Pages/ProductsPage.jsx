@@ -67,6 +67,8 @@ const ProductPage = () => {
             >
             </div>
           </div>
+
+         
         </div>
       </div>
     </div>

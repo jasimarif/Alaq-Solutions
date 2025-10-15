@@ -1,0 +1,214 @@
+import React, { useEffect, useRef } from 'react'
+import ProductPage from './ProductsPage'
+import LandingPage from './LandingPage'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import FeaturesPage from './FeaturesPage'
+
+gsap.registerPlugin(ScrollTrigger)
+
+const MainPage = () => {
+  const containerRef = useRef(null)
+  const landingRef = useRef(null)
+  const productsRef = useRef(null)
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // Set initial state for products page
+      gsap.set(productsRef.current, {
+        y: '100vh',
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        zIndex: 10
+      })
+
+      // Animate products page to slide up from bottom when scrolling
+      gsap.to(productsRef.current, {
+        y: '0vh',
+        ease: 'none',
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: 'top top',
+          end: 'bottom bottom',
+          scrub: 1,
+          pin: landingRef.current,
+          pinSpacing: false,
+          markers: false
+        }
+      })
+    })
+
+    return () => ctx.revert()
+  }, [])
+
+  return (
+    <div ref={containerRef} className="relative">
+      <div ref={landingRef} className="h-screen w-full">
+        <LandingPage/>
+      </div>
+      <div className="h-screen w-full"></div>
+      <div ref={productsRef} className="w-full">
+        <ProductPage/>
+      </div>
+
+    </div>
+
+  )
+}
+
+export default MainPage
+
+
+
+import React, { useState, useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
+
+const TabButton = ({ active, children, onClick }) => (
+  <button
+    onClick={onClick}
+    className={`px-6 py-3 text-base font-medium cursor-pointer tracking-tighter transition-all relative`}
+  >
+    <span className={active ? 'text-gray-900' : 'text-gray-400 hover:text-gray-600'}>
+      {children}
+    </span>
+    {active && (
+      <span className="absolute rounded-2xl bottom-0 left-0 right-0 h-[3px] bg-indigo-600 transform translate-y-1/2" />
+    )}
+  </button>
+);
+
+const ProductPage = () => {
+  const [activeTab, setActiveTab] = useState('core');
+  const card1Ref = useRef(null);
+  const card2Ref = useRef(null);
+  const card3Ref = useRef(null);
+  const sectionRef = useRef(null);
+  const scrollProgress = useRef(0);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // Calculate positions
+      const getPositions = () => {
+        const card1Rect = card1Ref.current.getBoundingClientRect();
+        const card2Rect = card2Ref.current.getBoundingClientRect();
+        const card3Rect = card3Ref.current.getBoundingClientRect();
+        
+        const actualGap = card3Rect.top - (card2Rect.top + card2Rect.height);
+        
+        return {
+          card1ToRight: card2Rect.left - card1Rect.left,
+          card1ToTop: card2Rect.top - card1Rect.top,
+          card2ToLeft: card1Rect.left - card2Rect.left,
+          card2ToBottom: card1Rect.top - card2Rect.top,
+          card3ToLeft: card1Rect.left - card2Rect.left,
+          card3ToBottom: (card1Rect.top + card2Rect.height + actualGap) - card3Rect.top
+        };
+      };
+
+      const positions = getPositions();
+
+      // Create ScrollTrigger animation
+      ScrollTrigger.create({
+        trigger: sectionRef.current,
+        start: 'top top',
+        end: '+=100%',
+        pin: true,
+        scrub: 1,
+        onUpdate: (self) => {
+          const progress = self.progress;
+          
+          // Switch tab at 50% progress
+          if (progress > 0.5) {
+            setActiveTab('revenue');
+          } else {
+            setActiveTab('core');
+          }
+
+          // Apply transforms
+          gsap.set(card1Ref.current, {
+            x: positions.card1ToRight * progress,
+            y: positions.card1ToTop * progress
+          });
+
+          gsap.set(card2Ref.current, {
+            x: positions.card2ToLeft * progress,
+            y: positions.card2ToBottom * progress
+          });
+
+          gsap.set(card3Ref.current, {
+            x: positions.card3ToLeft * progress,
+            y: positions.card3ToBottom * progress
+          });
+        }
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
+  return (
+    <div ref={sectionRef} className="min-h-screen w-full bg-white p-8 font-poppins flex items-center justify-center">
+      <div className="max-w-7xl w-full">
+        <div className="text-center mb-8">
+          <h1 className="text-5xl font-light tracking-tighter text-gray-900 mb-4">
+            Two separate products<br />that are better together.
+          </h1>
+        </div>
+
+        <div className="flex justify-center mb-12 border-b border-gray-200 w-fit mx-auto">
+          <TabButton
+            active={activeTab === 'core'}
+            onClick={() => setActiveTab('core')}
+          >
+            Core Accounting
+          </TabButton>
+          <TabButton
+            active={activeTab === 'revenue'}
+            onClick={() => setActiveTab('revenue')}
+          >
+            Revenue Automation
+          </TabButton>
+        </div>
+
+        {/* cards - using flexbox for better centering */}
+        <div className='flex justify-center items-center gap-4'>
+          {/* Left column (card 1) */}
+          <div className='relative'>
+            <div 
+              ref={card1Ref}
+              className='bg-[#F3F2F6] pl-10 pt-20 rounded-3xl h-[28rem] w-[30rem] will-change-transform overflow-hidden relative'
+            >
+            </div>
+          </div>
+
+          {/* Right column (cards 2 and 3) */}
+          <div className='flex flex-col gap-4'>
+            <div 
+              ref={card2Ref}
+              className='bg-[#F3F2F6] rounded-3xl h-[19rem] w-[22rem] will-change-transform'
+            >
+            </div>
+            
+            <div 
+              ref={card3Ref}
+              className='bg-[#F3F2F6] rounded-3xl h-[8rem] w-[22rem] will-change-transform'
+            >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default ProductPage;
+
+
+
+
+https://github.com/ayush013/folio

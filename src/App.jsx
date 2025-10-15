@@ -1,11 +1,9 @@
-import LandingPage from "./Components/LandingPage"
+import MainPage from "./Pages/MainPage"
 
 function App() {
 
   return (
-    <div>
-      <LandingPage/>
-    </div>
+    <MainPage/>
   )
 }
 

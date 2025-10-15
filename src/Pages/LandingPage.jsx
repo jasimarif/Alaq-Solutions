@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { ChevronDown, ArrowRight } from 'lucide-react';
-import Navbar from './Navbar';
+import Navbar from '../Components/Navbar';
 import { gsap } from 'gsap';
 const RevenueChart = () => {
     const chartRef = useRef(null);
@@ -169,7 +169,7 @@ const HeroSection = () => {
     }, []);
 
     return (
-        <div className=" flex ">
+        <div className=" flex">
             <div className="space-y-8 pt-20 pl-24">
                 <div>
                     <div ref={titleRef}>
@@ -267,7 +267,7 @@ const TrustSection = () => {
 
 const LandingPage = () => {
     return (
-        <div className="h-screen bg-[#132D25] font-poppins relative overflow-x-hidden">
+        <div className="h-screen w-full bg-[#132D25] font-poppins relative overflow-hidden">
             <Navbar />
 
             <main className="">

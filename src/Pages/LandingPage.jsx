@@ -181,7 +181,7 @@ const HeroSection = () => {
                         <div className="text-7xl lg:text-8xl font-light text-white leading-[0.95] tracking-tighter">
                             Scale <span className="text-[#d4f4af] font-normal">Faster.</span>
                         </div>
-                        <button ref={buttonRef} className="bg-[#d4f4af] text-[#1a3a35] px-6 py-3 rounded-full font-semibold text-lg hover:bg-[#c5e6a6] transition-all flex items-center space-x-12 group shadow-lg hover:shadow-xl">
+                        <button ref={buttonRef} className="bg-[#d4f4af] text-[#1a3a35] px-6 py-3 rounded-full cursor-none font-semibold text-lg hover:bg-[#c5e6a6] transition-all flex items-center space-x-12 group shadow-lg hover:shadow-xl">
                             <span>Get Started</span>
                             <div className='bg-[#FF862F] rounded-full p-2'>
                                 <ArrowRight className="group-hover:translate-x-2 transition-transform text-white" size={22} />
@@ -246,7 +246,7 @@ const TrustSection = () => {
                 {companies.map((company, i) => (
                     <div
                         key={i}
-                        className={`text-[#869B7F] text-xl ${company.italic ? 'italic' : ''} hover:text-gray-400 transition cursor-pointer`}
+                        className={`text-[#869B7F] text-xl ${company.italic ? 'italic' : ''} hover:text-gray-400 transition cursor-none`}
                     >
                         {company.display}
                     </div>

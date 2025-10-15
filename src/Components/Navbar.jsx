@@ -54,18 +54,18 @@ const Navbar = () => {
                                 onMouseEnter={() => setActiveDropdown('products')}
                                 onMouseLeave={() => setActiveDropdown(null)}
                             >
-                                <button className="flex items-center space-x-1 text-white hover:text-white transition cursor-pointer">
+                                <button className="flex items-center space-x-1 text-white hover:text-white transition cursor-none">
                                     <span>Products</span>
                                     <ChevronDown size={14} />
                                 </button>
                                 {activeDropdown === 'products' && (
                                     <div ref={productsDropdownRef} className="absolute top-full left-0 mt-4 bg-[#E8DDD0] rounded-2xl p-4 w-64 shadow-xl z-[9999]">
                                         <div className="space-y-3">
-                                            <div className="dropdown-item p-3 hover:bg-white/50 rounded-lg transition cursor-pointer">
+                                            <div className="dropdown-item p-3 hover:bg-white/50 rounded-lg transition cursor-none">
                                                 <div className="text-[#1a3a35] font-semibold mb-1">Core Accounting</div>
                                                 <div className="text-[#8B7355] text-xs">The modern general ledger that scales with you</div>
                                             </div>
-                                            <div className="dropdown-item p-3 hover:bg-white/50 rounded-lg transition cursor-pointer">
+                                            <div className="dropdown-item p-3 hover:bg-white/50 rounded-lg transition cursor-none">
                                                 <div className="text-[#1a3a35] font-semibold mb-1">Revenue Automation</div>
                                                 <div className="text-[#8B7355] text-xs">Automate your end-to-end revenue process</div>
                                             </div>
@@ -79,18 +79,18 @@ const Navbar = () => {
                                 onMouseEnter={() => setActiveDropdown('solutions')}
                                 onMouseLeave={() => setActiveDropdown(null)}
                             >
-                                <button className="flex items-center space-x-1 text-white hover:text-white transition cursor-pointer">
+                                <button className="flex items-center space-x-1 text-white hover:text-white transition cursor-none">
                                     <span>Solutions</span>
                                     <ChevronDown size={14} />
                                 </button>
                                 {activeDropdown === 'solutions' && (
                                     <div ref={solutionsDropdownRef} className="absolute top-full left-0 mt-4 bg-[#E8DDD0] rounded-2xl p-4 w-64 shadow-xl z-[9999]">
                                         <div className="space-y-3">
-                                            <div className="dropdown-item p-3 hover:bg-white/50 rounded-lg transition cursor-pointer">
+                                            <div className="dropdown-item p-3 hover:bg-white/50 rounded-lg transition cursor-none">
                                                 <div className="text-[#1a3a35] font-semibold mb-1">For Finance Teams</div>
                                                 <div className="text-[#8B7355] text-xs">Streamline your financial operations</div>
                                             </div>
-                                            <div className="dropdown-item p-3 hover:bg-white/50 rounded-lg transition cursor-pointer">
+                                            <div className="dropdown-item p-3 hover:bg-white/50 rounded-lg transition cursor-none">
                                                 <div className="text-[#1a3a35] font-semibold mb-1">For Enterprises</div>
                                                 <div className="text-[#8B7355] text-xs">Scale with confidence</div>
                                             </div>
@@ -99,25 +99,25 @@ const Navbar = () => {
                                 )}
                             </div>
 
-                            <a href="#" className="text-white hover:text-white transition cursor-pointer">Customers</a>
+                            <a href="#" className="text-white hover:text-white transition cursor-none">Customers</a>
 
                             <div 
                                 className="relative"
                                 onMouseEnter={() => setActiveDropdown('resources')}
                                 onMouseLeave={() => setActiveDropdown(null)}
                             >
-                                <button className="flex items-center space-x-1 text-white hover:text-white transition cursor-pointer">
+                                <button className="flex items-center space-x-1 text-white hover:text-white transition cursor-none">
                                     <span>Resources</span>
                                     <ChevronDown size={14} />
                                 </button>
                                 {activeDropdown === 'resources' && (
                                     <div ref={resourcesDropdownRef} className="absolute top-full left-0 mt-4 bg-[#E8DDD0] rounded-2xl p-4 w-64 shadow-xl z-[9999]">
                                         <div className="space-y-3">
-                                            <div className="dropdown-item p-3 hover:bg-white/50 rounded-lg transition cursor-pointer">
+                                            <div className="dropdown-item p-3 hover:bg-white/50 rounded-lg transition cursor-none">
                                                 <div className="text-[#1a3a35] font-semibold mb-1">Documentation</div>
                                                 <div className="text-[#8B7355] text-xs">Learn how to use our platform</div>
                                             </div>
-                                            <div className="dropdown-item p-3 hover:bg-white/50 rounded-lg transition cursor-pointer">
+                                            <div className="dropdown-item p-3 hover:bg-white/50 rounded-lg transition cursor-none">
                                                 <div className="text-[#1a3a35] font-semibold mb-1">Blog</div>
                                                 <div className="text-[#8B7355] text-xs">Latest news and insights</div>
                                             </div>

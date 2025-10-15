@@ -11,6 +11,11 @@ body, html {
 
 body {
   position: relative;
+  cursor: none;
+}
+
+a {
+  cursor: none !important;
 }
 
 /* Collaboration Section Styles */

@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 const TabButton = ({ active, children, onClick }) => (
   <button
     onClick={onClick}
-    className={`px-6 py-3 text-base font-medium cursor-pointer tracking-tighter transition-all relative`}
+    className={`px-6 py-3 text-base font-medium cursor-none tracking-tighter transition-all relative`}
   >
     <span className={active ? 'text-gray-900' : 'text-gray-400 hover:text-gray-600'}>
       {children}

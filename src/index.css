@@ -45,6 +45,19 @@ a {
   will-change: transform;
 }
 
+/* Progress Indicator Styles */
+.progress {
+  height: 0.1875rem;
+}
+
+.progress .progress-bar {
+  height: 0.2rem;
+  transform-origin: left;
+  will-change: transform;
+  transform: scaleX(0);
+  @apply w-full bg-[#d4f4af];
+}
+
 /* Tall screen modifier */
 @media (min-height: 900px) {
   .tall\:py-36 {

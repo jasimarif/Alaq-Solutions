@@ -4,8 +4,8 @@ import { useEffect, useRef } from "react";
 import { gsap, Linear } from "gsap";
 
 const CURSOR_STYLES = {
-  CURSOR: "fixed hidden bg-white w-4 h-4 select-none pointer-events-none z-50",
-  FOLLOWER: "fixed hidden h-8 w-8 select-none pointer-events-none z-50",
+  CURSOR: "fixed hidden bg-white w-4 h-4 select-none pointer-events-none z-[9999]",
+  FOLLOWER: "fixed hidden h-8 w-8 select-none pointer-events-none z-[9999]",
 };
 
 const isSmallScreen = () => {

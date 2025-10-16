@@ -41,10 +41,18 @@ a {
   will-change: opacity;
 }
 
+.will-change-transform {
+  will-change: transform;
+}
+
 /* Tall screen modifier */
 @media (min-height: 900px) {
   .tall\:py-36 {
     padding-top: 9rem;
     padding-bottom: 9rem;
+  }
+
+  .tall\:mt-12 {
+    margin-top: 3rem;
   }
 }

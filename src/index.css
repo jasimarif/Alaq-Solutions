@@ -55,7 +55,7 @@ a {
   transform-origin: left;
   will-change: transform;
   transform: scaleX(0);
-  @apply w-full bg-[#d4f4af];
+  @apply w-full bg-[#3b5e54];
 }
 
 /* Tall screen modifier */

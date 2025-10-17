@@ -3,7 +3,7 @@ import React from 'react'
 
 const SlidingButton = ({text, shadow}) => {
   return (
-    <button className={`relative bg-[#d4f4af] hover:text-white text-[#1a3a35] px-6 py-3 rounded-full font-poppins cursor-none font-semibold text-lg overflow-hidden flex items-center gap-3 group ${shadow ? 'shadow-lg hover:shadow-xl' : ''}`}>
+    <button className={`relative bg-darkGreen  hover:text-white text-white/90 px-6 py-3 rounded-full font-poppins cursor-none font-medium text-lg overflow-hidden flex items-center gap-3 group ${shadow ? 'shadow-lg hover:shadow-xl' : ''}`}>
           <span className="relative z-10 transition-colors duration-500">{text}</span>
           <div className='relative z-10 bg-[#FF862F] rounded-full p-2 group-hover:bg-white transition-colors duration-500'>
             <ArrowRight className="text-white group-hover:text-[#FF862F] transition-colors duration-500" size={22} />

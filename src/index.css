@@ -2,6 +2,8 @@
 
 @theme {
   --font-poppins: 'Poppins', sans-serif;
+  --color-darkGreen: #132D25;
+  --color-limeGreen: #d4f4af;
 }
 
 body, html {

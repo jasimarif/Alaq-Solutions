@@ -372,16 +372,16 @@ const TimelineSection = () => {
   const renderSlides = () => {
     return (
       <div
-        className="max-w-full  bg-white rounded-2xl overflow-hidden  p-4"
+        className="max-w-full bg-limeGreen rounded-2xl overflow-hidden p-6 "
         ref={screenContainer}
       >
         <div className="">
-          <h2 className="font-poppins font-semibold tracking-tighter text-3xl mb-2 ">Let's Do Wonders!</h2>
+          <h2 className="font-poppins font-semibold tracking-tighter text-3xl mb-2 text-darkGreen">Let's Do Wonders!</h2>
           <DirectionPad/>
-          <p className="text-lg font-medium mt-6 mb-2">Experience the power of an integrated business management platform that grows with your business.</p>
-          <p className="text-lg font-medium mb-4">Would you like to explore any specific component of the suite in more detail?</p>
+          <p className="text-lg font-medium mt-6 mb-2 text-darkGreen">Experience the power of an integrated business management platform that grows with your business.</p>
+          <p className="text-lg font-medium mb-4 text-darkGreen">Would you like to explore any specific component of the suite in more detail?</p>
           <SlidingButton text={'LEARN MORE ABOUT US'}/>
-        
+
         </div>
       </div>
     );

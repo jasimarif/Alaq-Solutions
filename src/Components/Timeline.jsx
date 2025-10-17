@@ -316,30 +316,6 @@ const TimelineSection = () => {
     }
   };
 
-  const setSlidesAnimation = (timeline) => {
-    svgCheckpointItems.forEach((_, index) => {
-      // all except the first slide
-      if (index !== 0) {
-        timeline.fromTo(
-          screenContainer.current.querySelector(`.slide-${index + 1}`),
-          { opacity: 0 },
-          { opacity: 1 }
-        );
-      }
-
-      // all except the last slide
-      if (index !== svgCheckpointItems.length - 1) {
-        timeline.to(
-          screenContainer.current.querySelector(`.slide-${index + 1}`),
-          {
-            opacity: 0,
-            delay: 2.35,
-          }
-        );
-      }
-    });
-  };
-
   const initScrollTrigger = () => {
     const timeline = gsap
       .timeline({ defaults: { ease: "none", duration: 0.44 } })
@@ -353,9 +329,6 @@ const TimelineSection = () => {
 
     // Slide as a trigger for Desktop
     if (window.innerWidth >= 768) {
-      // Animation for right side slides
-      setSlidesAnimation(timeline);
-
       const platformHeight =
         screenContainer.current.getBoundingClientRect().height;
 
@@ -366,7 +339,7 @@ const TimelineSection = () => {
         pin: true,
         pinSpacing: true,
       };
-      duration = timeline.totalDuration() / svgCheckpointItems.length;
+      duration = 3;
     } else {
       // Mobile configuration
       trigger = svgContainer.current;
@@ -401,22 +374,14 @@ const TimelineSection = () => {
   const renderSlides = () => {
     return (
       <div
-        className="max-w-full h-96 shadow-xl bg-gray-800 rounded-2xl overflow-hidden"
+        className="max-w-full h-96 shadow-xl bg-gray-800 rounded-2xl overflow-hidden flex flex-col items-center justify-center p-8"
         ref={screenContainer}
       >
-        <div className="w-full h-8 bg-gray-700"></div>
-        <div className="relative h-full w-full -mt-2 bg-gray-900 overflow-hidden">
-          <div className="absolute top-0 left-0 h-full w-full">
-            {svgCheckpointItems.map((item, index) => (
-              <img
-                key={`${item.title}-${index}`}
-                className={`w-full h-full absolute top-0 object-cover slide-${index + 1}`}
-                src={item.slideImage || ""}
-                alt={item.title || "Timeline"}
-                loading="lazy"
-              />
-            ))}
-          </div>
+        <div className="text-center">
+          <h3 className="text-3xl font-bold text-yellow-400 mb-4">Our Journey</h3>
+          <p className="text-lg text-gray-300">
+            Scroll through the timeline to explore our milestones and achievements
+          </p>
         </div>
       </div>
     );

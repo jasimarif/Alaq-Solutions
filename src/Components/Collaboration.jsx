@@ -6,7 +6,7 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 const COLLABORATION_STYLE = {
   SLIDING_TEXT: "opacity-20 text-5xl md:text-7xl font-semibold whitespace-nowrap text-gray-300 font-poppins tracking-tighter",
   SECTION:
-    "w-full relative select-none tall:py-36 py-36 section-container flex flex-col bg-[#132D25]",
+    "min-w-screen relative select-none tall:py-36 py-36 section-container flex flex-col bg-[#132D25]",
   TITLE: "mt-6 md:mt-8 font-medium text-4xl md:text-5xl text-center text-white font-poppins tracking-tighter",
 };
 

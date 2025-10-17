@@ -17,63 +17,18 @@ export const ItemSize = {
 export const TIMELINE = [
   {
     type: NodeTypes.CHECKPOINT,
-    title: "2023",
+    title: "Our Expertise",
     size: ItemSize.LARGE,
     shouldDrawLine: false,
     alignment: Branch.LEFT,
   },
   {
     type: NodeTypes.CHECKPOINT,
-    title: "Speaker at React India",
+    title: "Building Digital Solutions That Matter",
     size: ItemSize.SMALL,
     subtitle:
-      "Discussed on Interaction to Next Paint (INP), a Google Core Web Vital metric",
-    image: "/timeline/reactindia.svg",
-    slideImage: "/timeline/reactindia.jpg",
+      "We craft innovative technology solutions that transform businesses, enhance user experiences, and drive sustainable growth through cutting-edge development practices.",
     shouldDrawLine: true,
-    alignment: Branch.LEFT,
-  },
-  {
-    type: NodeTypes.CHECKPOINT,
-    title: "2022",
-    size: ItemSize.LARGE,
-    shouldDrawLine: false,
-    alignment: Branch.LEFT,
-  },
-  {
-    type: NodeTypes.CHECKPOINT,
-    title: "Frontend Engineer 2 (Current)",
-    size: ItemSize.SMALL,
-    subtitle:
-      "Frontend Engineering @ Core team, solving problems around Livingroom device performance",
-    image: "/timeline/hotstar.svg",
-    slideImage: "/timeline/hotstar.jpeg",
-    shouldDrawLine: true,
-    alignment: Branch.LEFT,
-  },
-  {
-    type: NodeTypes.CHECKPOINT,
-    title: "2021",
-    size: ItemSize.LARGE,
-    shouldDrawLine: false,
-    alignment: Branch.LEFT,
-  },
-  {
-    type: NodeTypes.CHECKPOINT,
-    title: "UI Engineer",
-    size: ItemSize.SMALL,
-    subtitle:
-      "Contributed to Server driven UI framework for powering experiences @ Flipkart Wholesale 😎",
-    image: "/timeline/flipkart.svg",
-    slideImage: "/timeline/flipkart.gif",
-    shouldDrawLine: true,
-    alignment: Branch.LEFT,
-  },
-  {
-    type: NodeTypes.CHECKPOINT,
-    title: "2020",
-    size: ItemSize.LARGE,
-    shouldDrawLine: false,
     alignment: Branch.LEFT,
   },
   {
@@ -81,165 +36,64 @@ export const TIMELINE = [
   },
   {
     type: NodeTypes.CHECKPOINT,
-    title: "UI Engineer (freelance)",
+    title: "Experienced Team",
     size: ItemSize.SMALL,
     subtitle:
-      "Built solutions for employee engagement, productivity and performance 🎯",
-    image: "/timeline/huminos.svg",
-    slideImage: "/timeline/huminos-freelance.jpg",
+      "Our industry veterans bring deep expertise in business transformation, technology implementation, and solution optimization. We've successfully guided hundreds of organizations through complex digital evolutions.",
     shouldDrawLine: true,
     alignment: Branch.RIGHT,
   },
   {
     type: NodeTypes.CHECKPOINT,
-    title: "Motion Graphics (freelance)",
-    size: ItemSize.SMALL,
-    subtitle: "Motion Graphics content for Product Launch 🚀",
-    image: "/timeline/octanner.svg",
-    slideImage: "/timeline/aftereffects.jpg",
-    shouldDrawLine: true,
-    alignment: Branch.LEFT,
-  },
-  {
-    type: NodeTypes.CONVERGE,
-  },
-  {
-    type: NodeTypes.CHECKPOINT,
-    title: "2019",
-    size: ItemSize.LARGE,
-    shouldDrawLine: false,
-    alignment: Branch.LEFT,
-  },
-  {
-    type: NodeTypes.CHECKPOINT,
-    title: "UI Engineer",
+    title: "Proven Track Record",
     size: ItemSize.SMALL,
     subtitle:
-      "Worked on enterprise blockchain solutions for web. Transforming UI/UX and frontend framework. Built a design system.",
-    image: "/timeline/dltlabs.svg",
-    slideImage: "/timeline/dlt-website.jpg",
+      "With over 15 years of combined experience across Fortune 500 companies and emerging startups, our team delivers measurable results. We've completed 200+ successful projects with 98% client satisfaction rate.",
     shouldDrawLine: true,
-    alignment: Branch.LEFT,
-  },
-  {
-    type: NodeTypes.CHECKPOINT,
-    title: "UX Engineer",
-    size: ItemSize.SMALL,
-    subtitle:
-      "First job! 🥳 Product design and development for employee engagement chatbot suite for workplace by facebook",
-    image: "/timeline/huminos.svg",
-    slideImage: "/timeline/huminos-website.jpg",
-    shouldDrawLine: true,
-    alignment: Branch.LEFT,
-  },
-  {
-    type: NodeTypes.CHECKPOINT,
-    title: "Graduated from College 🎓",
-    size: ItemSize.SMALL,
-    subtitle:
-      "Spent 4 years laying the foundation of Frontend Engineering, UI/UX, and Fitness!",
-    image: "/timeline/akgec.svg",
-    slideImage: "/timeline/farewell.jpg",
-    shouldDrawLine: true,
-    alignment: Branch.LEFT,
-  },
-
-  {
-    type: NodeTypes.CHECKPOINT,
-    title: "2018",
-    size: ItemSize.LARGE,
-    shouldDrawLine: false,
-    alignment: Branch.LEFT,
-  },
-  {
-    type: NodeTypes.DIVERGE,
-  },
-  {
-    type: NodeTypes.CHECKPOINT,
-    title: "Student lead at SDC-SI",
-    size: ItemSize.SMALL,
-    subtitle:
-      "Represented a team of 39 talented developers. Served different roles of leadership, project management and delivery.",
-    image: "/timeline/si.svg",
-    slideImage: "/timeline/si-head.jpg",
-    shouldDrawLine: true,
-    alignment: Branch.LEFT,
-  },
-  {
-    type: NodeTypes.CHECKPOINT,
-    title: "Lecture on SVG animations",
-    size: ItemSize.SMALL,
-    subtitle:
-      "Guided 200 students to create their first animated SVG using CSS/SMIL at PHP Workshop, SDC-SI",
-
-    slideImage: "/timeline/svg-lecture.jpg",
-    shouldDrawLine: true,
-    alignment: Branch.LEFT,
-  },
-
-  {
-    type: NodeTypes.CHECKPOINT,
-    title: "2017",
-    size: ItemSize.LARGE,
-    shouldDrawLine: false,
     alignment: Branch.RIGHT,
   },
   {
     type: NodeTypes.CHECKPOINT,
-    title: "1st position in Web Designing, IMSU",
+    title: "Industry Expertise",
     size: ItemSize.SMALL,
     subtitle:
-      "Competed against 20+ teams for design and development of web project from scratch",
-    slideImage: "/timeline/ims-17.jpg",
+      "Specialized knowledge across healthcare, fintech, e-commerce, manufacturing, and SaaS industries. Our domain experts understand your unique challenges and regulatory requirements.",
     shouldDrawLine: true,
     alignment: Branch.RIGHT,
   },
-
   {
     type: NodeTypes.CHECKPOINT,
-    title: "Lecture on Javascript",
+    title: "Best Case Strategies",
     size: ItemSize.SMALL,
     subtitle:
-      "Guided 200 students for javascript fundamentals at Game Development workshop, SDC-SI",
-    slideImage: "/timeline/js-17.jpg",
+      "We develop customized strategies aligned with your business goals, leveraging proven methodologies and industry best practices to ensure optimal outcomes. Our approach combines innovation with practical execution.",
     shouldDrawLine: true,
-    alignment: Branch.LEFT,
-  },
-
-  {
-    type: NodeTypes.CHECKPOINT,
-    title: "1st position in Web Design, ABES ACM",
-    size: ItemSize.SMALL,
-    subtitle:
-      "Competed in web and graphic design challenge with 100+ participants.",
-    slideImage: "/timeline/abes-17.jpg",
-    shouldDrawLine: true,
-    alignment: Branch.RIGHT,
-  },
-
-  {
-    type: NodeTypes.CHECKPOINT,
-    title: "Lecture on Web Technologies",
-    size: ItemSize.SMALL,
-    subtitle:
-      "Guided 300+ students on getting started with web technologies like HTML/CSS and JS",
-    slideImage: "/timeline/web-17.jpg",
-    shouldDrawLine: true,
-    alignment: Branch.LEFT,
-  },
-  {
-    type: NodeTypes.CHECKPOINT,
-    title: "2016",
-    size: ItemSize.LARGE,
-    shouldDrawLine: false,
     alignment: Branch.RIGHT,
   },
   {
     type: NodeTypes.CHECKPOINT,
-    title: "1st position in Web Designing, IMSU",
+    title: "Agile Methodology",
     size: ItemSize.SMALL,
-    subtitle: "Secured 1st prize in Web design challenge against 50+ teams",
-    slideImage: "/timeline/ims-16.jpg",
+    subtitle:
+      "Iterative development with continuous feedback loops ensures rapid adaptation to changing requirements. Sprint-based delivery keeps projects on track and stakeholders engaged throughout the process.",
+    shouldDrawLine: true,
+    alignment: Branch.RIGHT,
+  },
+  {
+    type: NodeTypes.CHECKPOINT,
+    title: "Data-Driven Decisions",
+    size: ItemSize.SMALL,
+    subtitle:
+      "Every strategy backed by comprehensive market research, competitive analysis, and performance metrics. We use advanced analytics to validate assumptions and optimize outcomes.",
+    shouldDrawLine: true,
+    alignment: Branch.RIGHT,
+  },
+  {
+    type: NodeTypes.CHECKPOINT,
+    title: "Risk Mitigation",
+    size: ItemSize.SMALL,
+    subtitle:
+      "Proactive identification and management of potential project risks. Our comprehensive risk assessment framework ensures smooth execution and contingency planning for any scenario.",
     shouldDrawLine: true,
     alignment: Branch.RIGHT,
   },
@@ -248,37 +102,95 @@ export const TIMELINE = [
   },
   {
     type: NodeTypes.CHECKPOINT,
-    title: "",
+    title: "With You - From Start to Finish",
+    size: ItemSize.SMALL,
+    subtitle:
+      "Experience end-to-end partnership throughout your journey. From initial planning through implementation and ongoing optimization, we provide consistent support and guidance to maximize your success.",
+    shouldDrawLine: true,
+    alignment: Branch.LEFT,
+  },
+  {
+    type: NodeTypes.DIVERGE,
+  },
+  {
+    type: NodeTypes.CHECKPOINT,
+    title: "Strategic Planning & Discovery",
+    size: ItemSize.SMALL,
+    subtitle:
+      "Comprehensive business analysis, stakeholder interviews, and technical assessment. We map out your current state, define success metrics, and create detailed project roadmaps.",
+    shouldDrawLine: true,
+    alignment: Branch.RIGHT,
+  },
+  {
+    type: NodeTypes.CHECKPOINT,
+    title: "Design & Development",
+    size: ItemSize.SMALL,
+    subtitle:
+      "User-centered design approach with rapid prototyping and iterative development. Our cross-functional teams ensure seamless integration between design vision and technical implementation.",
+    shouldDrawLine: true,
+    alignment: Branch.RIGHT,
+  },
+  {
+    type: NodeTypes.CHECKPOINT,
+    title: "Testing & Quality Assurance",
+    size: ItemSize.SMALL,
+    subtitle:
+      "Rigorous testing protocols including automated testing, security audits, and performance optimization. We ensure your solution meets the highest standards before deployment.",
+    shouldDrawLine: true,
+    alignment: Branch.RIGHT,
+  },
+  {
+    type: NodeTypes.CHECKPOINT,
+    title: "Deployment & Launch",
+    size: ItemSize.SMALL,
+    subtitle:
+      "Seamless deployment with minimal downtime. Our DevOps experts handle infrastructure setup, monitoring configuration, and launch strategy to ensure smooth go-live experience.",
+    shouldDrawLine: true,
+    alignment: Branch.RIGHT,
+  },
+  {
+    type: NodeTypes.CHECKPOINT,
+    title: "Ongoing Support & Optimization",
+    size: ItemSize.SMALL,
+    subtitle:
+      "24/7 monitoring, regular performance reviews, and continuous improvement initiatives.",
+    shouldDrawLine: true,
+    alignment: Branch.RIGHT,
+  },
+  {
+    type: NodeTypes.CONVERGE,
+  },
+  {
+    type: NodeTypes.CHECKPOINT,
+    title: "Success Metrics",
     size: ItemSize.LARGE,
     shouldDrawLine: false,
     alignment: Branch.LEFT,
   },
   {
     type: NodeTypes.CHECKPOINT,
-    title: "UI/UX, Frontend Engineer",
+    title: "Client Satisfaction",
     size: ItemSize.SMALL,
     subtitle:
-      "Started journey in SDC-SI, where I learnt the fundamentals of Frontend, UI/UX, Graphic design and more...",
-    image: "/timeline/si.svg",
-    slideImage: "/timeline/si-start.jpg",
+      "98% client satisfaction rate with 85% of clients engaging for additional projects. Our Net Promoter Score of 72 reflects our commitment to delivering exceptional value.",
     shouldDrawLine: true,
     alignment: Branch.LEFT,
   },
   {
     type: NodeTypes.CHECKPOINT,
-    title: "2014",
-    size: ItemSize.LARGE,
-    shouldDrawLine: false,
+    title: "Project Success Rate",
+    size: ItemSize.SMALL,
+    subtitle:
+      "95% of projects delivered on time and within budget. Our robust project management framework ensures predictable outcomes and transparent communication.",
+    shouldDrawLine: true,
     alignment: Branch.LEFT,
   },
   {
     type: NodeTypes.CHECKPOINT,
-    title: "Recognized Themer",
+    title: "Business Impact",
     size: ItemSize.SMALL,
     subtitle:
-      "Awarded as recognized themer,  Developed themes and ROMs for Xperia 2011 devices lineup with over 15k+ downloads. Featured on xda portal twice.",
-    image: "/timeline/xda.svg",
-    slideImage: "/timeline/xda-rt.jpg",
+      "Average 40% improvement in operational efficiency and 25% increase in revenue growth for our clients. Measurable ROI typically achieved within 6-12 months of implementation.",
     shouldDrawLine: true,
     alignment: Branch.LEFT,
   },

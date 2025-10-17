@@ -7,11 +7,13 @@ import {
 } from "../constants";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import DirectionPad from "./AnimatedArrows";
+import SlidingButton from "./Button";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const svgColor = "#9CA3AF";
-const animColor = "#FCD34D";
+const svgColor = "#FFFFFF";
+const animColor = "#d4f4af";
 const separation = 450;
 const strokeWidth = 2;
 const leftBranchX = 13;
@@ -101,7 +103,7 @@ const TimelineSection = () => {
   };
 
   const getDotString = (x, y) => {
-    return `<rect class='dot' width=${dotSize} height=${dotSize} fill='#111827' x=${
+    return `<rect class='dot' width=${dotSize} height=${dotSize} fill='#132D25' x=${
       x - dotSize / 2
     } y=${
       y - dotSize / 2
@@ -132,7 +134,7 @@ const TimelineSection = () => {
   };
 
   const addText = (timelineNode, y, isDiverged) => {
-    const { title, subtitle, size, image } = timelineNode;
+    const { title, subtitle, size } = timelineNode;
 
     const offset = isDiverged ? rightBranchX : 10;
     const foreignObjectX = dotSize / 2 + 10 + offset;
@@ -140,15 +142,13 @@ const TimelineSection = () => {
     const foreignObjectWidth = svgWidth - (dotSize / 2 + 10 + offset);
 
     const titleSizeClass = size === ItemSize.LARGE ? "text-6xl" : "text-2xl";
-    const logoString = image
-      ? `<img src='${image}' class='h-8 mb-2' loading='lazy' width='100' height='32' alt='${image}' />`
-      : "";
+    const titleColorClass = (title === "Our Expertise" || title === "Success Metrics") ? "text-white" : "text-[#d4f4af]";
     const subtitleString = subtitle
-      ? `<p class='text-xl mt-2 text-gray-200 font-medium tracking-wide'>${subtitle}</p>`
+      ? `<p class='text-xl mt-2 text-[#869B7F] font-medium tracking-wide'>${subtitle}</p>`
       : "";
 
     return `<foreignObject x=${foreignObjectX} y=${foreignObjectY} width=${foreignObjectWidth}
-        height=${separation}>${logoString}<p class='${titleSizeClass}'>${title}</p>${subtitleString}</foreignObject>`;
+        height=${separation}><p class='${titleSizeClass} ${titleColorClass}'>${title}</p>${subtitleString}</foreignObject>`;
   };
 
   const drawLine = (timelineNode, y, i, isDiverged) => {
@@ -327,7 +327,6 @@ const TimelineSection = () => {
     let end;
     let additionalConfig = {};
 
-    // Slide as a trigger for Desktop
     if (window.innerWidth >= 768) {
       const platformHeight =
         screenContainer.current.getBoundingClientRect().height;
@@ -341,7 +340,6 @@ const TimelineSection = () => {
       };
       duration = 3;
     } else {
-      // Mobile configuration
       trigger = svgContainer.current;
       start = "top center";
       end = `+=${svgLength}`;
@@ -374,14 +372,16 @@ const TimelineSection = () => {
   const renderSlides = () => {
     return (
       <div
-        className="max-w-full h-96 shadow-xl bg-gray-800 rounded-2xl overflow-hidden flex flex-col items-center justify-center p-8"
+        className="max-w-full  bg-white rounded-2xl overflow-hidden  p-4"
         ref={screenContainer}
       >
-        <div className="text-center">
-          <h3 className="text-3xl font-bold text-yellow-400 mb-4">Our Journey</h3>
-          <p className="text-lg text-gray-300">
-            Scroll through the timeline to explore our milestones and achievements
-          </p>
+        <div className="">
+          <h2 className="font-poppins font-semibold tracking-tighter text-3xl mb-2 ">Let's Do Wonders!</h2>
+          <DirectionPad/>
+          <p className="text-lg font-medium mt-6 mb-2">Experience the power of an integrated business management platform that grows with your business.</p>
+          <p className="text-lg font-medium mb-4">Would you like to explore any specific component of the suite in more detail?</p>
+          <SlidingButton text={'LEARN MORE ABOUT US'}/>
+        
         </div>
       </div>
     );
@@ -399,17 +399,17 @@ const TimelineSection = () => {
 
   const renderSectionTitle = () => (
     <div className="flex flex-col">
-      <p className="text-sm text-yellow-400 font-medium tracking-widest seq">MILESTONES</p>
-      <h1 className="text-5xl md:text-6xl font-bold text-gray-900 seq mt-2">Timeline</h1>
-      <h2 className="text-2xl md:max-w-2xl w-full text-gray-600 font-medium seq mt-2">
-        A quick recap of proud moments
+      <p className="text-sm text-[#d4f4af] font-medium tracking-widest seq">MILESTONES</p>
+      <h1 className="text-5xl md:text-6xl font-bold text-white seq mt-2 tracking-tighter">Why Choose Us</h1>
+      <h2 className="text-2xl md:max-w-2xl w-full text-[#d4f4af] font-medium seq mt-2">
+        Your success is our priority.
       </h2>
     </div>
   );
 
   return (
     <section
-      className="w-full relative select-none min-h-screen py-20 px-6 md:px-12 flex flex-col justify-center bg-white font-poppins"
+      className="w-full relative select-none min-h-screen py-20 px-6 md:px-12 flex flex-col justify-center bg-[#132D25] font-poppins"
       id="timeline"
     >
       {renderSectionTitle()}

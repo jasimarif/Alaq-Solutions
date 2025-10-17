@@ -9,37 +9,37 @@ const PROJECTS_DATA = [
   {
     name: "Project One",
     description: "Innovative solution for modern challenges",
-    gradient: ["#1F6582", "#1ABCFE"],
+    color: "#DCD6EA",
     url: "#",
   },
   {
     name: "Project Two",
     description: "Building the future of technology",
-    gradient: ["#153BB9", "#0E2C8B"],
+    color: "#DCD6EA",
     url: "#",
   },
   {
     name: "Project Three",
     description: "Transforming ideas into reality",
-    gradient: ["#245B57", "#004741"],
+    color: "#EADFD2",
     url: "#",
   },
   {
     name: "Project Four",
     description: "Empowering businesses with innovation",
-    gradient: ["#003052", "#167187"],
+    color: "#EADFD2",
     url: "#",
   },
   {
     name: "Project Five",
     description: "Creating seamless user experiences",
-    gradient: ["#3A0000", "#771E1E"],
+    color: "#D5E8D9",
     url: "#",
   },
   {
     name: "Project Six",
     description: "Driving digital transformation",
-    gradient: ["#17007B", "#3A2C79"],
+    color: "#D5E8D9",
     url: "#",
   },
 ];
@@ -151,9 +151,9 @@ const Projects = () => {
         className={`flex flex-col inner-container ${willChange ? 'will-change-transform' : ''}`}
         ref={sectionTitleElementRef}
       >
-        <p className="text-sm font-medium text-gray-600 tracking-widest seq">PROJECTS</p>
-        <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mt-2 seq tracking-tighter">Our Works</h1>
-        <h2 className="text-2xl text-gray-700 md:max-w-3xl w-full max-w-sm mt-2 seq tracking-tighter">
+        <p className="text-sm font-medium text-darkGreen tracking-widest seq">PROJECTS</p>
+        <h1 className="text-5xl md:text-6xl font-bold text-darkGreen mt-2 seq tracking-tighter">Our Works</h1>
+        <h2 className="text-2xl text-darkGreen  md:max-w-3xl w-full max-w-sm mt-2 seq tracking-tighter">
           We have contributed in over 20+ projects ranging from Frontend development, UI/UX design, and Digital Solutions
         </h2>
       </div>

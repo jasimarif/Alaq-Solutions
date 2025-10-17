@@ -4,6 +4,7 @@
   --font-poppins: 'Poppins', sans-serif;
   --color-darkGreen: #132D25;
   --color-limeGreen: #d4f4af;
+  --color-lightOrange: #FF862F;
 }
 
 body, html {
@@ -22,7 +23,7 @@ a {
 
 /* Collaboration Section Styles */
 .section-container {
-  @apply 2xl:container xl:px-20 md:px-12 px-4 mx-auto;
+  @apply 2xl:container xl:pl-14 md:px-6 px-4;
 }
 
 .text-strong {

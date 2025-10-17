@@ -401,7 +401,7 @@ const TimelineSection = () => {
     <div className="flex flex-col">
       <p className="text-sm text-[#d4f4af] font-medium tracking-widest seq">MILESTONES</p>
       <h1 className="text-5xl md:text-6xl font-bold text-white seq mt-2 tracking-tighter">Why Choose Us</h1>
-      <h2 className="text-2xl md:max-w-2xl w-full text-[#d4f4af] font-medium seq mt-2">
+      <h2 className="text-2xl md:max-w-2xl w-full text-limeGreen font-medium seq mt-2">
         Your success is our priority.
       </h2>
     </div>

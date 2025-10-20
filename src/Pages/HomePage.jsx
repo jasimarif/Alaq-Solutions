@@ -6,6 +6,7 @@ import ProgressIndicator from '../Components/ProgressIndicator'
 import { ArrowRight } from 'lucide-react'
 import Footer from '../Components/Footer'
 import TimelineSection from '../Components/Timeline'
+import WhyChooseUs from '../Components/WhyChooseUs'
 
 const HomePage = () => {
   return (
@@ -13,9 +14,10 @@ const HomePage = () => {
       <ProgressIndicator />
       <ProductPage />
       <Projects />
+      <WhyChooseUs />
       <TimelineSection />
       <CollaborationSection />
-     <Footer/>
+      <Footer />
     </div>
   )
 }

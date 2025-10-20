@@ -7,40 +7,50 @@ gsap.registerPlugin(ScrollTrigger);
 
 const PROJECTS_DATA = [
   {
-    name: "Project One",
-    description: "Innovative solution for modern challenges",
-    color: "#DCD6EA",
-    url: "#",
-  },
-  {
-    name: "Project Two",
-    description: "Building the future of technology",
-    color: "#DCD6EA",
-    url: "#",
-  },
-  {
-    name: "Project Three",
-    description: "Transforming ideas into reality",
-    color: "#EADFD2",
-    url: "#",
-  },
-  {
-    name: "Project Four",
-    description: "Empowering businesses with innovation",
-    color: "#EADFD2",
-    url: "#",
-  },
-  {
-    name: "Project Five",
-    description: "Creating seamless user experiences",
+    name: "Portals Management",
+    description: "Revolutionize your vendor management with our expert Vendor Portal integration services ensuring a seamless transition, efficient automation, and customized implementation for maximum efficiency.",
     color: "#D5E8D9",
     url: "#",
+    textColor: 'darkGreen'
   },
   {
-    name: "Project Six",
-    description: "Driving digital transformation",
+    name: "Integrations",
+    description: "Streamline your business operations with our expert NetSuite integration services, ensuring a seamless transition and customized implementation.",
     color: "#D5E8D9",
     url: "#",
+    textColor: 'darkGreen'
+
+  },
+  {
+    name: "AI Assistants",
+    description: "Revolutionize your business operations with our expert NetSuite and AI integration services  ensuring a seamless transition, intelligent automation, and customized implementation for maximum efficiency.",
+    color: "#EADFD2",
+    url: "#",
+    textColor: 'darkBrown'
+
+  },
+  {
+    name: "SuiteApps",
+    description: "Enhance your NetSuite experience with custom SuiteApps designed for specific business needs. Leverage purpose-built solutions like the Portlet SuiteApp for KPIs to gain better visibility into your key performance indicators and make data-driven decisions.",
+    color: "#EADFD2",
+    url: "#",
+    textColor: 'darkBrown'
+
+  },
+   {
+    name: "Portals Management",
+    description: "Revolutionize your vendor management with our expert Vendor Portal integration services ensuring a seamless transition, efficient automation, and customized implementation for maximum efficiency.",
+    color: "#DCD6EA",
+    url: "#",
+    textColor: 'darkPurple'
+  },
+  {
+    name: "Integrations",
+    description: "Streamline your business operations with our expert NetSuite integration services, ensuring a seamless transition and customized implementation.",
+    color: "#DCD6EA",
+    url: "#",
+    textColor: 'darkPurple'
+
   },
 ];
 
@@ -151,8 +161,8 @@ const Projects = () => {
         className={`flex flex-col inner-container ${willChange ? 'will-change-transform' : ''}`}
         ref={sectionTitleElementRef}
       >
-        <p className="text-sm font-medium text-darkGreen tracking-widest seq">PROJECTS</p>
-        <h1 className="text-5xl md:text-6xl font-bold text-darkGreen mt-2 seq tracking-tighter">Our Works</h1>
+        <p className="text-sm font-medium text-darkGreen tracking-widest seq">OUR WORKS</p>
+        <h1 className="text-5xl md:text-6xl font-bold text-darkGreen mt-2 seq tracking-tighter">Core ERP Excellence</h1>
         <h2 className="text-2xl text-darkGreen  md:max-w-3xl w-full max-w-sm mt-2 seq tracking-tighter">
           We have contributed in over 20+ projects ranging from Frontend development, UI/UX design, and Digital Solutions
         </h2>

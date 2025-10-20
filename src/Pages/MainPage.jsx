@@ -10,6 +10,7 @@ const MainPage = () => {
     <div >
         <LandingPage/>
         <HomePage/>
+        
     </div>
 
   )

@@ -7,6 +7,7 @@ import { ArrowRight } from 'lucide-react'
 import Footer from '../Components/Footer'
 import TimelineSection from '../Components/Timeline'
 import WhyChooseUs from '../Components/WhyChooseUs'
+import TestimonialSection from '../Components/TestimonialSection'
 
 const HomePage = () => {
   return (
@@ -16,6 +17,7 @@ const HomePage = () => {
       <Projects />
       <WhyChooseUs />
       <TimelineSection />
+      <TestimonialSection/>
       <CollaborationSection />
       <Footer />
     </div>

@@ -45,7 +45,6 @@ const WhyChooseUsFade = () => {
   useEffect(() => {
     const container = containerRef.current;
     
-    // Create scroll trigger for tab progression
     const scrollTrigger = ScrollTrigger.create({
       trigger: container,
       start: 'top top',
@@ -64,7 +63,6 @@ const WhyChooseUsFade = () => {
           setActiveTab(newTab);
         }
         
-        // Unlock scroll when reaching the end
         if (progress >= 0.99) {
           setIsScrollLocked(false);
         } else {
@@ -79,12 +77,10 @@ const WhyChooseUsFade = () => {
   }, [activeTab]);
 
   useEffect(() => {
-    // Determine scroll direction based on tab change
     const isScrollingDown = activeTab > prevTab;
     const tl = gsap.timeline();
     
     if (isScrollingDown) {
-      // Scrolling down: current card goes up, new card comes from bottom
       tl.to(cardRef.current, {
         opacity: 0,
         y: -100,
@@ -101,7 +97,6 @@ const WhyChooseUsFade = () => {
         ease: 'power3.out'
       });
     } else {
-      // Scrolling up: current card goes down, new card comes from top
       tl.to(cardRef.current, {
         opacity: 0,
         y: 100,

@@ -11,7 +11,9 @@ const TestimonialSection = () => {
   useEffect(() => {
     const words = textRef.current.querySelectorAll('.word');
 
-    gsap.set(words, { color: 'rgba(209, 213, 219, 0.2)' }); 
+    if (!words.length) return;
+
+    gsap.set(words, { color: '#ffffff' });
 
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -22,10 +24,13 @@ const TestimonialSection = () => {
       }
     });
 
-    tl.to(words, {
-      color: '#ffffff',
-      duration: 0.5,
-      ease: 'none'
+    words.forEach((word, index) => {
+      const startTime = index * 0.02; 
+      tl.to(word, {
+        color: '#d4f4af',
+        duration: 0.1,
+        ease: 'none'
+      }, startTime);
     });
 
     return () => {
@@ -43,7 +48,7 @@ const TestimonialSection = () => {
         <div className="">
           <h2
             ref={textRef}
-            className="text-4xl md:text-5xl lg:text-6xl font-normal leading-tight mb-16 text-center"
+            className="text-4xl md:text-5xl lg:text-6xl font-medium leading-tight mb-16 text-center tracking-tight"
           >
             {words.map((word, index) => (
               <span key={index} className="word inline-block mr-[0.3em]">
@@ -71,10 +76,10 @@ const TestimonialSection = () => {
                   <div className="w-2 h-2 rounded-full bg-gray-300"></div>
                   <div className="w-2 h-2 rounded-full bg-gray-300"></div>
                 </div>
-                <span className="text-sm text-gray-500 font-medium">Delphia</span>
+                <span className="text-sm text-gray-300 font-medium">OaksVille</span>
               </div>
-              <h3 className="text-2xl font-semibold text-gray-900">Andrea Burton, CPA</h3>
-              <p className="text-gray-600">Director of Finance</p>
+              <h3 className="text-2xl font-semibold text-white">Jasim Arif Ali</h3>
+              <p className="text-gray-300">CEO</p>
             </div>
           </div>
         </div>

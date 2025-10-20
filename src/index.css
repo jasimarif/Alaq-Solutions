@@ -42,6 +42,21 @@ a {
   background-clip: text;
 }
 
+.testimonial-gradient {
+  background: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #ffffff 50%,
+    #d4f4af 51%,
+    #d4f4af 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-position-x: 0%;
+}
+
 .will-change-opacity {
   will-change: opacity;
 }

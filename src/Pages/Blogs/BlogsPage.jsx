@@ -1,13 +1,7 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { Navbar, Footer, SlidingButton, BlogCard } from '../../Components';
-import { gsap } from 'gsap';
 
 const BlogsPage = () => {
-  const titleRef = useRef(null);
-  const descriptionRef = useRef(null);
-  const blogGridRef = useRef(null);
-  const newsletterRef = useRef(null);
-
   const blogs = [
     {
       id: 1,
@@ -65,48 +59,18 @@ const BlogsPage = () => {
     }
   ];
 
-  useEffect(() => {
-    const tl = gsap.timeline();
-
-    tl.fromTo(titleRef.current,
-      { opacity: 0, y: 100 },
-      { opacity: 1, y: 0, duration: 1, ease: 'power3.out' }
-    )
-    .fromTo(descriptionRef.current,
-      { opacity: 0, y: 30 },
-      { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out' },
-      '-=0.4'
-    )
-    .fromTo(blogGridRef.current.children,
-      { opacity: 0, y: 10 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.5,
-        stagger: 0.08,
-        ease: 'power1.out'
-      },
-      '-=0.2'
-    )
-    .fromTo(newsletterRef.current,
-      { opacity: 0, y: 30 },
-      { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out' },
-      '-=0.5'
-    );
-  }, []);
-
   return (
     <div className="bg-darkBlue min-h-screen font-poppins">
       <Navbar />
 
       {/* Hero Section */}
-      <div className="relative px-6 lg:px-24 pt-20 pb-16">
+      <div className="relative px-6 lg:px-24 pt-20 pb-16 animate-fadeIn">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h1 ref={titleRef} className="text-5xl lg:text-7xl font-bold text-white mb-6">
+            <h1 className="text-5xl lg:text-7xl font-bold text-white mb-6 animate-slideUp">
               Our <span className="text-blue-400 tracking-tighter">Blogs</span>
             </h1>
-            <p ref={descriptionRef} className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto animate-slideUp" style={{ animationDelay: '0.1s' }}>
               Stay updated with the latest insights, trends, and best practices in financial technology and business automation.
             </p>
           </div>
@@ -116,18 +80,24 @@ const BlogsPage = () => {
       {/* Blog Grid */}
       <div className="px-6 lg:px-24 pb-20">
         <div className="max-w-7xl mx-auto">
-          <div ref={blogGridRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogs.map((blog) => (
-              <BlogCard key={blog.id} blog={blog} />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {blogs.map((blog, index) => (
+              <div
+                key={blog.id}
+                className="animate-slideUp"
+                style={{ animationDelay: `${0.2 + index * 0.08}s` }}
+              >
+                <BlogCard blog={blog} />
+              </div>
             ))}
           </div>
         </div>
       </div>
 
       {/* Newsletter Subscription */}
-      <div className="px-6 lg:px-24 pb-20">
+      <div className="px-6 lg:px-24 pb-20 animate-fadeIn" style={{ animationDelay: '0.7s' }}>
         <div className="max-w-7xl mx-auto">
-          <div ref={newsletterRef} className="bg-gray-800 rounded-3xl p-12 text-center">
+          <div className="bg-gray-800 rounded-3xl p-12 text-center">
             <h3 className="text-3xl font-bold text-white mb-4">
               <span className='text-blue-400'>Subscribe</span> to Our Newsletter
             </h3>

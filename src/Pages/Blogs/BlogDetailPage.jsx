@@ -171,18 +171,18 @@ const BlogDetailPage = () => {
   return (
     <div className="bg-darkBlue min-h-screen font-poppins">
       <Navbar />
-      
+
       {/* Blog Header */}
-      <div className="relative px-6 lg:px-24 pt-20 pb-16">
+      <div className="relative px-6 lg:px-24 pt-20 pb-16 animate-fadeIn">
         <div className="max-w-4xl mx-auto">
-          <button 
+          <button
             onClick={() => navigate('/blogs')}
             className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors duration-300 mb-8 cursor-none"
           >
             ← Back to Blogs
           </button>
-          
-          <div className="mb-8">
+
+          <div className="mb-8 animate-slideUp" style={{ animationDelay: '0.1s' }}>
             <div className="flex items-center gap-4 text-gray-400 text-sm mb-4">
               <span>{currentBlog.date}</span>
               <span>•</span>
@@ -190,18 +190,18 @@ const BlogDetailPage = () => {
               <span>•</span>
               <span>By {currentBlog.author}</span>
             </div>
-            
+
             <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6">
               {currentBlog.title}
             </h1>
-            
+
             <p className="text-xl text-gray-300 leading-relaxed">
               {currentBlog.excerpt}
             </p>
           </div>
-          
+
           {/* Featured Image */}
-          <div className="aspect-video bg-gray-600 rounded-2xl overflow-hidden relative mb-12">
+          <div className="aspect-video bg-gray-600 rounded-2xl overflow-hidden relative mb-12 animate-slideUp" style={{ animationDelay: '0.2s' }}>
             <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20"></div>
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="text-white text-lg font-semibold">Featured Image</div>
@@ -211,9 +211,9 @@ const BlogDetailPage = () => {
       </div>
 
       {/* Blog Content */}
-      <div className="px-6 lg:px-24 pb-20">
+      <div className="px-6 lg:px-24 pb-20 animate-fadeIn" style={{ animationDelay: '0.3s' }}>
         <div className="max-w-4xl mx-auto">
-          <div 
+          <div
             className="prose prose-lg prose-invert max-w-none"
             dangerouslySetInnerHTML={{ __html: currentBlog.content }}
             style={{
@@ -225,15 +225,21 @@ const BlogDetailPage = () => {
       </div>
 
       {/* You Might Also Like Section */}
-      <div className="px-6 lg:px-24 pb-20">
+      <div className="px-6 lg:px-24 pb-20 animate-fadeIn" style={{ animationDelay: '0.4s' }}>
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-bold text-white mb-12 text-center">
             You Might Also Like
           </h2>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {otherBlogs.map((blog) => (
-              <BlogCard key={blog.id} blog={blog} />
+            {otherBlogs.map((blog, index) => (
+              <div
+                key={blog.id}
+                className="animate-slideUp"
+                style={{ animationDelay: `${0.5 + index * 0.1}s` }}
+              >
+                <BlogCard blog={blog} />
+              </div>
             ))}
           </div>
         </div>

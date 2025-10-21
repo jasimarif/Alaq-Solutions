@@ -7,7 +7,7 @@ const Footer = () => {
 
   return (
      <div className='bg-[#1a202c] w-full overflow-hidden flex flex-col justify-center items-center'>
-        <SlidingButton text={'Contact Us'}/>
+        <SlidingButton text={'Contact Us'} onClick={() => setIsModalOpen(true)} />
         <div className="text-center  flex items-end justify-center pt-8 pb-0 mb-0" style={{ paddingBottom: '0', marginBottom: '0' }}>
           <svg width="160" height="160" viewBox="0 0 24 12" fill="none" className="text-blue-400" style={{ marginBottom: '0', paddingBottom: '0', display: 'block' }}>
             <path d="M12 2L8 10H16L12 2Z" fill="currentColor" />

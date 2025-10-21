@@ -36,7 +36,22 @@ const PROJECTS_DATA = [
     url: "#",
     textColor: 'white'
 
-  }
+  },
+   {
+    name: "Portals Management",
+    description: "Revolutionize your vendor management with our expert Vendor Portal integration services ensuring a seamless transition, efficient automation, and customized implementation for maximum efficiency.",
+    color: "#2d3748",
+    url: "#",
+    textColor: 'white'
+  },
+  {
+    name: "Integrations",
+    description: "Streamline your business operations with our expert NetSuite integration services, ensuring a seamless transition and customized implementation.",
+    color: "#2d3748",
+    url: "#",
+    textColor: 'white'
+
+  },
 ];
 
 const Projects = () => {
@@ -58,7 +73,6 @@ const Projects = () => {
     let revealTimeline;
 
     if (isDesktop && !preferReducedMotion) {
-      // Reveal animation
       revealTimeline = gsap.timeline({ defaults: { ease: 'none' } });
       revealTimeline.from(
         targetSectionRef.current.querySelectorAll('.seq'),
@@ -73,21 +87,21 @@ const Projects = () => {
         animation: revealTimeline,
       });
 
-      // Horizontal scroll animation
       projectsTimeline = gsap.timeline({ defaults: { ease: 'none' } });
-      const sidePadding =
-        document.body.clientWidth -
-        targetSectionRef.current.querySelector('.inner-container').clientWidth;
-      const elementWidth =
-        sidePadding +
-        targetSectionRef.current.querySelector('.project-wrapper').clientWidth;
-      targetSectionRef.current.style.width = `${elementWidth}px`;
-      const width = window.innerWidth - elementWidth;
-      const duration = `${(elementWidth / window.innerHeight) * 100}%`;
+      const projectWrapper = targetSectionRef.current.querySelector('.project-wrapper');
+
+      const projectWrapperWidth = projectWrapper.scrollWidth;
+      const viewportWidth = window.innerWidth;
+
+      const scrollDistance = -(projectWrapperWidth - viewportWidth + 100);
+
+      targetSectionRef.current.style.width = `${projectWrapperWidth}px`;
+
+      const duration = `${(Math.abs(scrollDistance) / window.innerHeight) * 100}%`;
 
       projectsTimeline
-        .to(targetSectionRef.current, { x: width })
-        .to(sectionTitleElementRef.current, { x: -width }, '<');
+        .to(targetSectionRef.current, { x: scrollDistance })
+        .to(sectionTitleElementRef.current, { x: -scrollDistance }, '<');
 
       projectsScrollTrigger = ScrollTrigger.create({
         trigger: targetSectionRef.current,
@@ -112,7 +126,6 @@ const Projects = () => {
       projectWrapper.style.setProperty('padding', `0 ${parentPadding}`);
       projectWrapper.style.setProperty('transform', `translateX(-${parentPadding})`);
 
-      // Reveal animation for mobile
       revealTimeline = gsap.timeline({ defaults: { ease: 'none' } });
       revealTimeline.from(
         targetSectionRef.current.querySelectorAll('.seq'),
@@ -153,7 +166,7 @@ const Projects = () => {
         </h2>
       </div>
 
-      <div className="tall:mt-12 mt-6 grid grid-flow-col auto-cols-max md:gap-10 tracking-tighter  gap-6 project-wrapper w-fit seq snap-x scroll-pl-6 snap-mandatory">
+      <div className="tall:mt-12 mt-6 grid grid-flow-col auto-cols-max md:gap-10 tracking-tighter  gap-6 project-wrapper w-fit seq snap-x scroll-pl-6 snap-mandatory ">
         {PROJECTS_DATA.map((project, index) => (
           <ProjectTile
             key={index}

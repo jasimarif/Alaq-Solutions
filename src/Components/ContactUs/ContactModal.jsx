@@ -64,7 +64,7 @@ const ContactModal = ({ isOpen, onClose }) => {
         <div className='flex items-center justify-center'>
         {/* Left side: heading */}
         <div className="flex-1 p-8 flex flex-col  justify-center ">
-          <svg width="100" height="100" viewBox="0 0 24 12" fill="none" className="text-orange-500 mb-4">
+          <svg width="100" height="100" viewBox="0 0 24 12" fill="none" className="text-blue-400 mb-4">
             <path d="M12 2L8 10H16L12 2Z" fill="currentColor" />
             <path d="M8 10L4 18H20L16 10H8Z" fill="currentColor" opacity="0.7" />
           </svg>

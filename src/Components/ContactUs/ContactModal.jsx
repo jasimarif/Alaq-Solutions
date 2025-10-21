@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { X } from 'lucide-react';
-import SlidingButton from './Button';
+import { SlidingButton } from '../index';
 
 const ContactModal = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({

@@ -62,7 +62,7 @@ const TestimonialSection = () => {
               <div className="absolute inset-0 rounded-full blur-2xl opacity-40"></div>
               <div className="relative w-24 h-24 rounded-full overflow-hidden bg-gray-200">
                 <img
-                  src=""
+                  src={null}
                   alt="Jasim Arif Ali"
                   className="w-full h-full object-cover"
                 />

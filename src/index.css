@@ -26,6 +26,15 @@ a {
   cursor: none !important;
 }
 
+/* Line clamp utility */
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 /* Collaboration Section Styles */
 .section-container {
   max-width: 1400px;
@@ -107,4 +116,23 @@ a {
   .tall\:mt-12 {
     margin-top: 3rem;
   }
+}
+
+/* Blog Content Prose Styles */
+.prose h3 {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.prose p {
+  color: #e5e7eb;
+  margin-bottom: 1.5rem;
+  line-height: 1.75;
+}
+
+.prose h3:first-child {
+  margin-top: 0;
 }

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { ChevronDown, ArrowRight } from 'lucide-react';
-import Navbar from '../Components/Navbar';
+import { Navbar, SlidingButton } from '../../Components';
 import { gsap } from 'gsap';
 const RevenueChart = () => {
     const chartRef = useRef(null);
@@ -181,12 +181,9 @@ const HeroSection = () => {
                         <div className="text-7xl lg:text-8xl font-light text-white leading-[0.95] tracking-tighter">
                             Scale <span className="text-[#60a5fa] font-normal">Faster.</span>
                         </div>
-                        <button ref={buttonRef} className="bg-[#60a5fa] text-white px-6 py-3 rounded-full cursor-none font-semibold text-lg hover:bg-[#3b82f6] transition-all flex items-center space-x-12 group shadow-lg hover:shadow-xl">
-                            <span>Get Started</span>
-                            <div className='bg-[#f59e0b] rounded-full p-2'>
-                                <ArrowRight className="group-hover:translate-x-2 transition-transform text-white" size={22} />
-                            </div>
-                        </button>
+                        <div ref={buttonRef}>
+                            <SlidingButton  text="Get Started" shadow={true} />
+                        </div>
                     </div>
                 </div>
 

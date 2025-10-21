@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import ProjectTile from './ProjectTile';
+import { ProjectTile } from '../index';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -36,22 +36,7 @@ const PROJECTS_DATA = [
     url: "#",
     textColor: 'white'
 
-  },
-   {
-    name: "Portals Management",
-    description: "Revolutionize your vendor management with our expert Vendor Portal integration services ensuring a seamless transition, efficient automation, and customized implementation for maximum efficiency.",
-    color: "#2d3748",
-    url: "#",
-    textColor: 'white'
-  },
-  {
-    name: "Integrations",
-    description: "Streamline your business operations with our expert NetSuite integration services, ensuring a seamless transition and customized implementation.",
-    color: "#2d3748",
-    url: "#",
-    textColor: 'white'
-
-  },
+  }
 ];
 
 const Projects = () => {
@@ -169,9 +154,9 @@ const Projects = () => {
       </div>
 
       <div className="tall:mt-12 mt-6 grid grid-flow-col auto-cols-max md:gap-10 tracking-tighter  gap-6 project-wrapper w-fit seq snap-x scroll-pl-6 snap-mandatory">
-        {PROJECTS_DATA.map((project) => (
+        {PROJECTS_DATA.map((project, index) => (
           <ProjectTile
-            key={project.name}
+            key={index}
             project={project}
             animationEnabled={horizontalAnimationEnabled}
           />

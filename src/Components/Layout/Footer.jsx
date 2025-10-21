@@ -1,7 +1,6 @@
 import { ArrowRight } from 'lucide-react'
 import React, { useState } from 'react'
-import ContactModal from './ContactModal'
-import SlidingButton from './Button';
+import { ContactModal, SlidingButton } from '../index';
 
 const Footer = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);

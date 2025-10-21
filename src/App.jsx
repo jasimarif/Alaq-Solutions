@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import MainPage from "./Pages/MainPage";
-import Cursor from "./Components/Cursor";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { MainPage, BlogsPage, BlogDetailPage } from "./Pages";
+import Cursor from "./Components/Cursor/Cursor";
 
 const DEBOUNCE_TIME = 100;
 
@@ -33,10 +34,14 @@ function App() {
   }, []);
 
   return (
-    <>
+    <Router>
       <Cursor isDesktop={isDesktop} />
-      <MainPage />
-    </>
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/blogs" element={<BlogsPage />} />
+        <Route path="/blogs/:id" element={<BlogDetailPage />} />
+      </Routes>
+    </Router>
   );
 }
 

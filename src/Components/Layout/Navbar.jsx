@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import { ChevronDown, ArrowRight } from 'lucide-react';
 import { gsap } from 'gsap';
 
@@ -40,13 +41,13 @@ const Navbar = () => {
             <div className="py-5">
                 <div className="flex items-center justify-between">
                     <div className="flex items-end space-x-10">
-                        <div className="flex items-center space-x-1">
+                        <Link to="/" className="flex items-center space-x-1">
                             <svg width="40" height="40" viewBox="0 0 24 21" fill="none" className="text-blue-400">
                                 <path d="M12 2L8 10H16L12 2Z" fill="currentColor" />
                                 <path d="M8 10L4 18H20L16 10H8Z" fill="currentColor" opacity="0.7" />
                             </svg>
                             <span className="text-white text-4xl font-medium tracking-wide">ALAQ Solutions</span>
-                        </div>
+                        </Link>
 
                         <div className="hidden md:flex items-center space-x-6 relative">
                             <div 
@@ -99,7 +100,7 @@ const Navbar = () => {
                                 )}
                             </div>
 
-                            <a href="#" className="text-white hover:text-white transition cursor-none">Customers</a>
+                            <Link to="/blogs" className="text-white hover:text-blue-300 transition duration-500 cursor-none">Blogs</Link>
 
                             <div 
                                 className="relative"

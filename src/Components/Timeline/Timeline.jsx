@@ -4,11 +4,10 @@ import {
   NodeTypes,
   TIMELINE,
   ItemSize,
-} from "../constants";
+} from "../../constants";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import DirectionPad from "./AnimatedArrows";
-import SlidingButton from "./Button";
+import { DirectionPad, SlidingButton } from "../index";
 
 gsap.registerPlugin(ScrollTrigger);
 

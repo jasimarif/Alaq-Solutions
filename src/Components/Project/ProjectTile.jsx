@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import DirectionPad from './AnimatedArrows';
+import { DirectionPad } from '../index';
 
 const ProjectTile = ({ project, animationEnabled }) => {
   const projectCard = useRef(null);

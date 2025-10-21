@@ -13,8 +13,24 @@ const TestimonialSection = () => {
 
     if (!words.length) return;
 
-    gsap.set(words, { color: '#ffffff' });
+    gsap.set(words, { color: '#ffffff', scale: 0.5, opacity: 0 });
 
+    // Scale up animation
+    gsap.to(words, {
+      scale: 1,
+      opacity: 1,
+      duration: 0.8,
+      stagger: 0.03,
+      ease: 'back.out(1.2)',
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: 'top 80%',
+        end: 'top 50%',
+        toggleActions: 'play none none reverse',
+      }
+    });
+
+    // Color change animation
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
@@ -25,7 +41,7 @@ const TestimonialSection = () => {
     });
 
     words.forEach((word, index) => {
-      const startTime = index * 0.02; 
+      const startTime = index * 0.02;
       tl.to(word, {
         color: '#60a5fa',
         duration: 0.1,

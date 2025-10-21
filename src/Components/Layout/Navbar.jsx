@@ -60,7 +60,7 @@ const Navbar = () => {
                                     <ChevronDown size={14} />
                                 </button>
                                 {activeDropdown === 'products' && (
-                                    <div ref={productsDropdownRef} className="absolute top-full left-0 mt-4 bg-[#374151] rounded-2xl p-4 w-64 shadow-xl z-[9999] border border-[#4b5563]">
+                                    <div ref={productsDropdownRef} className="absolute top-full left-0 mt-0.5 bg-[#374151] rounded-2xl p-4 w-64 shadow-xl z-[9999] border border-[#4b5563]">
                                         <div className="space-y-3">
                                             <div className="dropdown-item p-3 hover:bg-[#4b5563]/50 rounded-lg transition cursor-none">
                                                 <div className="text-white font-semibold mb-1">Core Accounting</div>
@@ -85,7 +85,7 @@ const Navbar = () => {
                                     <ChevronDown size={14} />
                                 </button>
                                 {activeDropdown === 'solutions' && (
-                                    <div ref={solutionsDropdownRef} className="absolute top-full left-0 mt-4 bg-[#374151] rounded-2xl p-4 w-64 shadow-xl z-[9999] border border-[#4b5563]">
+                                    <div ref={solutionsDropdownRef} className="absolute top-full left-0 mt-0.5 bg-[#374151] rounded-2xl p-4 w-64 shadow-xl z-[9999] border border-[#4b5563]">
                                         <div className="space-y-3">
                                             <div className="dropdown-item p-3 hover:bg-[#4b5563]/50 rounded-lg transition cursor-none">
                                                 <div className="text-white font-semibold mb-1">For Finance Teams</div>
@@ -112,7 +112,7 @@ const Navbar = () => {
                                     <ChevronDown size={14} />
                                 </button>
                                 {activeDropdown === 'resources' && (
-                                    <div ref={resourcesDropdownRef} className="absolute top-full left-0 mt-4 bg-[#374151] rounded-2xl p-4 w-64 shadow-xl z-[9999] border border-[#4b5563]">
+                                    <div ref={resourcesDropdownRef} className="absolute top-full left-0 mt-0.5 bg-[#374151] rounded-2xl p-4 w-64 shadow-xl z-[9999] border border-[#4b5563]">
                                         <div className="space-y-3">
                                             <div className="dropdown-item p-3 hover:bg-[#4b5563]/50 rounded-lg transition cursor-none">
                                                 <div className="text-white font-semibold mb-1">Documentation</div>

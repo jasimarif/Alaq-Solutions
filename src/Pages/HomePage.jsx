@@ -11,7 +11,7 @@ import TestimonialSection from '../Components/TestimonialSection'
 
 const HomePage = () => {
   return (
-    <div >
+    <div className="bg-[#1a202c]">
       <ProgressIndicator />
       <ProductPage />
       <Projects />

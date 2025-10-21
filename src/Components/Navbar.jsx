@@ -59,15 +59,15 @@ const Navbar = () => {
                                     <ChevronDown size={14} />
                                 </button>
                                 {activeDropdown === 'products' && (
-                                    <div ref={productsDropdownRef} className="absolute top-full left-0 mt-4 bg-[#E8DDD0] rounded-2xl p-4 w-64 shadow-xl z-[9999]">
+                                    <div ref={productsDropdownRef} className="absolute top-full left-0 mt-4 bg-[#374151] rounded-2xl p-4 w-64 shadow-xl z-[9999] border border-[#4b5563]">
                                         <div className="space-y-3">
-                                            <div className="dropdown-item p-3 hover:bg-white/50 rounded-lg transition cursor-none">
-                                                <div className="text-[#1a3a35] font-semibold mb-1">Core Accounting</div>
-                                                <div className="text-[#8B7355] text-xs">The modern general ledger that scales with you</div>
+                                            <div className="dropdown-item p-3 hover:bg-[#4b5563]/50 rounded-lg transition cursor-none">
+                                                <div className="text-white font-semibold mb-1">Core Accounting</div>
+                                                <div className="text-gray-300 text-xs">The modern general ledger that scales with you</div>
                                             </div>
-                                            <div className="dropdown-item p-3 hover:bg-white/50 rounded-lg transition cursor-none">
-                                                <div className="text-[#1a3a35] font-semibold mb-1">Revenue Automation</div>
-                                                <div className="text-[#8B7355] text-xs">Automate your end-to-end revenue process</div>
+                                            <div className="dropdown-item p-3 hover:bg-[#4b5563]/50 rounded-lg transition cursor-none">
+                                                <div className="text-white font-semibold mb-1">Revenue Automation</div>
+                                                <div className="text-gray-300 text-xs">Automate your end-to-end revenue process</div>
                                             </div>
                                         </div>
                                     </div>
@@ -84,15 +84,15 @@ const Navbar = () => {
                                     <ChevronDown size={14} />
                                 </button>
                                 {activeDropdown === 'solutions' && (
-                                    <div ref={solutionsDropdownRef} className="absolute top-full left-0 mt-4 bg-[#E8DDD0] rounded-2xl p-4 w-64 shadow-xl z-[9999]">
+                                    <div ref={solutionsDropdownRef} className="absolute top-full left-0 mt-4 bg-[#374151] rounded-2xl p-4 w-64 shadow-xl z-[9999] border border-[#4b5563]">
                                         <div className="space-y-3">
-                                            <div className="dropdown-item p-3 hover:bg-white/50 rounded-lg transition cursor-none">
-                                                <div className="text-[#1a3a35] font-semibold mb-1">For Finance Teams</div>
-                                                <div className="text-[#8B7355] text-xs">Streamline your financial operations</div>
+                                            <div className="dropdown-item p-3 hover:bg-[#4b5563]/50 rounded-lg transition cursor-none">
+                                                <div className="text-white font-semibold mb-1">For Finance Teams</div>
+                                                <div className="text-gray-300 text-xs">Streamline your financial operations</div>
                                             </div>
-                                            <div className="dropdown-item p-3 hover:bg-white/50 rounded-lg transition cursor-none">
-                                                <div className="text-[#1a3a35] font-semibold mb-1">For Enterprises</div>
-                                                <div className="text-[#8B7355] text-xs">Scale with confidence</div>
+                                            <div className="dropdown-item p-3 hover:bg-[#4b5563]/50 rounded-lg transition cursor-none">
+                                                <div className="text-white font-semibold mb-1">For Enterprises</div>
+                                                <div className="text-gray-300 text-xs">Scale with confidence</div>
                                             </div>
                                         </div>
                                     </div>
@@ -111,15 +111,15 @@ const Navbar = () => {
                                     <ChevronDown size={14} />
                                 </button>
                                 {activeDropdown === 'resources' && (
-                                    <div ref={resourcesDropdownRef} className="absolute top-full left-0 mt-4 bg-[#E8DDD0] rounded-2xl p-4 w-64 shadow-xl z-[9999]">
+                                    <div ref={resourcesDropdownRef} className="absolute top-full left-0 mt-4 bg-[#374151] rounded-2xl p-4 w-64 shadow-xl z-[9999] border border-[#4b5563]">
                                         <div className="space-y-3">
-                                            <div className="dropdown-item p-3 hover:bg-white/50 rounded-lg transition cursor-none">
-                                                <div className="text-[#1a3a35] font-semibold mb-1">Documentation</div>
-                                                <div className="text-[#8B7355] text-xs">Learn how to use our platform</div>
+                                            <div className="dropdown-item p-3 hover:bg-[#4b5563]/50 rounded-lg transition cursor-none">
+                                                <div className="text-white font-semibold mb-1">Documentation</div>
+                                                <div className="text-gray-300 text-xs">Learn how to use our platform</div>
                                             </div>
-                                            <div className="dropdown-item p-3 hover:bg-white/50 rounded-lg transition cursor-none">
-                                                <div className="text-[#1a3a35] font-semibold mb-1">Blog</div>
-                                                <div className="text-[#8B7355] text-xs">Latest news and insights</div>
+                                            <div className="dropdown-item p-3 hover:bg-[#4b5563]/50 rounded-lg transition cursor-none">
+                                                <div className="text-white font-semibold mb-1">Blog</div>
+                                                <div className="text-gray-300 text-xs">Latest news and insights</div>
                                             </div>
                                         </div>
                                     </div>

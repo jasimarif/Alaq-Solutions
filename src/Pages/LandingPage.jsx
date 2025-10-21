@@ -13,13 +13,13 @@ const RevenueChart = () => {
     }, []);
 
     return (
-        <div ref={chartRef} className="relative overflow-hidden bg-[#3d5550] rounded-2xl p-5 w-[20rem] h-[16rem]">
+        <div ref={chartRef} className="relative overflow-hidden bg-[#374151] rounded-2xl p-5 w-[20rem] h-[16rem]">
             <div className="space-y-4">
                 <div className="flex items-center space-x-4">
                     <img
                         src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&h=120&fit=crop"
                         alt="VP"
-                        className="w-16 h-16 rounded-full object-cover ring-2 ring-[#d4f4af]"
+                        className="w-16 h-16 rounded-full object-cover ring-2 ring-[#60a5fa]"
                     />
                     <div>
                         <div className="text-white font-medium text-base">VP of Finance</div>
@@ -29,7 +29,7 @@ const RevenueChart = () => {
                 <div className="text-right">
                     <div className="text-gray-400 text-xs uppercase tracking-wider mb-1">Revenue</div>
                     <div className="text-white text-3xl font-bold mb-1">$956K</div>
-                    <div className="inline-flex items-center bg-emerald-500/20 text-emerald-400 px-2 py-1 rounded text-xs font-medium">
+                    <div className="inline-flex items-center bg-blue-500/20 text-blue-400 px-2 py-1 rounded text-xs font-medium">
                         ↑ 11%
                     </div>
                 </div>
@@ -37,7 +37,7 @@ const RevenueChart = () => {
                     {[45, 52, 48, 58, 55, 68, 62, 72, 70, 78, 82, 88].map((height, i) => (
                         <div
                             key={i}
-                            className="flex-1 bg-gradient-to-t from-[#d4f4af] to-[#b8e08f] rounded-t-sm transition-all duration-300 hover:opacity-80"
+                            className="flex-1 bg-gradient-to-t from-[#60a5fa] to-[#93c5fd] rounded-t-sm transition-all duration-300 hover:opacity-80"
                             style={{ height: `${height}%` }}
                         />
                     ))}
@@ -48,7 +48,7 @@ const RevenueChart = () => {
                     <polyline
                         points="0,50 20,40 40,45 60,30 80,25 100,20 120,15"
                         fill="none"
-                        stroke="#d4f4af"
+                        stroke="#60a5fa"
                         strokeWidth="2"
                     />
                 </svg>
@@ -74,16 +74,16 @@ const ContractsCard = () => {
     }, []);
 
     return (
-        <div ref={cardRef} className='bg-[#3d5550] rounded-2xl p-5 w-[18rem]'>
+        <div ref={cardRef} className='bg-[#374151] rounded-2xl p-5 w-[18rem]'>
             <div className="flex items-center justify-between mb-1 ">
                 <span className="text-white font-medium">Contracts</span>
-                <span className="text-emerald-400 text-xs font-medium bg-emerald-500/20 px-3 py-1 rounded-full">
+                <span className="text-blue-400 text-xs font-medium bg-blue-500/20 px-3 py-1 rounded-full">
                     + 20+
                 </span>
             </div>
             <div className="space-y-3">
                 {contracts.map((contract, i) => (
-                    <div key={i} className="flex items-center justify-between text-xs py-1 border-b border-[#2a4a45] last:border-0">
+                    <div key={i} className="flex items-center justify-between text-xs py-1 border-b border-[#4b5563] last:border-0">
                         <span className="text-white font-medium min-w-[100px]">{contract.company}</span>
                         <span className="text-gray-400 text-xs flex-1 text-center">{contract.service}</span>
                         <span className="text-white font-semibold min-w-[80px] text-right">{contract.amount}</span>
@@ -105,10 +105,10 @@ const CashFlowCard = () => {
     }, []);
 
     return (
-        <div ref={cashFlowRef} className='bg-[#3d5550] rounded-2xl p-5 w-[20rem]'>
+        <div ref={cashFlowRef} className='bg-[#374151] rounded-2xl p-5 w-[20rem]'>
             <div className="flex items-center justify-between mb-4">
                 <span className="text-white font-medium">Cash Flow</span>
-                <span className="text-emerald-400 text-sm font-medium bg-emerald-500/20 px-3 py-1 rounded-full">
+                <span className="text-blue-400 text-sm font-medium bg-blue-500/20 px-3 py-1 rounded-full">
                     ↑ 9.5%
                 </span>
             </div>
@@ -122,11 +122,11 @@ const CashFlowCard = () => {
                 ].map((values, i) => (
                     <div key={i} className="flex-1 flex flex-col justify-end space-y-1 h-full">
                         <div
-                            className="bg-[#d4f4af] rounded-t"
+                            className="bg-[#60a5fa] rounded-t"
                             style={{ height: `${values[0]}%` }}
                         />
                         <div
-                            className="bg-[#5a6f6a] rounded-t"
+                            className="bg-[#6b7280] rounded-t"
                             style={{ height: `${values[1]}%` }}
                         />
                     </div>
@@ -179,11 +179,11 @@ const HeroSection = () => {
                     </div>
                     <div className="flex items-end space-x-8" ref={subtitleRef}>
                         <div className="text-7xl lg:text-8xl font-light text-white leading-[0.95] tracking-tighter">
-                            Scale <span className="text-[#d4f4af] font-normal">Faster.</span>
+                            Scale <span className="text-[#60a5fa] font-normal">Faster.</span>
                         </div>
-                        <button ref={buttonRef} className="bg-[#d4f4af] text-[#1a3a35] px-6 py-3 rounded-full cursor-none font-semibold text-lg hover:bg-[#c5e6a6] transition-all flex items-center space-x-12 group shadow-lg hover:shadow-xl">
+                        <button ref={buttonRef} className="bg-[#60a5fa] text-white px-6 py-3 rounded-full cursor-none font-semibold text-lg hover:bg-[#3b82f6] transition-all flex items-center space-x-12 group shadow-lg hover:shadow-xl">
                             <span>Get Started</span>
-                            <div className='bg-[#FF862F] rounded-full p-2'>
+                            <div className='bg-[#f59e0b] rounded-full p-2'>
                                 <ArrowRight className="group-hover:translate-x-2 transition-transform text-white" size={22} />
                             </div>
                         </button>
@@ -191,7 +191,7 @@ const HeroSection = () => {
                 </div>
 
                 <p ref={descriptionRef} className="text-xl text-gray-300 leading-relaxed  max-w-[50rem] tracking-tighter">
-                    <span className="text-[#d4f4af]">ALAQ Solutions</span> is the AI-first ERP powering next-gen finance & accounting teams. General ledger,
+                    <span className="text-[#60a5fa]">ALAQ Solutions</span> is the AI-first ERP powering next-gen finance & accounting teams. General ledger,
                     revenue automation, close management, and so much more—all on one unified platform.
                 </p>
             </div>
@@ -240,13 +240,13 @@ const TrustSection = () => {
 
     return (
         <div className="mt-16  pl-24">
-            <p ref={trustRef} className="text-[#869B7F] text-sm mb-8">Trusted by mid-market and enterprise leaders</p>
+            <p ref={trustRef} className="text-gray-400 text-sm mb-8">Trusted by mid-market and enterprise leaders</p>
 
             <div ref={companiesRef} className="flex gap-5 items-center mb-8">
                 {companies.map((company, i) => (
                     <div
                         key={i}
-                        className={`text-[#869B7F] text-xl ${company.italic ? 'italic' : ''} hover:text-gray-400 transition cursor-none`}
+                        className={`text-gray-400 text-xl ${company.italic ? 'italic' : ''} hover:text-gray-300 transition cursor-none`}
                     >
                         {company.display}
                     </div>
@@ -259,7 +259,7 @@ const TrustSection = () => {
                         <span key={i} className="text-yellow-500 text-lg">⭐</span>
                     ))}
                 </div>
-                <span className="text-[#869B7F] text-sm">4.9 out of 5 stars</span>
+                <span className="text-gray-400 text-sm">4.9 out of 5 stars</span>
             </div>
         </div>
     );
@@ -267,7 +267,7 @@ const TrustSection = () => {
 
 const LandingPage = () => {
     return (
-        <div className="h-screen w-full bg-[#132D25] font-poppins relative overflow-hidden">
+        <div className="h-screen w-full bg-[#121827] font-poppins relative overflow-hidden">
             <Navbar />
 
             <main className="">

@@ -7,7 +7,7 @@ import WhyChooseUs from '../Components/WhyChooseUs'
 
 const MainPage = () => {
   return (
-    <div >
+    <div className="bg-[#0f1419]">
         <LandingPage/>
         <HomePage/>
         

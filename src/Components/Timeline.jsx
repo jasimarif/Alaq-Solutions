@@ -13,7 +13,7 @@ import SlidingButton from "./Button";
 gsap.registerPlugin(ScrollTrigger);
 
 const svgColor = "#FFFFFF";
-const animColor = "#d4f4af";
+const animColor = "#60a5fa";
 const separation = 450;
 const strokeWidth = 2;
 const leftBranchX = 13;
@@ -103,7 +103,7 @@ const TimelineSection = () => {
   };
 
   const getDotString = (x, y) => {
-    return `<rect class='dot' width=${dotSize} height=${dotSize} fill='#132D25' x=${
+    return `<rect class='dot' width=${dotSize} height=${dotSize} fill='#0f1419' x=${
       x - dotSize / 2
     } y=${
       y - dotSize / 2
@@ -142,9 +142,9 @@ const TimelineSection = () => {
     const foreignObjectWidth = svgWidth - (dotSize / 2 + 10 + offset);
 
     const titleSizeClass = size === ItemSize.LARGE ? "text-6xl" : "text-2xl";
-    const titleColorClass = (title === "Our Expertise" || title === "Success Metrics") ? "text-white" : "text-[#d4f4af]";
+    const titleColorClass = (title === "Our Expertise" || title === "Success Metrics") ? "text-white" : "text-[#60a5fa]";
     const subtitleString = subtitle
-      ? `<p class='text-xl mt-2 text-[#869B7F] font-medium tracking-wide'>${subtitle}</p>`
+      ? `<p class='text-xl mt-2 text-gray-400 font-medium tracking-wide'>${subtitle}</p>`
       : "";
 
     return `<foreignObject x=${foreignObjectX} y=${foreignObjectY} width=${foreignObjectWidth}
@@ -372,14 +372,14 @@ const TimelineSection = () => {
   const renderSlides = () => {
     return (
       <div
-        className="max-w-full bg-limeGreen rounded-2xl overflow-hidden p-6 "
+        className="max-w-full bg-[#374151] rounded-2xl overflow-hidden p-6 border border-[#4b5563]"
         ref={screenContainer}
       >
         <div className="">
-          <h2 className="font-poppins font-semibold tracking-tighter text-3xl mb-2 text-darkGreen">Let's Do Wonders!</h2>
-          <DirectionPad bgColor={'bg-darkGreen'}/>
-          <p className="text-lg font-medium mt-6 mb-2 text-darkGreen">Experience the power of an integrated business management platform that grows with your business.</p>
-          <p className="text-lg font-medium mb-4 text-darkGreen">Would you like to explore any specific component of the suite in more detail?</p>
+          <h2 className="font-poppins font-semibold tracking-tighter text-3xl mb-2 text-white">Let's Do Wonders!</h2>
+          <DirectionPad bgColor={'bg-white'}/>
+          <p className="text-lg font-medium mt-6 mb-2 text-gray-300">Experience the power of an integrated business management platform that grows with your business.</p>
+          <p className="text-lg font-medium mb-4 text-gray-300">Would you like to explore any specific component of the suite in more detail?</p>
           <SlidingButton text={'LEARN MORE ABOUT US'}/>
 
         </div>
@@ -399,9 +399,9 @@ const TimelineSection = () => {
 
   const renderSectionTitle = () => (
     <div className="flex flex-col">
-      <p className="text-sm text-[#d4f4af] font-medium tracking-widest seq">MILESTONES</p>
+      <p className="text-sm text-[#60a5fa] font-medium tracking-widest seq">MILESTONES</p>
       <h1 className="text-5xl md:text-6xl font-bold text-white seq mt-2 tracking-tighter">Why Choose Us</h1>
-      <h2 className="text-2xl md:max-w-2xl w-full text-limeGreen font-medium seq mt-2">
+      <h2 className="text-2xl md:max-w-2xl w-full text-[#60a5fa] font-medium seq mt-2">
         Your success is our priority.
       </h2>
     </div>
@@ -409,7 +409,7 @@ const TimelineSection = () => {
 
   return (
     <section
-      className="w-full relative select-none min-h-screen py-20 px-6 md:px-12 flex flex-col justify-center bg-[#132D25] font-poppins"
+      className="w-full relative select-none min-h-screen py-20 px-6 md:px-12 flex flex-col justify-center bg-[#1a202c] font-poppins"
       id="timeline"
     >
       {renderSectionTitle()}

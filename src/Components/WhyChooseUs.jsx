@@ -14,12 +14,12 @@ const tabData = [
     buttonText: 'For Experienced Team',
     arrows: 15,
     colors: {
-      main: '#1a2e2a',
-      card: '#6b8573',
-      button: '#c5e5b4',
-      badge: '#2a4a3f',
-      accent: '#a8c5a0',
-      activeTab: '#a8c5a0'
+      main: '#121827',
+      card: '#374151',
+      button: '#60a5fa',
+      badge: '#2d3748',
+      accent: '#60a5fa',
+      activeTab: '#60a5fa'
     }
   },
   {
@@ -31,12 +31,12 @@ const tabData = [
     buttonText: 'For Strategies',
     arrows: 20,
     colors: {
-      main: '#301805',
-      card: '#8A6240',
-      button: '#F7A061',
-      badge: '#4a2810',
-      accent: '#F7A061',
-      activeTab: '#F7A061'
+      main: '#0f1419',
+      card: '#4b5563',
+      button: '#f59e0b',
+      badge: '#374151',
+      accent: '#f59e0b',
+      activeTab: '#f59e0b'
     }
   },
   {
@@ -48,12 +48,12 @@ const tabData = [
     buttonText: 'Partner With Us',
     arrows: 12,
     colors: {
-      main: '#1A0948',
-      card: '#645A7D',
-      button: '#C5B4F3',
-      badge: '#2d1560',
-      accent: '#C5B4F3',
-      activeTab: '#C5B4F3'
+      main: '#1e293b',
+      card: '#475569',
+      button: '#8b5cf6',
+      badge: '#334155',
+      accent: '#8b5cf6',
+      activeTab: '#8b5cf6'
     }
   }
 ];
@@ -156,7 +156,7 @@ const WhyChooseUs = () => {
   const currentTab = tabData[activeTab];
 
   return (
-    <div className="bg-white">
+    <div className="bg-[#1a202c]">
 
       {/* Main component */}
       <div 
@@ -263,8 +263,8 @@ const WhyChooseUs = () => {
 
               <button 
                 ref={buttonRef}
-                className="font-medium px-8 py-4 rounded-full transition-all self-start text-lg hover:opacity-90"
-                style={{ backgroundColor: currentTab.colors.button, color: '#1a2e2a' }}
+                className="font-medium px-8 py-4 rounded-full transition-all self-start text-lg hover:opacity-90 text-white"
+                style={{ backgroundColor: currentTab.colors.button }}
               >
                 {currentTab.buttonText}
               </button>

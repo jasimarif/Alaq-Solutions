@@ -27,7 +27,7 @@ const TestimonialSection = () => {
     words.forEach((word, index) => {
       const startTime = index * 0.02; 
       tl.to(word, {
-        color: '#d4f4af',
+        color: '#60a5fa',
         duration: 0.1,
         ease: 'none'
       }, startTime);
@@ -43,7 +43,7 @@ const TestimonialSection = () => {
   const words = testimonialText.split(' ');
 
   return (
-    <div ref={containerRef} className="h-screen flex items-center pl-28 p-8 bg-darkGreen font-poppins">
+    <div ref={containerRef} className="h-screen flex items-center pl-28 p-8 bg-[#1a202c] font-poppins">
       <div className="max-w-6xl w-full">
         <div className="">
           <h2
@@ -62,7 +62,7 @@ const TestimonialSection = () => {
               <div className="absolute inset-0 rounded-full blur-2xl opacity-40"></div>
               <div className="relative w-24 h-24 rounded-full overflow-hidden bg-gray-200">
                 <img
-                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop"
+                  src=""
                   alt="Andrea Burton"
                   className="w-full h-full object-cover"
                 />

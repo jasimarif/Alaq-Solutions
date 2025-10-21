@@ -27,9 +27,9 @@ const ProjectTile = ({ project, animationEnabled }) => {
         }}
       >
 
-        <h1 className={`text-3xl font-semibold tracking-tighter text-${textColor}`}>{name}</h1>
-        <div><DirectionPad bgColor={`bg-${textColor}`}/></div>
-        <p className={`text-${textColor} text-lg`}>{description}</p>
+        <h1 className="text-3xl font-semibold tracking-tighter text-white">{name}</h1>
+        <div><DirectionPad bgColor="bg-white"/></div>
+        <p className="text-gray-300 text-lg">{description}</p>
         <div
          
         />

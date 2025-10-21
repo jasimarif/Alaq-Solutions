@@ -9,47 +9,47 @@ const PROJECTS_DATA = [
   {
     name: "Portals Management",
     description: "Revolutionize your vendor management with our expert Vendor Portal integration services ensuring a seamless transition, efficient automation, and customized implementation for maximum efficiency.",
-    color: "#D5E8D9",
+    color: "#374151",
     url: "#",
-    textColor: 'darkGreen'
+    textColor: 'white'
   },
   {
     name: "Integrations",
     description: "Streamline your business operations with our expert NetSuite integration services, ensuring a seamless transition and customized implementation.",
-    color: "#D5E8D9",
+    color: "#374151",
     url: "#",
-    textColor: 'darkGreen'
+    textColor: 'white'
 
   },
   {
     name: "AI Assistants",
     description: "Revolutionize your business operations with our expert NetSuite and AI integration services  ensuring a seamless transition, intelligent automation, and customized implementation for maximum efficiency.",
-    color: "#EADFD2",
+    color: "#4b5563",
     url: "#",
-    textColor: 'darkBrown'
+    textColor: 'white'
 
   },
   {
     name: "SuiteApps",
     description: "Enhance your NetSuite experience with custom SuiteApps designed for specific business needs. Leverage purpose-built solutions like the Portlet SuiteApp for KPIs to gain better visibility into your key performance indicators and make data-driven decisions.",
-    color: "#EADFD2",
+    color: "#4b5563",
     url: "#",
-    textColor: 'darkBrown'
+    textColor: 'white'
 
   },
    {
     name: "Portals Management",
     description: "Revolutionize your vendor management with our expert Vendor Portal integration services ensuring a seamless transition, efficient automation, and customized implementation for maximum efficiency.",
-    color: "#DCD6EA",
+    color: "#2d3748",
     url: "#",
-    textColor: 'darkPurple'
+    textColor: 'white'
   },
   {
     name: "Integrations",
     description: "Streamline your business operations with our expert NetSuite integration services, ensuring a seamless transition and customized implementation.",
-    color: "#DCD6EA",
+    color: "#2d3748",
     url: "#",
-    textColor: 'darkPurple'
+    textColor: 'white'
 
   },
 ];
@@ -161,14 +161,14 @@ const Projects = () => {
         className={`flex flex-col inner-container ${willChange ? 'will-change-transform' : ''}`}
         ref={sectionTitleElementRef}
       >
-        <p className="text-sm font-medium text-darkGreen tracking-widest seq">OUR WORKS</p>
-        <h1 className="text-5xl md:text-6xl font-bold text-darkGreen mt-2 seq tracking-tighter">Core ERP Excellence</h1>
-        <h2 className="text-2xl text-darkGreen  md:max-w-3xl w-full max-w-sm mt-2 seq tracking-tighter">
+        <p className="text-sm font-medium text-gray-400 tracking-widest seq">OUR WORKS</p>
+        <h1 className="text-5xl md:text-6xl font-bold text-white mt-2 seq tracking-tighter">Core ERP Excellence</h1>
+        <h2 className="text-2xl text-gray-300  md:max-w-3xl w-full max-w-sm mt-2 seq tracking-tighter">
           We have contributed in over 20+ projects ranging from Frontend development, UI/UX design, and Digital Solutions
         </h2>
       </div>
 
-      <div className="tall:mt-12 mt-6 grid grid-flow-col auto-cols-max md:gap-10 tracking-tighter gap-6 project-wrapper w-fit seq snap-x scroll-pl-6 snap-mandatory">
+      <div className="tall:mt-12 mt-6 grid grid-flow-col auto-cols-max md:gap-10 tracking-tighter  gap-6 project-wrapper w-fit seq snap-x scroll-pl-6 snap-mandatory">
         {PROJECTS_DATA.map((project) => (
           <ProjectTile
             key={project.name}

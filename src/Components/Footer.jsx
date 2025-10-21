@@ -1,20 +1,16 @@
 import { ArrowRight } from 'lucide-react'
-import React from 'react'
+import React, { useState } from 'react'
+import ContactModal from './ContactModal'
+import SlidingButton from './Button';
 
 const Footer = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
      <div className='bg-[#1a202c] w-full overflow-hidden flex flex-col justify-center items-center'>
-        <button className="relative bg-[#60a5fa] hover:text-white text-white px-6 py-3 rounded-full font-poppins cursor-none font-semibold text-lg overflow-hidden flex items-center gap-3 group shadow-lg hover:shadow-xl">
-          <span className="relative z-10 transition-colors duration-500">Contact Us</span>
-          <div className='relative z-10 bg-[#f59e0b] rounded-full p-2 group-hover:bg-white transition-colors duration-500'>
-            <ArrowRight className="text-white group-hover:text-[#f59e0b] transition-colors duration-500" size={22} />
-          </div>
-
-          {/* Sliding background overlay */}
-          <div className="absolute inset-0 bg-[#f59e0b] rounded-full transform translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></div>
-        </button>
+        <SlidingButton text={'Contact Us'}/>
         <div className="text-center  flex items-end justify-center pt-8 pb-0 mb-0" style={{ paddingBottom: '0', marginBottom: '0' }}>
-          <svg width="160" height="160" viewBox="0 0 24 12" fill="none" className="text-orange-500" style={{ marginBottom: '0', paddingBottom: '0', display: 'block' }}>
+          <svg width="160" height="160" viewBox="0 0 24 12" fill="none" className="text-blue-400" style={{ marginBottom: '0', paddingBottom: '0', display: 'block' }}>
             <path d="M12 2L8 10H16L12 2Z" fill="currentColor" />
             <path d="M8 10L4 18H20L16 10H8Z" fill="currentColor" opacity="0.7" />
           </svg>
@@ -23,6 +19,7 @@ const Footer = () => {
             ALAQ Solutions.
           </div>
         </div>
+        <ContactModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
       </div>
   )
 }

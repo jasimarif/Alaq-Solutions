@@ -63,7 +63,7 @@ const TestimonialSection = () => {
               <div className="relative w-24 h-24 rounded-full overflow-hidden bg-gray-200">
                 <img
                   src=""
-                  alt="Andrea Burton"
+                  alt="Jasim Arif Ali"
                   className="w-full h-full object-cover"
                 />
               </div>

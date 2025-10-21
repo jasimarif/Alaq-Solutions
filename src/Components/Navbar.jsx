@@ -40,8 +40,8 @@ const Navbar = () => {
             <div className="py-5">
                 <div className="flex items-center justify-between">
                     <div className="flex items-end space-x-10">
-                        <div className="flex items-center space-x-2">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-orange-500">
+                        <div className="flex items-center space-x-1">
+                            <svg width="40" height="40" viewBox="0 0 24 21" fill="none" className="text-blue-400">
                                 <path d="M12 2L8 10H16L12 2Z" fill="currentColor" />
                                 <path d="M8 10L4 18H20L16 10H8Z" fill="currentColor" opacity="0.7" />
                             </svg>

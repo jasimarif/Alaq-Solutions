@@ -78,13 +78,13 @@ const BlogsPage = () => {
       '-=0.4'
     )
     .fromTo(blogGridRef.current.children,
-      { opacity: 0, x: -30 },
+      { opacity: 0, y: 10 },
       {
         opacity: 1,
-        x: 0,
-        duration: 0.8,
-        stagger: 0.15,
-        ease: 'power2.out'
+        y: 0,
+        duration: 0.5,
+        stagger: 0.08,
+        ease: 'power1.out'
       },
       '-=0.2'
     )

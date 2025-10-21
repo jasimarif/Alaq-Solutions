@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import gsap from 'gsap';
-import { X } from 'lucide-react';
+import { X, Mail, AlertCircle, CheckCircle } from 'lucide-react';
 import { SlidingButton } from '../index';
+import { initEmailJS, sendContactEmail, validateEmailJSConfig } from '../../utils/emailjs';
 
 const ContactModal = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
@@ -12,11 +13,16 @@ const ContactModal = ({ isOpen, onClose }) => {
     message: ''
   });
   const [show, setShow] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null); 
+  const [statusMessage, setStatusMessage] = useState('');
   const modalRef = useRef(null);
 
   useEffect(() => {
     if (isOpen) {
       setShow(true);
+      setSubmitStatus(null);
+      setStatusMessage('');
     } else if (show) {
       gsap.to(modalRef.current, {
         opacity: 0,
@@ -44,10 +50,62 @@ const ContactModal = ({ isOpen, onClose }) => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    onClose();
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+    setStatusMessage('');
+
+    try {
+      if (!validateEmailJSConfig()) {
+        throw new Error('EmailJS configuration is incomplete. Please check your .env file.');
+      }
+
+      if (!initEmailJS()) {
+        throw new Error('Failed to initialize EmailJS.');
+      }
+
+      // Send email using utility function
+      const result = await sendContactEmail(formData);
+
+      console.log('Email sent successfully:', result);
+      setSubmitStatus('success');
+      setStatusMessage('Thank you! Your message has been sent successfully.');
+      
+      setFormData({
+        firstName: '',
+        lastName: '',
+        email: '',
+        company: '',
+        message: ''
+      });
+
+      setTimeout(() => {
+        onClose();
+        setSubmitStatus(null);
+        setStatusMessage('');
+      }, 3000);
+
+    } catch (error) {
+      console.error('Error sending email:', error);
+      setSubmitStatus('error');
+      
+      if (error.message.includes('configuration')) {
+        setStatusMessage('Configuration error. Please contact the administrator.');
+      } else if (error.status === 412) {
+        setStatusMessage('Email service authentication error. Please check the setup guide.');
+      } else if (error.status === 400) {
+        setStatusMessage('Please check your input and try again.');
+      } else if (error.status === 429) {
+        setStatusMessage('Too many requests. Please try again later.');
+      } else if (error.status === 401) {
+        setStatusMessage('Authentication failed. Please check email service configuration.');
+      } else {
+        setStatusMessage('Sorry, there was an error sending your message. Please try again.');
+      }
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (!show) return null;
@@ -138,8 +196,41 @@ const ContactModal = ({ isOpen, onClose }) => {
                 required
               />
             </div>
+            
+            {/* Status Message */}
+            {submitStatus && (
+              <div className={`flex items-center gap-2 p-3 rounded-lg ${
+                submitStatus === 'success' 
+                  ? 'bg-green-900/30 text-green-400 border border-green-400/30' 
+                  : 'bg-red-900/30 text-red-400 border border-red-400/30'
+              }`}>
+                {submitStatus === 'success' ? (
+                  <CheckCircle size={20} />
+                ) : (
+                  <AlertCircle size={20} />
+                )}
+                <span className="text-sm font-poppins">{statusMessage}</span>
+              </div>
+            )}
+            
           <div className="flex justify-end">
-             <SlidingButton text={'Submit'}/>
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="relative overflow-hidden bg-blue-500 hover:bg-blue-600 disabled:bg-gray-600 disabled:cursor-not-allowed text-white px-6 py-3 rounded-lg font-poppins transition-all duration-300 flex items-center gap-2"
+            >
+              {isSubmitting ? (
+                <>
+                  <div className="animate-spin rounded-full h-4 w-4 border-2 border-white border-t-transparent"></div>
+                  Sending...
+                </>
+              ) : (
+                <>
+                  <Mail size={16} />
+                  Send Message
+                </>
+              )}
+            </button>
             </div>   
           </form>
          

@@ -7,7 +7,7 @@ const HomePage = () => {
   return (
     <div className="bg-[#1a202c]">
       <ProgressIndicator />
-      <ProductPage />
+      {/* <ProductPage /> */}
       <Projects />
       <WhyChooseUs />
       <TimelineSection />

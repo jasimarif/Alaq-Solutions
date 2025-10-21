@@ -63,33 +63,6 @@ export const TIMELINE = [
   },
   {
     type: NodeTypes.CHECKPOINT,
-    title: "Best Case Strategies",
-    size: ItemSize.SMALL,
-    subtitle:
-      "We develop customized strategies aligned with your business goals, leveraging proven methodologies and industry best practices to ensure optimal outcomes. Our approach combines innovation with practical execution.",
-    shouldDrawLine: true,
-    alignment: Branch.RIGHT,
-  },
-  {
-    type: NodeTypes.CHECKPOINT,
-    title: "Agile Methodology",
-    size: ItemSize.SMALL,
-    subtitle:
-      "Iterative development with continuous feedback loops ensures rapid adaptation to changing requirements. Sprint-based delivery keeps projects on track and stakeholders engaged throughout the process.",
-    shouldDrawLine: true,
-    alignment: Branch.RIGHT,
-  },
-  {
-    type: NodeTypes.CHECKPOINT,
-    title: "Data-Driven Decisions",
-    size: ItemSize.SMALL,
-    subtitle:
-      "Every strategy backed by comprehensive market research, competitive analysis, and performance metrics. We use advanced analytics to validate assumptions and optimize outcomes.",
-    shouldDrawLine: true,
-    alignment: Branch.RIGHT,
-  },
-  {
-    type: NodeTypes.CHECKPOINT,
     title: "Risk Mitigation",
     size: ItemSize.SMALL,
     subtitle:
@@ -136,15 +109,6 @@ export const TIMELINE = [
     size: ItemSize.SMALL,
     subtitle:
       "Rigorous testing protocols including automated testing, security audits, and performance optimization. We ensure your solution meets the highest standards before deployment.",
-    shouldDrawLine: true,
-    alignment: Branch.RIGHT,
-  },
-  {
-    type: NodeTypes.CHECKPOINT,
-    title: "Deployment & Launch",
-    size: ItemSize.SMALL,
-    subtitle:
-      "Seamless deployment with minimal downtime. Our DevOps experts handle infrastructure setup, monitoring configuration, and launch strategy to ensure smooth go-live experience.",
     shouldDrawLine: true,
     alignment: Branch.RIGHT,
   },

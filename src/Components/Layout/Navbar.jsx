@@ -2,9 +2,11 @@ import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { ChevronDown, ArrowRight } from 'lucide-react';
 import { gsap } from 'gsap';
+import { ContactModal } from '../index';
 
 const Navbar = () => {
     const [activeDropdown, setActiveDropdown] = useState(null);
+    const [isModalOpen, setIsModalOpen] = useState(false);
     const productsDropdownRef = useRef(null);
     const solutionsDropdownRef = useRef(null);
     const resourcesDropdownRef = useRef(null);
@@ -50,49 +52,25 @@ const Navbar = () => {
                         </Link>
 
                         <div className="hidden md:flex items-center space-x-6 relative">
-                            <div 
-                                className="relative"
-                                onMouseEnter={() => setActiveDropdown('products')}
-                                onMouseLeave={() => setActiveDropdown(null)}
-                            >
-                                <button className="flex items-center space-x-1 text-white hover:text-white transition cursor-none">
-                                    <span>Products</span>
-                                    <ChevronDown size={14} />
-                                </button>
-                                {activeDropdown === 'products' && (
-                                    <div ref={productsDropdownRef} className="absolute top-full left-0 mt-0.5 bg-[#374151] rounded-2xl p-4 w-64 shadow-xl z-[9999] border border-[#4b5563]">
-                                        <div className="space-y-3">
-                                            <div className="dropdown-item p-3 hover:bg-[#4b5563]/50 rounded-lg transition cursor-none">
-                                                <div className="text-white font-semibold mb-1">Core Accounting</div>
-                                                <div className="text-gray-300 text-xs">The modern general ledger that scales with you</div>
-                                            </div>
-                                            <div className="dropdown-item p-3 hover:bg-[#4b5563]/50 rounded-lg transition cursor-none">
-                                                <div className="text-white font-semibold mb-1">Revenue Automation</div>
-                                                <div className="text-gray-300 text-xs">Automate your end-to-end revenue process</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                )}
-                            </div>
+                            <Link to="/" className="text-white hover:text-blue-300 transition duration-500 cursor-none">Home</Link>
 
                             <div 
                                 className="relative"
-                                onMouseEnter={() => setActiveDropdown('solutions')}
+                                onMouseEnter={() => setActiveDropdown('netsuite')}
                                 onMouseLeave={() => setActiveDropdown(null)}
                             >
                                 <button className="flex items-center space-x-1 text-white hover:text-white transition cursor-none">
-                                    <span>Solutions</span>
+                                    <span>Netsuite</span>
                                     <ChevronDown size={14} />
                                 </button>
-                                {activeDropdown === 'solutions' && (
+                                {activeDropdown === 'netsuite' && (
                                     <div ref={solutionsDropdownRef} className="absolute top-full left-0 mt-0.5 bg-[#374151] rounded-2xl p-4 w-64 shadow-xl z-[9999] border border-[#4b5563]">
                                         <div className="space-y-3">
                                             <div className="dropdown-item p-3 hover:bg-[#4b5563]/50 rounded-lg transition cursor-none">
-                                                <div className="text-white font-semibold mb-1">For Finance Teams</div>
-                                                <div className="text-gray-300 text-xs">Streamline your financial operations</div>
+                                                <div className="text-white font-semibold mb-1">Integrations</div>
                                             </div>
                                             <div className="dropdown-item p-3 hover:bg-[#4b5563]/50 rounded-lg transition cursor-none">
-                                                <div className="text-white font-semibold mb-1">For Enterprises</div>
+                                                <div className="text-white font-semibold mb-1">Custom Development</div>
                                                 <div className="text-gray-300 text-xs">Scale with confidence</div>
                                             </div>
                                         </div>
@@ -101,35 +79,14 @@ const Navbar = () => {
                             </div>
 
                             <Link to="/blogs" className="text-white hover:text-blue-300 transition duration-500 cursor-none">Blogs</Link>
+                            <button onClick={() => setIsModalOpen(true)} className="text-white hover:text-blue-300 transition duration-500 cursor-none">Contact Us</button>
 
-                            <div 
-                                className="relative"
-                                onMouseEnter={() => setActiveDropdown('resources')}
-                                onMouseLeave={() => setActiveDropdown(null)}
-                            >
-                                <button className="flex items-center space-x-1 text-white hover:text-white transition cursor-none">
-                                    <span>Resources</span>
-                                    <ChevronDown size={14} />
-                                </button>
-                                {activeDropdown === 'resources' && (
-                                    <div ref={resourcesDropdownRef} className="absolute top-full left-0 mt-0.5 bg-[#374151] rounded-2xl p-4 w-64 shadow-xl z-[9999] border border-[#4b5563]">
-                                        <div className="space-y-3">
-                                            <div className="dropdown-item p-3 hover:bg-[#4b5563]/50 rounded-lg transition cursor-none">
-                                                <div className="text-white font-semibold mb-1">Documentation</div>
-                                                <div className="text-gray-300 text-xs">Learn how to use our platform</div>
-                                            </div>
-                                            <div className="dropdown-item p-3 hover:bg-[#4b5563]/50 rounded-lg transition cursor-none">
-                                                <div className="text-white font-semibold mb-1">Blog</div>
-                                                <div className="text-gray-300 text-xs">Latest news and insights</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                )}
-                            </div>
+                           
                         </div>
                     </div>
                 </div>
             </div>
+            <ContactModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
         </nav>
     );
 };

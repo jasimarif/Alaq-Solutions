@@ -275,7 +275,7 @@ const HeroSection = ({ onOpenContact }) => {
                 <SlidingButton text="Get Started" shadow={true} onClick={onOpenContact} />
                 <button 
                     onClick={onOpenContact}
-                    className="px-5 sm:px-6 py-3 sm:py-3.5 rounded-full border border-gray-600 text-gray-200 hover:text-white hover:bg-gray-800 hover:border-blue-400/50 transition-all font-medium text-xs sm:text-sm cursor-pointer shadow-sm"
+                    className="inline-flex items-center justify-center px-5 sm:px-6 py-2.5 sm:py-3 rounded-full border border-gray-600/80 hover:border-blue-400/60 bg-gray-900/40 hover:bg-gray-800/80 text-gray-200 hover:text-white transition-all font-semibold text-sm sm:text-base cursor-pointer shadow-sm"
                 >
                     Schedule Demo
                 </button>

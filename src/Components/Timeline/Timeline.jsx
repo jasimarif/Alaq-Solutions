@@ -75,7 +75,7 @@ const MILESTONE_PHASES = [
     ],
     stat: "+40%",
     statLabel: "Operational Efficiency Gain",
-    ctaText: "SCHEDULE DEMO & CONSULTATION",
+    ctaText: "Schedule Consultation",
     accent: "#34d399"
   }
 ];
@@ -555,20 +555,21 @@ const TimelineSection = () => {
             </span>
           </div>
 
-          {/* Action CTA Button */}
-          <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div className="w-full sm:w-auto">
+          {/* Action CTA Button & Step Controls */}
+          <div className="pt-3 border-t border-gray-800/80 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
+            <div>
               {activePhase === 2 ? (
                 <SlidingButton
                   text={currentPhaseData.ctaText}
                   onClick={handleOpenContact}
+                  className="w-full sm:w-auto justify-center"
                 />
               ) : (
                 <button
                   onClick={() =>
                     setActivePhase((prev) => (prev + 1) % MILESTONE_PHASES.length)
                   }
-                  className="w-full sm:w-auto px-6 py-3 rounded-full bg-blue-500/20 hover:bg-blue-500/30 border border-blue-400/40 text-blue-300 hover:text-white font-medium text-xs sm:text-sm transition-all flex items-center justify-center gap-2 cursor-pointer shadow-md"
+                  className="w-full sm:w-auto px-5 py-2.5 sm:py-3 rounded-full bg-blue-500/20 hover:bg-blue-500/30 border border-blue-400/40 text-blue-300 hover:text-white font-semibold text-xs sm:text-sm transition-all flex items-center justify-center gap-2 cursor-pointer shadow-md"
                 >
                   <span>Next Phase</span>
                   <ChevronRight className="w-4 h-4" />
@@ -576,26 +577,31 @@ const TimelineSection = () => {
               )}
             </div>
 
-            {/* Step Navigation controls */}
-            <div className="flex items-center space-x-2">
-              <button
-                onClick={() =>
-                  setActivePhase((prev) => (prev > 0 ? prev - 1 : MILESTONE_PHASES.length - 1))
-                }
-                className="p-2 rounded-full border border-gray-700 hover:border-blue-400/40 bg-gray-800/80 text-gray-300 hover:text-white transition cursor-pointer"
-                aria-label="Previous Phase"
-              >
-                <ChevronLeft className="w-4 h-4" />
-              </button>
-              <button
-                onClick={() =>
-                  setActivePhase((prev) => (prev + 1) % MILESTONE_PHASES.length)
-                }
-                className="p-2 rounded-full border border-gray-700 hover:border-blue-400/40 bg-gray-800/80 text-gray-300 hover:text-white transition cursor-pointer"
-                aria-label="Next Phase"
-              >
-                <ChevronRight className="w-4 h-4" />
-              </button>
+            {/* Step Navigation Controls with Phase Counter */}
+            <div className="flex items-center justify-between sm:justify-end gap-3 pt-1 sm:pt-0">
+              <span className="text-xs font-mono font-medium text-gray-400 bg-gray-800/80 border border-gray-700/60 px-2.5 py-1 rounded-full">
+                0{activePhase + 1} / 0{MILESTONE_PHASES.length}
+              </span>
+              <div className="flex items-center space-x-1.5">
+                <button
+                  onClick={() =>
+                    setActivePhase((prev) => (prev > 0 ? prev - 1 : MILESTONE_PHASES.length - 1))
+                  }
+                  className="p-2 rounded-full border border-gray-700 hover:border-blue-400/50 bg-gray-800/80 text-gray-300 hover:text-white transition cursor-pointer"
+                  aria-label="Previous Phase"
+                >
+                  <ChevronLeft className="w-4 h-4" />
+                </button>
+                <button
+                  onClick={() =>
+                    setActivePhase((prev) => (prev + 1) % MILESTONE_PHASES.length)
+                  }
+                  className="p-2 rounded-full border border-gray-700 hover:border-blue-400/50 bg-gray-800/80 text-gray-300 hover:text-white transition cursor-pointer"
+                  aria-label="Next Phase"
+                >
+                  <ChevronRight className="w-4 h-4" />
+                </button>
+              </div>
             </div>
           </div>
         </div>

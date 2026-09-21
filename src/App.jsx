@@ -15,8 +15,8 @@ function App() {
       clearTimeout(timer);
       timer = setTimeout(() => {
         const isDesktopResult =
-          typeof window.orientation === "undefined" &&
-          navigator.userAgent.indexOf("IEMobile") === -1;
+          typeof window !== "undefined" &&
+          window.matchMedia("(hover: hover) and (pointer: fine) and (min-width: 768px)").matches;
 
         window.history.scrollRestoration = "manual";
 

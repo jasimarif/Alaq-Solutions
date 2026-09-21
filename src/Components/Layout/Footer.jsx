@@ -6,20 +6,25 @@ const Footer = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-     <div className='bg-[#1a202c] w-full overflow-hidden flex flex-col justify-center items-center'>
+     <footer className='bg-[#1a202c] w-full overflow-hidden flex flex-col justify-center items-center pt-16 sm:pt-24 pb-8 px-4 font-poppins'>
         <SlidingButton text={'Contact Us'} onClick={() => setIsModalOpen(true)} />
-        <div className="text-center  flex items-end justify-center pt-8 pb-0 mb-0" style={{ paddingBottom: '0', marginBottom: '0' }}>
-          <svg width="160" height="160" viewBox="0 0 24 12" fill="none" className="text-blue-400" style={{ marginBottom: '0', paddingBottom: '0', display: 'block' }}>
-            <path d="M12 2L8 10H16L12 2Z" fill="currentColor" />
-            <path d="M8 10L4 18H20L16 10H8Z" fill="currentColor" opacity="0.7" />
-          </svg>
-          <div className="text-white text-[10rem] font-bold font-poppins bottom-0 tracking-tighter leading-none pt-4" style={{ height: '9rem' }}>
-
-            ALAQ Solutions.
+        <div className="text-center flex flex-wrap items-center justify-center gap-3 sm:gap-5 pt-10 sm:pt-16 pb-4 max-w-full">
+          <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-white flex items-center justify-center p-2 shadow-xl ring-2 ring-blue-400/40 overflow-hidden flex-shrink-0">
+            <img 
+              src="/logo.png" 
+              alt="ALAQ Solutions Logo" 
+              className="w-full h-full object-contain"
+            />
+          </div>
+          <div className="text-white text-3xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-bold tracking-tighter leading-none">
+            ALAQ <span className="text-blue-400">Solutions.</span>
           </div>
         </div>
+        <p className="text-gray-500 text-xs sm:text-sm mt-6 text-center">
+          &copy; {new Date().getFullYear()} ALAQ Solutions. All rights reserved.
+        </p>
         <ContactModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
-      </div>
+      </footer>
   )
 }
 

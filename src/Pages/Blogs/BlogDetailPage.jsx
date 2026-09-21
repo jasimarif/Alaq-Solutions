@@ -177,17 +177,17 @@ const BlogDetailPage = () => {
       <Navbar />
 
       {/* Blog Header */}
-      <div className="relative px-6 lg:px-24 pt-20 pb-16 animate-fadeIn">
+      <div className="relative px-4 sm:px-8 lg:px-16 pt-8 sm:pt-14 pb-8 sm:pb-12 animate-fadeIn">
         <div className="max-w-4xl mx-auto">
           <button
             onClick={() => navigate('/blogs')}
-            className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors duration-300 mb-8 cursor-none"
+            className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors duration-300 mb-6 font-medium text-sm sm:text-base"
           >
             ← Back to Blogs
           </button>
 
-          <div className="mb-8 animate-slideUp" style={{ animationDelay: '0.1s' }}>
-            <div className="flex items-center gap-4 text-gray-400 text-sm mb-4">
+          <div className="mb-6 sm:mb-8 animate-slideUp" style={{ animationDelay: '0.1s' }}>
+            <div className="flex flex-wrap items-center gap-2 sm:gap-4 text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4">
               <span>{currentBlog.date}</span>
               <span>•</span>
               <span>{currentBlog.readTime}</span>
@@ -195,47 +195,43 @@ const BlogDetailPage = () => {
               <span>By {currentBlog.author}</span>
             </div>
 
-            <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6">
+            <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6 tracking-tight leading-tight">
               {currentBlog.title}
             </h1>
 
-            <p className="text-xl text-gray-300 leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed">
               {currentBlog.excerpt}
             </p>
           </div>
 
           {/* Featured Image */}
-          <div className="aspect-video bg-gray-600 rounded-2xl overflow-hidden relative mb-12 animate-slideUp" style={{ animationDelay: '0.2s' }}>
+          <div className="aspect-video bg-gray-700 rounded-2xl overflow-hidden relative mb-8 sm:mb-12 animate-slideUp border border-gray-600/50" style={{ animationDelay: '0.2s' }}>
             <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20"></div>
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-white text-lg font-semibold">Featured Image</div>
+              <div className="text-white text-base sm:text-lg font-semibold">Featured Image</div>
             </div>
           </div>
         </div>
       </div>
 
       {/* Blog Content */}
-      <div className="px-6 lg:px-24 pb-20 animate-fadeIn" style={{ animationDelay: '0.3s' }}>
+      <div className="px-4 sm:px-8 lg:px-16 pb-12 sm:pb-16 animate-fadeIn" style={{ animationDelay: '0.3s' }}>
         <div className="max-w-4xl mx-auto">
           <div
-            className="prose prose-lg prose-invert max-w-none"
+            className="prose prose-invert max-w-none text-gray-200 text-sm sm:text-base leading-relaxed"
             dangerouslySetInnerHTML={{ __html: currentBlog.content }}
-            style={{
-              color: '#e5e7eb',
-              lineHeight: '1.75',
-            }}
           />
         </div>
       </div>
 
       {/* You Might Also Like Section */}
-      <div className="px-6 lg:px-24 pb-20 animate-fadeIn" style={{ animationDelay: '0.4s' }}>
+      <div className="px-4 sm:px-8 lg:px-16 pb-16 sm:pb-24 animate-fadeIn" style={{ animationDelay: '0.4s' }}>
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-12 text-center">
+          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-8 sm:mb-10 text-center tracking-tight">
             You Might Also Like
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
             {otherBlogs.map((blog, index) => (
               <div
                 key={blog.id}

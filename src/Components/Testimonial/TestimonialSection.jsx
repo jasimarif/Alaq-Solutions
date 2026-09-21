@@ -1,109 +1,52 @@
-import React, { useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
+import React from 'react';
+import { Star, Quote } from 'lucide-react';
 
 const TestimonialSection = () => {
-  const textRef = useRef(null);
-  const containerRef = useRef(null);
-
-  useEffect(() => {
-    const words = textRef.current.querySelectorAll('.word');
-
-    if (!words.length) return;
-
-    gsap.set(words, { color: '#ffffff' });
-
-    gsap.fromTo(textRef.current,
-      {
-        scale: 0.5,
-        opacity: 0
-      },
-      {
-        scale: 1,
-        opacity: 1,
-        duration: 1,
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: 'top 80%',
-          end: 'top 20%',
-          scrub: 1,
-        }
-      }
-    );
-
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: 'top bottom',
-        end: 'top top',
-        scrub: 1,
-      }
-    });
-
-    words.forEach((word, index) => {
-      const startTime = index * 0.02;
-      tl.to(word, {
-        color: '#60a5fa',
-        duration: 0.1,
-        ease: 'none'
-      }, startTime);
-    });
-
-    return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-    };
-  }, []);
-
-  const testimonialText = `We migrated from Sage Intacct to Campfire to accelerate our close process. It's the only solution in the market that is modern, yet has the power to support our global operations across multiple legal entities and currencies.`;
-
-  const words = testimonialText.split(' ');
-
   return (
-    <div ref={containerRef} className="h-screen flex items-center pl-28 p-8 bg-[#1a202c] font-poppins">
-      <div className="max-w-6xl w-full">
-        <div className="">
-          <h2
-            ref={textRef}
-            className="text-4xl md:text-5xl lg:text-6xl font-medium leading-tight mb-16 text-center tracking-tight"
-          >
-            {words.map((word, index) => (
-              <span key={index} className="word inline-block mr-[0.3em]">
-                {word}
-              </span>
-            ))}
-          </h2>
+    <section className="py-10 sm:py-16 md:py-20 px-4 sm:px-8 md:px-12 bg-[#121827] font-poppins w-full overflow-hidden border-t border-gray-800/60">
+      <div className="max-w-4xl w-full mx-auto">
+        {/* Simple, decent testimonial card */}
+        <div className="bg-gradient-to-b from-[#162030] to-[#0f1724] border border-blue-500/20 rounded-2xl sm:rounded-3xl p-6 sm:p-10 shadow-2xl relative text-center">
+          {/* Quote Icon Badge */}
+          <div className="inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-blue-500/15 border border-blue-500/30 text-blue-400 mb-5">
+            <Quote className="w-5 h-5 sm:w-6 sm:h-6 rotate-180" />
+          </div>
 
-          <div className="flex items-center justify-center gap-6">
-            <div className="relative">
-              <div className="absolute inset-0 rounded-full blur-2xl opacity-40"></div>
-              <div className="relative w-24 h-24 rounded-full overflow-hidden bg-gray-200">
-                <img
-                  src={null}
-                  alt="Jasim Arif Ali"
-                  className="w-full h-full object-cover"
-                />
-              </div>
+          {/* Testimonial Quote Text - Always visible & readable */}
+          <p className="text-base sm:text-xl md:text-2xl font-normal leading-relaxed text-gray-100 max-w-3xl mx-auto tracking-normal">
+            “We migrated our financial architecture to <span className="text-[#60a5fa] font-semibold">ALAQ Solutions</span> to accelerate our month-end close. It is modern, seamless, and gives our executive team total visibility across multiple legal entities and currencies.”
+          </p>
+
+          {/* Star rating */}
+          <div className="flex items-center justify-center gap-1.5 my-5">
+            {[...Array(5)].map((_, i) => (
+              <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+            ))}
+            <span className="text-xs text-gray-400 ml-1.5">5.0 Verified Client Review</span>
+          </div>
+
+          {/* CEO & Company Attribution */}
+          <div className="pt-5 border-t border-gray-800/80 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+            <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full overflow-hidden ring-2 ring-blue-400/50 shadow-md flex-shrink-0">
+              <img
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=160&h=160&fit=crop"
+                alt="Jasim Arif Ali"
+                className="w-full h-full object-cover"
+              />
             </div>
 
-            <div className="text-left">
-              <div className="flex items-center gap-2 mb-1">
-                <div className="flex gap-1">
-                  <div className="w-2 h-2 rounded-full bg-gray-300"></div>
-                  <div className="w-2 h-2 rounded-full bg-gray-300"></div>
-                  <div className="w-2 h-2 rounded-full bg-gray-300"></div>
-                </div>
-                <span className="text-sm text-gray-300 font-medium">OaksVille</span>
+            <div className="text-center sm:text-left">
+              <div className="flex items-center justify-center sm:justify-start gap-1.5 mb-0.5">
+                <span className="w-2 h-2 rounded-full bg-blue-400"></span>
+                <span className="text-xs text-blue-400 font-semibold tracking-wide uppercase">OaksVille</span>
               </div>
-              <h3 className="text-2xl font-semibold text-white">Jasim Arif Ali</h3>
-              <p className="text-gray-300">CEO</p>
+              <h3 className="text-base sm:text-lg font-bold text-white leading-tight">Jasim Arif Ali</h3>
+              <p className="text-gray-400 text-xs">CEO & Founder</p>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

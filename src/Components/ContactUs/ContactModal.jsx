@@ -111,131 +111,145 @@ const ContactModal = ({ isOpen, onClose }) => {
   if (!show) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/50 backdrop-blur-sm transition-all flex items-center justify-center  duration-300  z-50 font-poppins">
-      <div ref={modalRef} className="bg-[#1a202c] rounded-4xl shadow-lg mx-4 flex relative">
+    <div className="fixed inset-0 bg-black/60 backdrop-blur-sm transition-all flex items-center justify-center duration-300 z-50 font-poppins p-4 sm:p-6">
+      <div 
+        ref={modalRef} 
+        className="bg-[#1a202c] rounded-3xl sm:rounded-4xl shadow-2xl w-full max-w-4xl relative max-h-[92vh] overflow-y-auto border border-gray-700"
+      >
         <button
           onClick={onClose}
-          className="absolute top-6 right-8 cursor-none bg-black/50 rounded-full p-2  text-white hover:text-gray-400 transition-colors duration-200 z-10"
+          aria-label="Close contact modal"
+          className="absolute top-4 right-4 sm:top-6 sm:right-6 bg-gray-800/80 hover:bg-gray-700 rounded-full p-2.5 text-gray-300 hover:text-white transition duration-200 z-20 border border-gray-600/50"
         >
-          <X size={24} />
+          <X size={20} />
         </button>
-        <div className='flex items-center justify-center'>
-        {/* Left side: heading */}
-        <div className="flex-1 p-8 flex flex-col  justify-center ">
-          <svg width="100" height="100" viewBox="0 0 24 12" fill="none" className="text-blue-400 mb-4">
-            <path d="M12 2L8 10H16L12 2Z" fill="currentColor" />
-            <path d="M8 10L4 18H20L16 10H8Z" fill="currentColor" opacity="0.7" />
-          </svg>
-          <h2 className="text-white text-8xl font-medium tracking-tighter font-poppins">
-            Schedule a <span className='text-blue-400'>Meeting</span> 
-          </h2>
-          <p className='pt-8 text-white '>
-            Let's get some basic info, and then we will get you on the calendar.
-          </p>
-        </div>
-        {/* Right side: Form */}
-        <div className="flex-1 p-8 mt-18">
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div>
-              <input
-                type="text"
-                id="firstName"
-                name="firstName"
-                value={formData.firstName}
-                onChange={handleChange}
-                placeholder="First Name"
-                className="w-full px-4 py-3 bg-gray-800 text-white rounded-lg border border-gray-600 focus:outline-none focus:border-[#60a5fa] font-poppins"
-                required
-              />
-            </div>
-            <div>
-              <input
-                type="text"
-                id="lastName"
-                name="lastName"
-                value={formData.lastName}
-                onChange={handleChange}
-                placeholder="Last Name"
-                className="w-full px-4 py-3 bg-gray-800 text-white rounded-lg border border-gray-600 focus:outline-none focus:border-[#60a5fa] font-poppins"
-                required
-              />
-            </div>
-            <div>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                placeholder="Email"
-                className="w-full px-4 py-3 bg-gray-800 text-white rounded-lg border border-gray-600 focus:outline-none focus:border-[#60a5fa] font-poppins"
-                required
-              />
-            </div>
-             <div>
-              <input
-                type="text"
-                id="company"
-                name="company"
-                value={formData.company}
-                onChange={handleChange}
-                placeholder="Company Name"
-                className="w-full px-4 py-3 bg-gray-800 text-white rounded-lg border border-gray-600 focus:outline-none focus:border-[#60a5fa] font-poppins"
-                required
-              />
-            </div>
-            <div>
-              <textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                rows="4"
-                placeholder="Message"
-                className="w-full px-4 py-3 bg-gray-800 text-white rounded-lg border border-gray-600 focus:outline-none focus:border-[#60a5fa] font-poppins resize-none"
-                required
-              />
-            </div>
-            
-            {/* Status Message */}
-            {submitStatus && (
-              <div className={`flex items-center gap-2 p-3 rounded-lg ${
-                submitStatus === 'success' 
-                  ? 'bg-green-900/30 text-green-400 border border-green-400/30' 
-                  : 'bg-red-900/30 text-red-400 border border-red-400/30'
-              }`}>
-                {submitStatus === 'success' ? (
-                  <CheckCircle size={20} />
-                ) : (
-                  <AlertCircle size={20} />
-                )}
-                <span className="text-sm font-poppins">{statusMessage}</span>
+
+        <div className="flex flex-col lg:flex-row items-stretch">
+          {/* Left side: heading */}
+          <div className="p-6 sm:p-10 lg:w-5/12 flex flex-col justify-center bg-[#151c27] rounded-t-3xl lg:rounded-tr-none lg:rounded-l-3xl border-b lg:border-b-0 lg:border-r border-gray-700/50">
+            <div className="mb-4 inline-block">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white flex items-center justify-center p-2 shadow-lg ring-2 ring-blue-400/40 overflow-hidden flex-shrink-0">
+                <img 
+                  src="/logo.png" 
+                  alt="ALAQ Solutions Logo" 
+                  className="w-full h-full object-contain"
+                />
               </div>
-            )}
-            
-          <div className="flex justify-end">
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              className="relative overflow-hidden bg-blue-500 hover:bg-blue-600 disabled:bg-gray-600 disabled:cursor-not-allowed text-white px-6 py-3 rounded-lg font-poppins transition-all duration-300 flex items-center gap-2"
-            >
-              {isSubmitting ? (
-                <>
-                  <div className="animate-spin rounded-full h-4 w-4 border-2 border-white border-t-transparent"></div>
-                  Sending...
-                </>
-              ) : (
-                <>
-                  <Mail size={16} />
-                  Send Message
-                </>
+            </div>
+            <h2 className="text-white text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight font-poppins">
+              Schedule a <span className="text-blue-400">Meeting</span> 
+            </h2>
+            <p className="pt-4 text-gray-300 text-sm sm:text-base leading-relaxed">
+              Let's get some basic info, and then we will get you on the calendar.
+            </p>
+          </div>
+
+          {/* Right side: Form */}
+          <div className="p-6 sm:p-10 lg:w-7/12 flex flex-col justify-center">
+            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <input
+                    type="text"
+                    id="firstName"
+                    name="firstName"
+                    value={formData.firstName}
+                    onChange={handleChange}
+                    placeholder="First Name"
+                    className="w-full px-4 py-3 bg-gray-800 text-white rounded-xl border border-gray-600 focus:outline-none focus:border-[#60a5fa] font-poppins text-sm"
+                    required
+                  />
+                </div>
+                <div>
+                  <input
+                    type="text"
+                    id="lastName"
+                    name="lastName"
+                    value={formData.lastName}
+                    onChange={handleChange}
+                    placeholder="Last Name"
+                    className="w-full px-4 py-3 bg-gray-800 text-white rounded-xl border border-gray-600 focus:outline-none focus:border-[#60a5fa] font-poppins text-sm"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="Business Email"
+                  className="w-full px-4 py-3 bg-gray-800 text-white rounded-xl border border-gray-600 focus:outline-none focus:border-[#60a5fa] font-poppins text-sm"
+                  required
+                />
+              </div>
+
+              <div>
+                <input
+                  type="text"
+                  id="company"
+                  name="company"
+                  value={formData.company}
+                  onChange={handleChange}
+                  placeholder="Company Name"
+                  className="w-full px-4 py-3 bg-gray-800 text-white rounded-xl border border-gray-600 focus:outline-none focus:border-[#60a5fa] font-poppins text-sm"
+                  required
+                />
+              </div>
+
+              <div>
+                <textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  rows="3"
+                  placeholder="How can we help your team?"
+                  className="w-full px-4 py-3 bg-gray-800 text-white rounded-xl border border-gray-600 focus:outline-none focus:border-[#60a5fa] font-poppins text-sm resize-none"
+                  required
+                />
+              </div>
+              
+              {/* Status Message */}
+              {submitStatus && (
+                <div className={`flex items-center gap-2 p-3 rounded-lg ${
+                  submitStatus === 'success' 
+                    ? 'bg-green-900/30 text-green-400 border border-green-400/30' 
+                    : 'bg-red-900/30 text-red-400 border border-red-400/30'
+                }`}>
+                  {submitStatus === 'success' ? (
+                    <CheckCircle size={18} className="flex-shrink-0" />
+                  ) : (
+                    <AlertCircle size={18} className="flex-shrink-0" />
+                  )}
+                  <span className="text-sm font-poppins">{statusMessage}</span>
+                </div>
               )}
-            </button>
-            </div>   
-          </form>
-         
-        </div>
-        
+              
+              <div className="flex justify-end pt-2">
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full sm:w-auto relative overflow-hidden bg-blue-500 hover:bg-blue-600 disabled:bg-gray-600 disabled:cursor-not-allowed text-white px-6 py-3 rounded-xl font-poppins transition-all duration-300 flex items-center justify-center gap-2 font-medium"
+                >
+                  {isSubmitting ? (
+                    <>
+                      <div className="animate-spin rounded-full h-4 w-4 border-2 border-white border-t-transparent"></div>
+                      <span>Sending...</span>
+                    </>
+                  ) : (
+                    <>
+                      <Mail size={16} />
+                      <span>Send Message</span>
+                    </>
+                  )}
+                </button>
+              </div>   
+            </form>
+          </div>
         </div>
       </div>
     </div>

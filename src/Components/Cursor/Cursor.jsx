@@ -80,6 +80,8 @@ const Cursor = ({ isDesktop }) => {
     };
   }, [cursor, follower, isDesktop]);
 
+  if (!isDesktop) return null;
+
   return (
     <>
       <div

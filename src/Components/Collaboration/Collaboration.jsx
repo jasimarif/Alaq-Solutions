@@ -1,105 +1,72 @@
-
+import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
-import { useEffect, useRef, useState } from "react";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ArrowRight, Handshake } from "lucide-react";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const COLLABORATION_STYLE = {
-  SLIDING_TEXT: "opacity-20 text-5xl md:text-7xl font-semibold whitespace-nowrap text-gray-500 font-poppins tracking-tighter",
+  SLIDING_TEXT:
+    "opacity-20 text-3xl sm:text-5xl md:text-7xl font-semibold whitespace-nowrap text-gray-500 font-poppins tracking-tighter",
   SECTION:
-    "min-w-screen relative select-none tall:py-36 py-36 section-container flex flex-col bg-[#1a202c]",
-  TITLE: "mt-6 md:mt-8 font-medium text-4xl md:text-5xl text-center text-white font-poppins tracking-tighter",
+    "w-full overflow-hidden relative select-none py-12 sm:py-20 md:py-32 flex flex-col bg-[#121827] border-t border-gray-800/60",
+  TITLE:
+    "my-6 sm:my-8 font-medium text-3xl sm:text-4xl md:text-5xl text-center text-white font-poppins tracking-tight px-4",
 };
-
-const isSmallScreen = () => {
-  if (typeof document !== 'undefined') {
-    return document.body.clientWidth < 767;
-  }
-  return false;
-};
-
-const NO_MOTION_PREFERENCE_QUERY = "(prefers-reduced-motion: no-preference)";
 
 const CollaborationSection = () => {
   const quoteRef = useRef(null);
   const targetSection = useRef(null);
+  const [willChange, setWillChange] = useState(false);
 
-  const [willChange, setwillChange] = useState(false);
-
-  const initTextGradientAnimation = (targetSection) => {
-    if (!quoteRef.current || !quoteRef.current.querySelector(".text-strong")) {
-      return null;
-    }
-
-    const timeline = gsap.timeline({
-      defaults: { ease: "none" }
-    });
-
-    timeline
-      .fromTo(quoteRef.current,
-        { opacity: 0 },
-        { opacity: 1, duration: 2, immediateRender: false }
-      )
-      .to(quoteRef.current.querySelector(".text-strong"), {
-        backgroundPositionX: "100%",
-        duration: 1,
-      });
-
-    return ScrollTrigger.create({
-      trigger: targetSection.current,
-      start: "center bottom",
-      end: "center center",
-      scrub: 0,
-      animation: timeline,
-      onToggle: (self) => setwillChange(self.isActive),
-    });
-  };
-
-  const initSlidingTextAnimation = (targetSection) => {
-    const slidingTl = gsap.timeline({ defaults: { ease: "none" } });
-
-    const uiLeft = targetSection.current.querySelector(".ui-left");
-    const uiRight = targetSection.current.querySelector(".ui-right");
-
-    if (!uiLeft || !uiRight) {
-      return null;
-    }
-
-    slidingTl
-      .to(uiLeft, {
-        xPercent: isSmallScreen() ? -500 : -150,
-      })
-      .fromTo(
-        uiRight,
-        { xPercent: isSmallScreen() ? -500 : -150 },
-        { xPercent: 0, immediateRender: false },
-        "<"
-      );
-
-    return ScrollTrigger.create({
-      trigger: targetSection.current,
-      start: "top bottom",
-      end: "bottom top",
-      scrub: 0,
-      animation: slidingTl,
-    });
+  const handleOpenContact = () => {
+    const contactBtn = document.querySelector("nav button:last-of-type");
+    if (contactBtn) contactBtn.click();
   };
 
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
+    const isDesktop = window.innerWidth >= 768;
+    if (!isDesktop) return;
 
-    if (quoteRef.current) {
-      gsap.set(quoteRef.current, { opacity: 1 });
-    }
-
-    const textBgAnimation = initTextGradientAnimation(targetSection);
+    let textBgAnimation;
     let slidingAnimation;
 
-    const { matches } = window.matchMedia(NO_MOTION_PREFERENCE_QUERY);
+    // Text gradient reveal animation on desktop
+    if (quoteRef.current && quoteRef.current.querySelector(".text-strong")) {
+      const timeline = gsap.timeline({ defaults: { ease: "none" } });
+      timeline.fromTo(
+        quoteRef.current,
+        { opacity: 0.6 },
+        { opacity: 1, duration: 1 }
+      );
 
-    if (matches) {
-      slidingAnimation = initSlidingTextAnimation(targetSection);
-    } else {
-      slidingAnimation = initSlidingTextAnimation(targetSection);
+      textBgAnimation = ScrollTrigger.create({
+        trigger: targetSection.current,
+        start: "center bottom",
+        end: "center center",
+        scrub: 0.5,
+        animation: timeline,
+        onToggle: (self) => setWillChange(self.isActive),
+      });
+    }
+
+    // Sliding text moving left and right on desktop
+    const uiLeft = targetSection.current?.querySelector(".ui-left");
+    const uiRight = targetSection.current?.querySelector(".ui-right");
+
+    if (uiLeft && uiRight) {
+      const slidingTl = gsap.timeline({ defaults: { ease: "none" } });
+      slidingTl
+        .to(uiLeft, { xPercent: -120 })
+        .fromTo(uiRight, { xPercent: -120 }, { xPercent: 0 }, "<");
+
+      slidingAnimation = ScrollTrigger.create({
+        trigger: targetSection.current,
+        start: "top bottom",
+        end: "bottom top",
+        scrub: 0.5,
+        animation: slidingTl,
+      });
     }
 
     return () => {
@@ -116,33 +83,56 @@ const CollaborationSection = () => {
     </p>
   );
 
-  const renderTitle = () => (
-    <h1
-      ref={quoteRef}
-      className={`${COLLABORATION_STYLE.TITLE} ${
-        willChange ? "will-change-opacity" : ""
-      }`}
-    >
-      Interested in <span className="text-strong font-bold">Collaboration</span>
-      ?
-    </h1>
-  );
-
   return (
     <section className={COLLABORATION_STYLE.SECTION} ref={targetSection}>
-      {renderSlidingText(
-        "Netsuite  MCP Servers ",
-        "ui-left"
-      )}
+      {/* Top Sliding Line (Visible on Desktop / Tablets) */}
+      <div className="hidden md:block overflow-hidden w-full">
+        {renderSlidingText("Netsuite   MCP Servers   Enterprise ERP   ", "ui-left")}
+      </div>
 
-      {renderTitle()}
+      {/* Main Content Area */}
+      <div className="max-w-4xl mx-auto text-center px-4 z-10 my-4 sm:my-6">
+        {/* Mobile Decent Badge */}
+        <div className="inline-flex md:hidden items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/25 text-blue-400 text-xs font-medium mb-3">
+          <Handshake className="w-3.5 h-3.5" />
+          Partner With Us
+        </div>
 
-      {renderSlidingText(
-        " AI Integration  LLM SalesForce ",
-        "mt-6 md:mt-8 ui-right"
-      )}
+        {/* Title */}
+        <h2
+          ref={quoteRef}
+          className={`${COLLABORATION_STYLE.TITLE} ${
+            willChange ? "will-change-opacity" : ""
+          }`}
+        >
+          Interested in{" "}
+          <span className="text-[#60a5fa] font-bold text-strong">Collaboration</span>?
+        </h2>
 
-    
+        {/* Subtitle */}
+        <p className="text-sm sm:text-base md:text-lg text-gray-300 max-w-xl mx-auto -mt-2 mb-6 leading-relaxed">
+          Whether you need NetSuite optimization, custom SuiteApp development, or AI financial automation, our team is ready to help.
+        </p>
+
+        {/* Clean CTA button */}
+        <div className="flex justify-center">
+          <button
+            onClick={handleOpenContact}
+            className="px-6 sm:px-8 py-3.5 rounded-full bg-blue-500 hover:bg-blue-600 text-white font-semibold text-sm sm:text-base transition-all duration-300 shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 flex items-center gap-2 cursor-pointer"
+          >
+            <span>Start a Conversation</span>
+            <ArrowRight className="w-4 h-4" />
+          </button>
+        </div>
+      </div>
+
+      {/* Bottom Sliding Line (Visible on Desktop / Tablets) */}
+      <div className="hidden md:block overflow-hidden w-full mt-4 sm:mt-6">
+        {renderSlidingText(
+          " AI Integration   LLM Finance   SalesForce Sync   ",
+          "ui-right"
+        )}
+      </div>
     </section>
   );
 };

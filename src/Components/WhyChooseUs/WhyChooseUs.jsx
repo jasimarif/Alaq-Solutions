@@ -71,37 +71,39 @@ const WhyChooseUs = () => {
   const [isScrollLocked, setIsScrollLocked] = useState(true);
 
   useEffect(() => {
+    const isDesktop = window.innerWidth >= 1024;
     const container = containerRef.current;
-    
+    if (!isDesktop || !container) return;
+
     const scrollTrigger = ScrollTrigger.create({
       trigger: container,
       start: 'top top',
-      end: `+=${window.innerHeight * (tabData.length - 1)}`,
+      end: () => `+=${window.innerHeight * (tabData.length - 1)}`,
       pin: true,
       scrub: 1,
+      invalidateOnRefresh: true,
       onUpdate: (self) => {
         const progress = self.progress;
         const newTab = Math.min(
           Math.floor(progress * tabData.length),
           tabData.length - 1
         );
-        
-        if (newTab !== activeTab) {
-          setActiveTab(newTab);
-        }
-        
-        if (progress >= 0.99) {
-          setIsScrollLocked(false);
-        } else {
-          setIsScrollLocked(true);
-        }
-      }
+        setActiveTab((prev) => (prev !== newTab ? newTab : prev));
+      },
     });
 
-    return () => {
-      scrollTrigger.kill();
+    const handleResize = () => {
+      if (window.innerWidth < 1024 && scrollTrigger) {
+        scrollTrigger.kill();
+      }
     };
-  }, [activeTab]);
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      if (scrollTrigger) scrollTrigger.kill();
+    };
+  }, []);
 
   useEffect(() => {
     // Animate card content change and colors
@@ -110,44 +112,44 @@ const WhyChooseUs = () => {
     
     tl.to([contentRef.current, buttonRef.current], {
       opacity: 0,
-      y: 20,
-      duration: 0.3,
+      y: 15,
+      duration: 0.25,
       ease: 'power2.in'
     })
     .to(mainBgRef.current, {
       backgroundColor: currentColors.main,
-      duration: 0.5,
+      duration: 0.4,
       ease: 'power2.inOut'
     }, 0)
     .to(cardRef.current, {
       backgroundColor: currentColors.card,
-      duration: 0.5,
+      duration: 0.4,
       ease: 'power2.inOut'
     }, 0)
     .to(buttonRef.current, {
       backgroundColor: currentColors.button,
-      duration: 0.5,
+      duration: 0.4,
       ease: 'power2.inOut'
     }, 0)
     .to(badgeRef.current, {
       backgroundColor: currentColors.badge,
-      duration: 0.5,
+      duration: 0.4,
       ease: 'power2.inOut'
     }, 0)
     .to(accentRef.current, {
       color: currentColors.accent,
-      duration: 0.5,
+      duration: 0.4,
       ease: 'power2.inOut'
     }, 0)
     .to(activeTabLineRef.current, {
       backgroundColor: currentColors.activeTab,
-      duration: 0.5,
+      duration: 0.4,
       ease: 'power2.inOut'
     }, 0)
     .to([contentRef.current, buttonRef.current], {
       opacity: 1,
       y: 0,
-      duration: 0.3,
+      duration: 0.25,
       ease: 'power2.out'
     });
 
@@ -157,55 +159,54 @@ const WhyChooseUs = () => {
 
   return (
     <div className="bg-[#1a202c]">
-
       {/* Main component */}
       <div 
         ref={containerRef}
-        className="min-h-screen flex items-center justify-center p-8 font-poppins"
+        className="min-h-screen flex items-center justify-center py-12 sm:py-20 px-4 sm:px-8 font-poppins"
       >
         <div 
           ref={mainBgRef}
-          className="w-[80rem] py- px-6 rounded-[4rem] mx-auto transition-colors duration-500"
+          className="w-full max-w-7xl rounded-3xl sm:rounded-4xl lg:rounded-[3.5rem] p-6 sm:p-10 lg:p-14 mx-auto transition-colors duration-500 shadow-2xl border border-gray-700/40"
           style={{ backgroundColor: currentTab.colors.main }}
         >
-          <div className="flex items-center justify-between">
+          <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-between gap-10 lg:gap-12">
             {/* Left side - Text content */}
-            <div className="text-white space-y-8 py-24 ml-24">
+            <div className="text-white space-y-6 sm:space-y-8 w-full lg:w-1/2 flex flex-col justify-center">
               <div 
                 ref={badgeRef}
-                className="inline-block px-4 py-2 font-medium rounded-full text-sm text-gray-300 transition-colors duration-500"
+                className="inline-block px-4 py-1.5 font-medium rounded-full text-xs sm:text-sm text-gray-300 transition-colors duration-500 self-start"
                 style={{ backgroundColor: currentTab.colors.badge }}
               >
                 Why Choose Us
               </div>
 
               <div>
-                <h1 className="text-5xl lg:text-6xl font-light mb-4 tracking-tighter">
+                <h1 className="text-3xl sm:text-5xl lg:text-6xl font-light mb-4 tracking-tight leading-tight">
                   Your success<br />
                   is our number 1<br />
                   <span 
                     ref={accentRef}
-                    className="transition-colors duration-500"
+                    className="transition-colors duration-500 font-normal"
                     style={{ color: currentTab.colors.accent }}
                   >
                     Priority
                   </span>
                 </h1>
-                <p className="text-xl text-gray-300 mt-6 tracking-tight">
-                  We deliver exceptional value by<br />
-                  powering modern companies through:
+                <p className="text-base sm:text-lg lg:text-xl text-gray-300 mt-4 sm:mt-6 tracking-normal">
+                  We deliver exceptional value by powering modern companies through:
                 </p>
               </div>
 
               {/* Tabs */}
-              <div className="inline-flex gap-8 border-b border-gray-600 tracking-tighter">
+              <div className="flex overflow-x-auto gap-4 sm:gap-8 border-b border-gray-600 tracking-tight pb-1 no-scrollbar w-full">
                 {tabData.map((tab, index) => (
                   <button
                     key={tab.id}
-                    className={`pb-4 text-lg transition-colors relative ${
+                    onClick={() => setActiveTab(index)}
+                    className={`pb-3 text-base sm:text-lg transition-colors relative whitespace-nowrap font-medium ${
                       activeTab === index 
                         ? '' 
-                        : 'text-gray-400'
+                        : 'text-gray-400 hover:text-gray-200'
                     }`}
                     style={{ color: activeTab === index ? currentTab.colors.activeTab : undefined }}
                   >
@@ -213,7 +214,7 @@ const WhyChooseUs = () => {
                     {activeTab === index && (
                       <div 
                         ref={activeTabLineRef}
-                        className=" transition-colors duration-500 absolute rounded-2xl bottom-0 left-0 right-0 h-[3px] transform translate-y-1/2"
+                        className="transition-colors duration-500 absolute rounded-full bottom-0 left-0 right-0 h-[3px] transform translate-y-1/2"
                         style={{ backgroundColor: currentTab.colors.activeTab }}
                       />
                     )}
@@ -225,23 +226,23 @@ const WhyChooseUs = () => {
             {/* Right side - Card */}
             <div 
               ref={cardRef}
-              className="rounded-[3rem] p-10 min-h-[550px] w-[500px] flex flex-col justify-between transition-colors duration-500"
+              className="rounded-3xl sm:rounded-[3rem] p-6 sm:p-10 min-h-[420px] sm:min-h-[500px] w-full lg:w-[460px] xl:w-[500px] flex flex-col justify-between transition-colors duration-500 shadow-xl border border-white/10"
               style={{ backgroundColor: currentTab.colors.card }}
             >
               <div ref={contentRef}>
-                <h2 className="text-4xl font-light text-white mb-2">
+                <h2 className="text-2xl sm:text-4xl font-light text-white mb-2">
                   {currentTab.title}
                 </h2>
-                <p className="text-gray-200 mb-8 text-lg">
+                <p className="text-gray-200 mb-6 text-base sm:text-lg font-medium">
                   {currentTab.subtitle}
                 </p>
 
                 {/* Arrow pattern */}
-                <div className="mb-8 flex flex-wrap gap-4">
-                  {Array.from({ length: currentTab.arrows }).map((_, i) => (
+                <div className="mb-6 flex flex-wrap gap-3">
+                  {Array.from({ length: Math.min(currentTab.arrows, 16) }).map((_, i) => (
                     <svg
                       key={i}
-                      className="w-6 h-6 text-black/30"
+                      className="w-5 h-5 text-black/30"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -256,14 +257,14 @@ const WhyChooseUs = () => {
                   ))}
                 </div>
 
-                <p className="text-white leading-relaxed mb-8">
+                <p className="text-white text-sm sm:text-base leading-relaxed mb-6 sm:mb-8">
                   {currentTab.description}
                 </p>
               </div>
 
               <button 
                 ref={buttonRef}
-                className="font-medium px-8 py-4 rounded-full transition-all self-start text-lg hover:opacity-90 text-white"
+                className="font-medium px-6 sm:px-8 py-3.5 sm:py-4 rounded-full transition-all self-start text-base sm:text-lg hover:opacity-90 text-white shadow-lg"
                 style={{ backgroundColor: currentTab.colors.button }}
               >
                 {currentTab.buttonText}

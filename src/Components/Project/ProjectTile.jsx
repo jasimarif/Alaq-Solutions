@@ -3,7 +3,7 @@ import { DirectionPad } from '../index';
 
 const ProjectTile = ({ project, animationEnabled }) => {
   const projectCard = useRef(null);
-  const { name, description, color, url, textColor, tag, accent } = project;
+  const { name, description, color, url, tag, accent } = project;
 
   return (
     <a

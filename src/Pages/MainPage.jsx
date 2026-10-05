@@ -1,17 +1,8 @@
-import React, { useEffect, useRef } from 'react'
-import { LandingPage, HomePage } from './index'
-import { WhyChooseUs as ScrollTabsComponent, WhyChooseUsFade, WhyChooseUs } from '../Components'
+import React from 'react';
+import HomePage from './HomePage/HomePage';
 
 const MainPage = () => {
-  return (
-    <div className="bg-[#0f1419]">
-        <LandingPage/>
-        <HomePage/>
-        
-    </div>
+  return <HomePage />;
+};
 
-  )
-}
-
-export default MainPage
-
+export default MainPage;

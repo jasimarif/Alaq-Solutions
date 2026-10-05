@@ -1,11 +1,10 @@
-
 import styles from "./Cursor.module.css";
 import { useEffect, useRef } from "react";
 import { gsap, Linear } from "gsap";
 
 const CURSOR_STYLES = {
-  CURSOR: "fixed hidden bg-white w-4 h-4 select-none pointer-events-none z-[10000]",
-  FOLLOWER: "fixed hidden h-8 w-8 select-none pointer-events-none z-[10000]",
+  CURSOR: "hidden select-none pointer-events-none",
+  FOLLOWER: "hidden select-none pointer-events-none",
 };
 
 const isSmallScreen = () => {
@@ -18,28 +17,35 @@ const Cursor = ({ isDesktop }) => {
   const follower = useRef(null);
 
   const onHover = () => {
+    if (!cursor.current || !follower.current) return;
     gsap.to(cursor.current, {
-      scale: 0.5,
-      duration: 0.3,
+      scale: 0.6,
+      duration: 0.25,
+      ease: "power2.out",
     });
     gsap.to(follower.current, {
-      scale: 3,
-      duration: 0.3,
+      scale: 1.35,
+      duration: 0.25,
+      ease: "power2.out",
     });
   };
 
   const onUnhover = () => {
+    if (!cursor.current || !follower.current) return;
     gsap.to(cursor.current, {
       scale: 1,
-      duration: 0.3,
+      duration: 0.25,
+      ease: "power2.out",
     });
     gsap.to(follower.current, {
       scale: 1,
-      duration: 0.3,
+      duration: 0.25,
+      ease: "power2.out",
     });
   };
 
   const moveCircle = (e) => {
+    if (!cursor.current || !follower.current) return;
     gsap.to(cursor.current, {
       x: e.clientX,
       y: e.clientY,
@@ -54,31 +60,42 @@ const Cursor = ({ isDesktop }) => {
     });
   };
 
-  const initCursorAnimation = () => {
-    follower.current.classList.remove("hidden");
-    cursor.current.classList.remove("hidden");
-
-    document.addEventListener("mousemove", moveCircle);
-
-    document.querySelectorAll(".link").forEach((el) => {
-      el.addEventListener("mouseenter", onHover);
-      el.addEventListener("mouseleave", onUnhover);
-    });
-  };
-
   useEffect(() => {
-    if (isDesktop && !isSmallScreen()) {
-      initCursorAnimation();
-    }
+    if (!isDesktop || isSmallScreen()) return;
+
+    if (follower.current) follower.current.classList.remove("hidden");
+    if (cursor.current) cursor.current.classList.remove("hidden");
+
+    const handleMouseMove = (e) => {
+      moveCircle(e);
+    };
+
+    // Event delegation on document (checks e.target.closest('.link'))
+    const handleMouseOver = (e) => {
+      if (e.target && typeof e.target.closest === "function" && e.target.closest(".link")) {
+        onHover();
+      }
+    };
+
+    const handleMouseOut = (e) => {
+      if (e.target && typeof e.target.closest === "function" && e.target.closest(".link")) {
+        const related = e.relatedTarget;
+        if (!related || typeof related.closest !== "function" || !related.closest(".link")) {
+          onUnhover();
+        }
+      }
+    };
+
+    document.addEventListener("mousemove", handleMouseMove);
+    document.addEventListener("mouseover", handleMouseOver);
+    document.addEventListener("mouseout", handleMouseOut);
 
     return () => {
-      document.removeEventListener("mousemove", moveCircle);
-      document.querySelectorAll(".link").forEach((el) => {
-        el.removeEventListener("mouseenter", onHover);
-        el.removeEventListener("mouseleave", onUnhover);
-      });
+      document.removeEventListener("mousemove", handleMouseMove);
+      document.removeEventListener("mouseover", handleMouseOver);
+      document.removeEventListener("mouseout", handleMouseOut);
     };
-  }, [cursor, follower, isDesktop]);
+  }, [isDesktop]);
 
   if (!isDesktop) return null;
 

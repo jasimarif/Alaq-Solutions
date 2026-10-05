@@ -267,7 +267,7 @@ const HeroSection = ({ onOpenContact }) => {
 
             {/* Description */}
             <p ref={descriptionRef} className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed max-w-xl tracking-normal">
-                <span className="text-[#60a5fa] font-semibold">ALAQ Solutions</span> is the AI-first ERP powering next-gen finance & accounting teams. General ledger, revenue automation, close management, and so much more—all on one unified platform.
+                <span className="text-[#60a5fa] font-semibold">ALAQ Solutions</span> is the AI-first ERP powering next-gen finance & accounting teams. General ledger, revenue automation, close management, and so much more, all on one unified platform.
             </p>
 
             {/* CTA Button Group */}

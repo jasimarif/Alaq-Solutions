@@ -68,7 +68,6 @@ const WhyChooseUs = () => {
   const badgeRef = useRef(null);
   const accentRef = useRef(null);
   const activeTabLineRef = useRef(null);
-  const [isScrollLocked, setIsScrollLocked] = useState(true);
 
   useEffect(() => {
     const isDesktop = window.innerWidth >= 1024;

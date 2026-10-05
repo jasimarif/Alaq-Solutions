@@ -2,10 +2,30 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="apple-touch-icon" href="/logo.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" as="image" href="/images/hero-workstation-base.jpg" type="image/jpeg" />
+    <script>
+      // Immediately disable browser automatic scroll restoration so reload starts at hero section
+      if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+      }
+      try {
+        var navEntries = performance.getEntriesByType('navigation');
+        var isReload = (navEntries && navEntries.length > 0 && navEntries[0].type === 'reload') ||
+                       (performance.navigation && performance.navigation.type === 1);
+        if (isReload) {
+          if (window.location.hash) {
+            history.replaceState(null, '', window.location.pathname);
+          }
+          window.scrollTo(0, 0);
+        }
+      } catch (e) {}
+    </script>
     <title>ALAQ Solutions | AI-First ERP & Financial Automation</title>
   </head>
   <body>

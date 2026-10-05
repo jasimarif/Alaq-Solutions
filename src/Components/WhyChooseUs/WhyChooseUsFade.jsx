@@ -40,7 +40,6 @@ const WhyChooseUsFade = () => {
   const containerRef = useRef(null);
   const cardRef = useRef(null);
   const contentRef = useRef(null);
-  const [isScrollLocked, setIsScrollLocked] = useState(true);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -63,11 +62,6 @@ const WhyChooseUsFade = () => {
           setActiveTab(newTab);
         }
         
-        if (progress >= 0.99) {
-          setIsScrollLocked(false);
-        } else {
-          setIsScrollLocked(true);
-        }
       }
     });
 

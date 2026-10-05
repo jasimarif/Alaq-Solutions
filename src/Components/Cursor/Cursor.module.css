@@ -1,13 +1,28 @@
-
 .cursor {
-  border-radius: 100%;
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  margin-left: -4px;
+  margin-top: -4px;
+  border-radius: 9999px;
+  background-color: #ffffff;
   mix-blend-mode: difference;
+  pointer-events: none;
+  z-index: 99999;
+  will-change: transform;
 }
 
 .cursorFollower {
-  border-radius: 100%;
-  left: -0.5rem;
-  top: -0.5rem;
-  background: rgba(255, 255, 255, 0.2);
+  position: fixed;
+  width: 28px;
+  height: 28px;
+  margin-left: -14px;
+  margin-top: -14px;
+  border-radius: 9999px;
+  border: 1.5px solid rgba(255, 255, 255, 0.85);
+  background-color: rgba(255, 255, 255, 0.08);
+  mix-blend-mode: difference;
+  pointer-events: none;
   will-change: transform;
+  z-index: 99999;
 }

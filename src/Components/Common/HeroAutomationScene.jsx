@@ -35,16 +35,15 @@ const frame = (deg = 0, z0 = 0) => (u, v, z = 0) => {
 };
 const clamp01 = (v) => Math.min(1, Math.max(0, v));
 const mixHex = (a, b, t) => {
-  const pa = a.match(/\w\w/g).map((h) => parseInt(h, 16));
-  const pb = b.match(/\w\w/g).map((h) => parseInt(h, 16));
-  return `#${pa.map((c, i) => Math.round(c + (pb[i] - c) * t).toString(16).padStart(2, '0')).join('')}`;
+  return `color-mix(in srgb, ${a} ${Math.round((1 - t) * 100)}%, ${b})`;
 };
 
 // Palette: charcoal/slate world, off-white objects, one soft blue, muted green checks
+// Palette: charcoal/slate world, off-white objects, one soft blue, muted green checks
 const COLOR = {
-  blue: '#6FA0FF',
-  blueSoft: '#A9C6FF',
-  green: '#5E9E80',
+  blue: 'var(--scene-scan)',
+  blueSoft: 'var(--scene-scan)', // Using same base, opacity changes in SVG
+  green: 'var(--scene-check)',
   ink: '#9CA6B4',
   inkDark: '#6E7989',
   paperSide: '#D3D9E0',
@@ -530,12 +529,12 @@ const Defs = () => {
   return (
     <defs>
       <linearGradient id="hs-paper" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0" stopColor="#FAFBFC" />
-        <stop offset="1" stopColor="#E4E8EE" />
+        <stop offset="0" stopColor="var(--scene-paper)" />
+        <stop offset="1" stopColor="var(--scene-paper)" />
       </linearGradient>
       <linearGradient id="hs-clean" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0" stopColor="#FFFFFF" />
-        <stop offset="1" stopColor="#E9EDF2" />
+        <stop offset="0" stopColor="var(--scene-paper)" />
+        <stop offset="1" stopColor="var(--scene-paper)" />
       </linearGradient>
       <linearGradient id="hs-card" x1="0" y1="0" x2="1" y2="1">
         <stop offset="0" stopColor="#F3F5F8" />
@@ -569,17 +568,17 @@ const Defs = () => {
       </radialGradient>
       {/* Platform top: lighter toward the gate, darker at the edges */}
       <radialGradient id="hs-platform" gradientUnits="userSpaceOnUse" cx={glow[0]} cy={glow[1]} r="560">
-        <stop offset="0" stopColor="#2A3546" />
-        <stop offset="0.55" stopColor="#1C2534" />
-        <stop offset="1" stopColor="#141B27" />
+        <stop offset="0" stopColor="var(--scene-platform)" />
+        <stop offset="0.55" stopColor="var(--scene-platform)" />
+        <stop offset="1" stopColor="var(--scene-platform-edge)" />
       </radialGradient>
       <linearGradient id="hs-side-right" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0" stopColor="#141C28" />
-        <stop offset="1" stopColor="#0C121A" />
+        <stop offset="0" stopColor="var(--scene-platform)" />
+        <stop offset="1" stopColor="var(--scene-platform-edge)" />
       </linearGradient>
       <linearGradient id="hs-side-front" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0" stopColor="#1A2330" />
-        <stop offset="1" stopColor="#111822" />
+        <stop offset="0" stopColor="var(--scene-platform)" />
+        <stop offset="1" stopColor="var(--scene-platform-edge)" />
       </linearGradient>
       <linearGradient id="hs-glass" x1="0" y1="0" x2="0" y2="1">
         <stop offset="0" stopColor="#D2DFF3" stopOpacity="0.22" />
@@ -595,10 +594,10 @@ const Pillar = ({ y }) => {
   const s = GATE.post / 2;
   return (
     <g transform={`translate(${x0} ${y0})`}>
-      <Slab P={P} w={GATE.post} d={GATE.post} h={GATE_H} top="#465265" light="#323D4D" dark="#1E2631" edge="rgba(255,255,255,0.22)" />
+      <Slab P={P} w={GATE.post} d={GATE.post} h={GATE_H} top="var(--scene-gate)" light="var(--scene-gate)" dark="var(--scene-gate)" edge="rgba(255,255,255,0.22)" />
       {/* Lit vertical bevel + soft blue rim on the leading edge */}
       <line x1={P(s, s, 0)[0]} y1={P(s, s, 0)[1]} x2={P(s, s, GATE_H)[0]} y2={P(s, s, GATE_H)[1]} stroke="rgba(255,255,255,0.18)" strokeWidth="1" />
-      <line x1={P(s, -s, 0)[0]} y1={P(s, -s, 0)[1]} x2={P(s, -s, GATE_H)[0]} y2={P(s, -s, GATE_H)[1]} stroke="rgba(150,185,255,0.3)" strokeWidth="1" />
+      <line x1={P(s, -s, 0)[0]} y1={P(s, -s, 0)[1]} x2={P(s, -s, GATE_H)[0]} y2={P(s, -s, GATE_H)[1]} stroke="var(--scene-rim)" strokeWidth="1" />
     </g>
   );
 };
@@ -647,7 +646,7 @@ const Platform = () => {
         <g key={`lane${y}`}>
           <polygon points={pts([iso(LANE_X[0], y - 0.07), iso(LANE_X[1], y - 0.07), iso(LANE_X[1], y + 0.07), iso(LANE_X[0], y + 0.07)])} fill="#0F151E" />
           <line x1={iso(LANE_X[0], y - 0.07)[0]} y1={iso(LANE_X[0], y - 0.07)[1]} x2={iso(LANE_X[1], y - 0.07)[0]} y2={iso(LANE_X[1], y - 0.07)[1]} stroke="rgba(0,0,0,0.35)" />
-          <line x1={iso(LANE_X[0], y + 0.07)[0]} y1={iso(LANE_X[0], y + 0.07)[1]} x2={iso(LANE_X[1], y + 0.07)[0]} y2={iso(LANE_X[1], y + 0.07)[1]} stroke="rgba(150,185,255,0.26)" />
+          <line x1={iso(LANE_X[0], y + 0.07)[0]} y1={iso(LANE_X[0], y + 0.07)[1]} x2={iso(LANE_X[1], y + 0.07)[0]} y2={iso(LANE_X[1], y + 0.07)[1]} stroke="var(--scene-rim)" />
         </g>
       ))}
 
@@ -733,8 +732,8 @@ const GateFront = () => {
 
       {/* Beam with lit top edges and a soft blue rim along its lower front edge */}
       <g transform={`translate(${bx} ${by})`}>
-        <Slab P={P} w={GATE.post} d={PLATFORM.d - 0.06} h={GATE.beam} top="#4A576B" light="#354152" dark="#212A36" edge="rgba(255,255,255,0.24)" />
-        <line x1={P(bw, -bd, 0)[0]} y1={P(bw, -bd, 0)[1]} x2={P(bw, bd, 0)[0]} y2={P(bw, bd, 0)[1]} stroke="rgba(150,185,255,0.32)" strokeWidth="1" />
+        <Slab P={P} w={GATE.post} d={PLATFORM.d - 0.06} h={GATE.beam} top="var(--scene-gate)" light="var(--scene-gate)" dark="var(--scene-gate)" edge="rgba(255,255,255,0.24)" />
+        <line x1={P(bw, -bd, 0)[0]} y1={P(bw, -bd, 0)[1]} x2={P(bw, bd, 0)[0]} y2={P(bw, bd, 0)[1]} stroke="var(--scene-rim)" strokeWidth="1" />
       </g>
     </svg>
   );

@@ -181,6 +181,11 @@ export const HOME_CONTENT = {
     ],
   },
 
+  beyondAutomation: {
+    title: "Beyond automation",
+    text: "ALAQ also operates in automotive trading, including car trading. It is a separate line of work from our automation services, and it extends what we do as a business.",
+  },
+
   ctaBanner: {
     title: "Ready to get paperwork off your shop floor?",
     subtitle: "Send us one messy dealer order, cut list, or note below. Our engineering team in Windsor will review it and show you what automated ERP entry looks like.",

@@ -68,7 +68,7 @@ const BlogsPage = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-10 sm:mb-14">
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 animate-slideUp tracking-tight">
-              Our <span className="text-blue-400">Blogs</span>
+              Our <span className="text-accent-soft">Blogs</span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto animate-slideUp leading-relaxed px-2" style={{ animationDelay: '0.1s' }}>
               Stay updated with the latest insights, trends, and best practices in financial technology and business automation.
@@ -97,9 +97,9 @@ const BlogsPage = () => {
       {/* Newsletter Subscription */}
       <div className="px-4 sm:px-8 lg:px-16 pb-16 sm:pb-20 animate-fadeIn" style={{ animationDelay: '0.7s' }}>
         <div className="max-w-7xl mx-auto">
-          <div className="bg-gray-800 rounded-3xl p-6 sm:p-12 text-center border border-gray-700/60 shadow-xl">
+          <div className="bg-gray-800 rounded-3xl p-6 sm:p-12 text-center border border-border-dark/60 shadow-xl">
             <h3 className="text-2xl sm:text-3xl font-bold text-white mb-3 sm:mb-4">
-              <span className='text-blue-400'>Subscribe</span> to Our Newsletter
+              <span className='text-accent-soft'>Subscribe</span> to Our Newsletter
             </h3>
             <p className="text-gray-300 text-sm sm:text-base mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed">
               Get the latest insights and updates delivered straight to your inbox. Stay ahead with our expert analysis and industry trends.

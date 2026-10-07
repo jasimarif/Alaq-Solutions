@@ -6,7 +6,6 @@ import {
   FileSpreadsheet,
   Database,
   Share2,
-  Car,
   ArrowRight,
   ArrowUpRight,
 } from 'lucide-react';
@@ -27,7 +26,7 @@ const SERVICE_ICONS = {
 
 const AboutPage = () => {
   const pageRef = useRef(null);
-  const { header, whoWeAre, whatWeDo, howWeWork, beyondAutomation, closingCta } = ABOUT_CONTENT;
+  const { header, whoWeAre, whatWeDo, howWeWork, closingCta } = ABOUT_CONTENT;
 
   useEffect(() => {
     const prefersReducedMotion =
@@ -113,13 +112,13 @@ const AboutPage = () => {
 
   return (
     <PageWrapper seo={PAGE_SEO.about} showCta={false}>
-      <div ref={pageRef} className="font-sans text-[#0F172A]">
+      <div ref={pageRef} className="font-sans text-text-dark">
         {/* =========================================================================
             1. PAGE HEADER (Dark only at the top, consistent with site)
             ========================================================================= */}
         <section
           aria-label="About Header"
-          className="relative bg-[#0B0F17] text-white pt-32 sm:pt-36 lg:pt-40 pb-16 sm:pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden"
+          className="relative bg-bg-darker text-white pt-32 sm:pt-36 lg:pt-40 pb-16 sm:pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden"
         >
           {/* Neutral Background Photo with Quiet Gradient Overlay */}
           <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden" aria-hidden="true">
@@ -131,7 +130,7 @@ const AboutPage = () => {
                 className="w-full h-full object-cover object-center opacity-25 filter grayscale contrast-125"
               />
             </picture>
-            <div className="absolute inset-0 bg-gradient-to-b from-[#0B0F17]/80 via-[#0B0F17]/90 to-[#0B0F17]" />
+            <div className="absolute inset-0 bg-gradient-to-b from-bg-darker/80 via-bg-darker/90 to-bg-darker" />
           </div>
 
           {/* Centered H1 and Intro */}
@@ -156,7 +155,7 @@ const AboutPage = () => {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
               {/* Left Column: Heading */}
               <div className="lg:col-span-5 text-left">
-                <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0F172A] tracking-tight">
+                <h2 className="text-3xl sm:text-4xl font-extrabold text-text-dark tracking-tight">
                   {whoWeAre.title}
                 </h2>
               </div>
@@ -176,11 +175,11 @@ const AboutPage = () => {
             ========================================================================= */}
         <section
           aria-label="What we do"
-          className="about-reveal-section bg-[#F6F7F9] py-16 lg:py-24 px-4 sm:px-6 lg:px-8 border-b border-slate-200/80"
+          className="about-reveal-section bg-bg-light py-16 lg:py-24 px-4 sm:px-6 lg:px-8 border-b border-slate-200/80"
         >
           <div className="max-w-7xl mx-auto">
             <div className="mb-12 sm:mb-16 text-left">
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0F172A] tracking-tight">
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-text-dark tracking-tight">
                 {whatWeDo.title}
               </h2>
             </div>
@@ -192,16 +191,16 @@ const AboutPage = () => {
                 return (
                   <div
                     key={card.id}
-                    className="about-stagger-card bg-[#EEF0F3] border border-[#E2E5EA] rounded-[18px] sm:rounded-[28px] p-3.5 sm:p-7 lg:p-9 shadow-2xs flex flex-col justify-between h-full transition-all duration-300 [@media(hover:hover)_and_(pointer:fine)]:hover:-translate-y-1.5 [@media(hover:hover)_and_(pointer:fine)]:hover:shadow-md"
+                    className="about-stagger-card bg-surface-light-2 border border-border-light rounded-[18px] sm:rounded-[28px] p-3.5 sm:p-7 lg:p-9 shadow-2xs flex flex-col justify-between h-full transition-all duration-300 [@media(hover:hover)_and_(pointer:fine)]:hover:-translate-y-1.5 [@media(hover:hover)_and_(pointer:fine)]:hover:shadow-md"
                   >
                     <div>
                       {/* Lucide Icon with Blue Accent */}
-                      <div className="w-8 h-8 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-white border border-[#E2E5EA] flex items-center justify-center mb-3 sm:mb-6 shadow-2xs">
-                        <IconComponent className="w-4 h-4 sm:w-6 sm:h-6 text-[#2F6BFF]" strokeWidth={1.75} />
+                      <div className="w-8 h-8 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-white border border-border-light flex items-center justify-center mb-3 sm:mb-6 shadow-2xs">
+                        <IconComponent className="w-4 h-4 sm:w-6 sm:h-6 text-accent" strokeWidth={1.75} />
                       </div>
 
                       {/* Bold Title */}
-                      <h3 className="text-xs sm:text-xl lg:text-2xl font-bold text-[#0F172A] tracking-tight mb-1.5 sm:mb-3 text-left leading-snug">
+                      <h3 className="text-xs sm:text-xl lg:text-2xl font-bold text-text-dark tracking-tight mb-1.5 sm:mb-3 text-left leading-snug">
                         {card.title}
                       </h3>
 
@@ -216,10 +215,10 @@ const AboutPage = () => {
                       <div className="pt-3 sm:pt-6 mt-3 sm:mt-6 border-t border-slate-200/80 text-left">
                         <a
                           href={card.learnMoreLink}
-                          className="inline-flex items-center gap-1 sm:gap-1.5 text-xs sm:text-sm font-semibold text-[#2F6BFF] hover:text-[#1D55E6] transition-colors link focus-visible:ring-2 focus-visible:ring-[#2F6BFF] rounded-md"
+                          className="inline-flex items-center gap-1 sm:gap-1.5 text-xs sm:text-sm font-semibold text-accent hover:text-[#1D55E6] transition-colors link focus-visible:ring-2 focus-visible:ring-focus-ring rounded-md"
                         >
                           <span>{card.learnMoreLabel || 'Learn more'}</span>
-                          <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#2F6BFF]" />
+                          <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-accent" />
                         </a>
                       </div>
                     )}
@@ -235,11 +234,11 @@ const AboutPage = () => {
             ========================================================================= */}
         <section
           aria-label="How we work"
-          className="about-reveal-section bg-white py-16 lg:py-24 px-4 sm:px-6 lg:px-8 border-b border-slate-200/80"
+          className="about-reveal-section bg-white py-16 lg:py-24 px-4 sm:px-6 lg:px-8"
         >
           <div className="max-w-7xl mx-auto">
             <div className="mb-8 sm:mb-16 text-left">
-              <h2 className="text-2xl sm:text-4xl font-extrabold text-[#0F172A] tracking-tight">
+              <h2 className="text-2xl sm:text-4xl font-extrabold text-text-dark tracking-tight">
                 {howWeWork.title}
               </h2>
             </div>
@@ -251,10 +250,10 @@ const AboutPage = () => {
                   key={idx}
                   className="about-stagger-item py-6 md:py-0 space-y-3 text-left md:px-6 lg:px-8 first:md:pl-0 last:md:pr-0"
                 >
-                  <span className="text-xs font-semibold text-[#2F6BFF] bg-blue-50 px-2.5 py-1 rounded-full border border-blue-100/80 inline-block font-sans">
+                  <span className="text-xs font-semibold text-accent bg-blue-50 px-2.5 py-1 rounded-full border border-blue-100/80 inline-block font-sans">
                     {item.number}
                   </span>
-                  <h3 className="text-[18px] sm:text-[20px] md:text-2xl font-bold text-[#0F172A] tracking-tight leading-snug">
+                  <h3 className="text-[18px] sm:text-[20px] md:text-2xl font-bold text-text-dark tracking-tight leading-snug">
                     {item.title}
                   </h3>
                   <p className="text-[15px] sm:text-base text-slate-600 leading-[1.6]">
@@ -267,48 +266,11 @@ const AboutPage = () => {
         </section>
 
         {/* =========================================================================
-            5. SECTION: BEYOND AUTOMATION (Visually separate wide soft-tinted panel)
-            ========================================================================= */}
-        <section
-          aria-label="Beyond automation"
-          className="about-reveal-section bg-[#F6F7F9] py-12 sm:py-16 px-4 sm:px-6 lg:px-8"
-        >
-          <div className="max-w-7xl mx-auto">
-            <div className="bg-[#E8EDF5] border border-[#D5DEE8] rounded-[24px] sm:rounded-[28px] p-5 sm:p-10 lg:p-12 shadow-2xs flex flex-row items-start sm:items-center justify-between gap-4 sm:gap-8">
-              <div className="space-y-2 max-w-3xl text-left flex-1 min-w-0">
-                <div className="flex items-center gap-2.5">
-                  <div
-                    className="w-8 h-8 rounded-xl bg-white border border-[#D5DEE8] flex sm:hidden items-center justify-center flex-shrink-0 text-slate-700 shadow-2xs"
-                    aria-hidden="true"
-                  >
-                    <Car className="w-4 h-4 text-slate-700" strokeWidth={1.5} />
-                  </div>
-                  <h2 className="text-lg sm:text-2xl md:text-3xl font-bold text-[#0F172A] tracking-tight">
-                    {beyondAutomation.title}
-                  </h2>
-                </div>
-                <p className="text-xs sm:text-sm md:text-base text-slate-700 leading-relaxed">
-                  {beyondAutomation.text}
-                </p>
-              </div>
-
-              {/* Small simple car icon on tablet/desktop */}
-              <div
-                className="hidden sm:flex w-14 h-14 rounded-2xl bg-white border border-[#D5DEE8] items-center justify-center flex-shrink-0 text-slate-700 shadow-2xs"
-                aria-hidden="true"
-              >
-                <Car className="w-7 h-7 text-slate-700" strokeWidth={1.5} />
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* =========================================================================
-            6. CLOSING CTA (Only CTA on the page, dark background band matching site)
+            5. CLOSING CTA (Only CTA on the page, dark background band matching site)
             ========================================================================= */}
         <section
           aria-label="Call to Action"
-          className="bg-[#0D131C] border-t border-slate-800/80 py-16 sm:py-24 px-4 sm:px-6 lg:px-8 text-center"
+          className="bg-surface-dark border-t border-border-dark/80 py-16 sm:py-24 px-4 sm:px-6 lg:px-8 text-center"
         >
           <div className="max-w-4xl mx-auto space-y-6">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight text-balance">
@@ -322,7 +284,7 @@ const AboutPage = () => {
             <div className="pt-4">
               <a
                 href={closingCta.buttonUrl || BOOKING_CTA_URL}
-                className="inline-flex items-center justify-center gap-3 bg-[#2F6BFF] hover:bg-[#1D55E6] text-white font-semibold text-sm sm:text-base px-8 py-4 rounded-full shadow-lg shadow-black/40 transition-all duration-200 link min-h-[48px] group cursor-pointer focus-visible:ring-2 focus-visible:ring-[#2F6BFF]"
+                className="inline-flex items-center justify-center gap-3 bg-accent hover:bg-accent-hover text-white font-semibold text-sm sm:text-base px-8 py-4 rounded-full shadow-lg shadow-black/40 transition-all duration-200 link min-h-[48px] group cursor-pointer focus-visible:ring-2 focus-visible:ring-focus-ring"
               >
                 <span>{closingCta.buttonLabel || BOOKING_CTA_LABEL}</span>
                 <span className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">

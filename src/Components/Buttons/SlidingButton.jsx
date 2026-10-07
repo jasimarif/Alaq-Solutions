@@ -5,11 +5,11 @@ const SlidingButton = ({ text, shadow, onClick, className = '' }) => {
   return (
     <button 
       onClick={onClick} 
-      className={`relative inline-flex items-center justify-center gap-2.5 sm:gap-3 bg-[#60a5fa] hover:text-white text-white px-5 sm:px-6 py-2.5 sm:py-3 rounded-full font-poppins cursor-pointer font-semibold text-sm sm:text-base overflow-hidden group transition-all duration-300 ${shadow ? 'shadow-md hover:shadow-lg shadow-blue-500/20' : ''} ${className}`}
+      className={`relative inline-flex items-center justify-center gap-2.5 sm:gap-3 bg-accent-soft hover:text-white text-white px-5 sm:px-6 py-2.5 sm:py-3 rounded-full font-poppins cursor-pointer font-semibold text-sm sm:text-base overflow-hidden group transition-all duration-300 ${shadow ? 'shadow-md hover:shadow-lg shadow-accent/20' : ''} ${className}`}
     >
       <span className="relative z-10 transition-colors duration-500 whitespace-nowrap">{text}</span>
-      <div className='relative z-10 bg-blue-500 rounded-full p-1 sm:p-1.5 group-hover:bg-white transition-colors duration-500 flex-shrink-0'>
-        <ArrowRight className="text-white group-hover:text-blue-500 transition-colors duration-500 w-3.5 h-3.5 sm:w-4 sm:h-4" />
+      <div className='relative z-10 bg-accent rounded-full p-1 sm:p-1.5 group-hover:bg-white transition-colors duration-500 flex-shrink-0'>
+        <ArrowRight className="text-white group-hover:text-accent transition-colors duration-500 w-3.5 h-3.5 sm:w-4 sm:h-4" />
       </div>
 
       {/* Sliding background overlay */}

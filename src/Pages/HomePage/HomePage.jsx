@@ -6,6 +6,7 @@ import {
   SolutionCard,
   WedgeStrip,
   SocialMediaSection,
+  BeyondAutomation,
 } from '../../Components/Common';
 import { HOME_CONTENT } from '../../data/home';
 import { PAGE_SEO } from '../../data/seo';
@@ -107,6 +108,9 @@ const HomePage = () => {
 
       {/* 4. Social Media Marketing: 3D Flip Cards & Consultation CTA */}
       <SocialMediaSection />
+
+      {/* 5. Beyond Automation: Automotive trading & car trading */}
+      <BeyondAutomation />
     </PageWrapper>
   );
 };

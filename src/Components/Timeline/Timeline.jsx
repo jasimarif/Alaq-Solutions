@@ -206,7 +206,7 @@ const TimelineSection = () => {
     const titleColorClass =
       title === "Our Expertise" || title === "Success Metrics"
         ? "text-white"
-        : "text-[#60a5fa]";
+        : "text-accent-soft";
     const subtitleString = subtitle
       ? `<p class='text-xs sm:text-sm mt-1 text-gray-400 font-medium tracking-normal line-clamp-2'>${subtitle}</p>`
       : "";
@@ -461,7 +461,7 @@ const TimelineSection = () => {
 
     return (
       <div
-        className="w-full max-w-full bg-gradient-to-br from-[#1b2537] via-[#162030] to-[#111827] rounded-3xl overflow-hidden p-6 sm:p-8 border border-blue-500/25 shadow-2xl relative transition-all duration-300"
+        className="w-full max-w-full bg-gradient-to-br from-[#1b2537] via-[#162030] to-[#111827] rounded-3xl overflow-hidden p-6 sm:p-8 border border-accent/25 shadow-2xl relative transition-all duration-300"
         ref={screenContainer}
       >
         {/* Top ambient color bar */}
@@ -517,7 +517,7 @@ const TimelineSection = () => {
                 {currentPhaseData.tagline}
               </p>
             </div>
-            <div className="p-2.5 rounded-2xl bg-blue-500/10 border border-blue-500/25 text-blue-400 flex-shrink-0">
+            <div className="p-2.5 rounded-2xl bg-accent/10 border border-accent/25 text-accent-soft flex-shrink-0">
               <IconComponent className="w-6 h-6" />
             </div>
           </div>
@@ -540,7 +540,7 @@ const TimelineSection = () => {
           </div>
 
           {/* Metric Stat Banner */}
-          <div className="p-4 rounded-2xl bg-gray-900/60 border border-gray-700/50 flex items-center justify-between mt-4">
+          <div className="p-4 rounded-2xl bg-gray-900/60 border border-border-dark/50 flex items-center justify-between mt-4">
             <div>
               <div className="text-[11px] text-gray-400 uppercase font-medium tracking-wider">
                 {currentPhaseData.statLabel}
@@ -549,7 +549,7 @@ const TimelineSection = () => {
                 {currentPhaseData.stat}
               </div>
             </div>
-            <span className="text-xs text-blue-400 flex items-center gap-1 font-medium">
+            <span className="text-xs text-accent-soft flex items-center gap-1 font-medium">
               <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
               Verified Metric
             </span>
@@ -569,7 +569,7 @@ const TimelineSection = () => {
                   onClick={() =>
                     setActivePhase((prev) => (prev + 1) % MILESTONE_PHASES.length)
                   }
-                  className="w-full sm:w-auto px-5 py-2.5 sm:py-3 rounded-full bg-blue-500/20 hover:bg-blue-500/30 border border-blue-400/40 text-blue-300 hover:text-white font-semibold text-xs sm:text-sm transition-all flex items-center justify-center gap-2 cursor-pointer shadow-md"
+                  className="w-full sm:w-auto px-5 py-2.5 sm:py-3 rounded-full bg-accent/20 hover:bg-accent/30 border border-blue-400/40 text-accent-soft hover:text-white font-semibold text-xs sm:text-sm transition-all flex items-center justify-center gap-2 cursor-pointer shadow-md"
                 >
                   <span>Next Phase</span>
                   <ChevronRight className="w-4 h-4" />
@@ -579,7 +579,7 @@ const TimelineSection = () => {
 
             {/* Step Navigation Controls with Phase Counter */}
             <div className="flex items-center justify-between sm:justify-end gap-3 pt-1 sm:pt-0">
-              <span className="text-xs font-mono font-medium text-gray-400 bg-gray-800/80 border border-gray-700/60 px-2.5 py-1 rounded-full">
+              <span className="text-xs font-mono font-medium text-gray-400 bg-gray-800/80 border border-border-dark/60 px-2.5 py-1 rounded-full">
                 0{activePhase + 1} / 0{MILESTONE_PHASES.length}
               </span>
               <div className="flex items-center space-x-1.5">
@@ -587,7 +587,7 @@ const TimelineSection = () => {
                   onClick={() =>
                     setActivePhase((prev) => (prev > 0 ? prev - 1 : MILESTONE_PHASES.length - 1))
                   }
-                  className="p-2 rounded-full border border-gray-700 hover:border-blue-400/50 bg-gray-800/80 text-gray-300 hover:text-white transition cursor-pointer"
+                  className="p-2 rounded-full border border-border-dark hover:border-blue-400/50 bg-gray-800/80 text-gray-300 hover:text-white transition cursor-pointer"
                   aria-label="Previous Phase"
                 >
                   <ChevronLeft className="w-4 h-4" />
@@ -596,7 +596,7 @@ const TimelineSection = () => {
                   onClick={() =>
                     setActivePhase((prev) => (prev + 1) % MILESTONE_PHASES.length)
                   }
-                  className="p-2 rounded-full border border-gray-700 hover:border-blue-400/50 bg-gray-800/80 text-gray-300 hover:text-white transition cursor-pointer"
+                  className="p-2 rounded-full border border-border-dark hover:border-blue-400/50 bg-gray-800/80 text-gray-300 hover:text-white transition cursor-pointer"
                   aria-label="Next Phase"
                 >
                   <ChevronRight className="w-4 h-4" />
@@ -622,7 +622,7 @@ const TimelineSection = () => {
 
   const renderSectionTitle = () => (
     <div className="flex flex-col">
-      <p className="text-xs sm:text-sm text-[#60a5fa] font-semibold tracking-widest uppercase seq">
+      <p className="text-xs sm:text-sm text-accent-soft font-semibold tracking-widest uppercase seq">
         MILESTONES & EVOLUTION
       </p>
       <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold text-white seq mt-2 tracking-tight">
@@ -649,8 +649,8 @@ const TimelineSection = () => {
             onClick={() => setActivePhase(idx)}
             className={`px-3.5 py-2 rounded-full text-xs font-semibold transition-all cursor-pointer ${
               activePhase === idx
-                ? "bg-blue-500 text-white shadow-lg shadow-blue-500/30"
-                : "bg-gray-800/80 text-gray-400 hover:text-gray-200 border border-gray-700/50"
+                ? "bg-accent text-white shadow-lg shadow-accent/30"
+                : "bg-gray-800/80 text-gray-400 hover:text-gray-200 border border-border-dark/50"
             }`}
           >
             {phase.phaseNumber}. {phase.badge}

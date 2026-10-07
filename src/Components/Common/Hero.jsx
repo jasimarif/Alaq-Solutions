@@ -26,7 +26,7 @@ const TrustChips = ({ points, className = '', delay }) => (
         key={point}
         className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-[14px] leading-tight text-slate-300 font-sans"
       >
-        <span className="w-1.5 h-1.5 rounded-full bg-[#8DB4FF] flex-shrink-0" aria-hidden="true" />
+        <span className="w-1.5 h-1.5 rounded-full bg-accent-soft flex-shrink-0" aria-hidden="true" />
         <span>{point}</span>
       </li>
     ))}
@@ -68,7 +68,7 @@ const Hero = ({
   return (
     <section
       aria-label="Hero Section"
-      className={`hero-section relative flex flex-col min-h-[100svh] pt-[104px] sm:pt-[112px] lg:pt-[88px] pb-14 lg:pb-8 bg-[#0B0F17] overflow-hidden [overflow-x:clip] justify-center ${className}`}
+      className={`hero-section relative flex flex-col min-h-[100svh] pt-[104px] sm:pt-[112px] lg:pt-[88px] pb-14 lg:pb-8 bg-bg-darker overflow-hidden [overflow-x:clip] justify-center ${className}`}
     >
       {/* Background Layer: deep charcoal with a quiet grid */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none" aria-hidden="true">
@@ -79,7 +79,7 @@ const Hero = ({
             backgroundSize: '32px 32px',
           }}
         />
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#0B0F17] to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-bg-darker to-transparent" />
       </div>
 
       {/* Hero Foreground Content: equal 20px side padding on mobile, natural vertical rhythm */}
@@ -90,7 +90,7 @@ const Hero = ({
             <h1 className="hero-headline font-extrabold text-white text-[clamp(2.15rem,9.5vw,2.85rem)] lg:text-6xl tracking-tight leading-[1.1] lg:leading-[1.12]">
               <Statement text={headlineLine1} delay="0.1s" />
               {headlineLine2 && (
-                <Statement text={headlineLine2} className="text-[#8DB4FF]" delay="0.18s" />
+                <Statement text={headlineLine2} className="text-accent-soft" delay="0.18s" />
               )}
             </h1>
 
@@ -121,7 +121,7 @@ const Hero = ({
                 }}
                 target={primaryCta.isExternal ? '_blank' : '_self'}
                 rel={primaryCta.isExternal ? 'noopener noreferrer' : undefined}
-                className="flex items-center justify-between w-full sm:w-auto sm:inline-flex h-[56px] min-h-[56px] px-6 rounded-full bg-[#2F6BFF] hover:bg-[#1D55E6] text-white font-semibold text-[15px] sm:text-base shadow-[0_4px_14px_rgba(47,107,255,0.2)] transition-all duration-200 link group cursor-pointer"
+                className="flex items-center justify-between w-full sm:w-auto sm:inline-flex h-[56px] min-h-[56px] px-6 rounded-full bg-accent hover:bg-accent-hover text-on-accent font-semibold text-[15px] sm:text-base shadow-glow transition-all duration-200 link group cursor-pointer"
               >
                 <span className="whitespace-nowrap text-left">{primaryCta.label}</span>
                 <span className="w-8 h-8 rounded-full bg-white/15 flex items-center justify-center flex-shrink-0 ml-3 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
@@ -139,7 +139,7 @@ const Hero = ({
                   className="text-xs sm:text-[15px] whitespace-nowrap text-slate-200 hover:text-white font-medium transition-colors link inline-flex items-center gap-1.5 underline-offset-4 hover:underline py-1.5 mt-2 sm:mt-0 sm:ml-4"
                 >
                   <span>{secondaryCta.label}</span>
-                  <span className="text-[#8DB4FF]" aria-hidden="true">→</span>
+                  <span className="text-accent-soft" aria-hidden="true">→</span>
                 </a>
               )}
             </div>
@@ -154,7 +154,7 @@ const Hero = ({
               Chips to scene: 40px (mt-10), lg:mt-0 on desktop.
               Full width within padding on mobile, aspect ratio 4:3, centered with balanced padding. */}
           <div className="hero-enter w-full mt-10 lg:mt-0 flex justify-start lg:justify-end" style={{ '--d': '0.35s' }}>
-            <div className="w-full lg:max-w-[620px] aspect-[4/3] sm:aspect-[4/3] lg:aspect-[5/4] rounded-2xl sm:rounded-3xl bg-gradient-to-b from-[#131B26]/90 via-[#0E1522]/95 to-[#080D15] border border-slate-700/60 p-3 sm:p-4 shadow-xl relative overflow-hidden flex items-center justify-center">
+            <div className="w-full lg:max-w-[620px] aspect-[4/3] sm:aspect-[4/3] lg:aspect-[5/4] rounded-2xl sm:rounded-3xl bg-gradient-to-b from-surface-dark/90 via-bg-darker/95 to-bg-darker border border-border-dark/60 p-3 sm:p-4 shadow-xl relative overflow-hidden flex items-center justify-center">
               <HeroAutomationScene
                 reducedMotion={prefersReducedMotion}
                 className="w-full h-full"

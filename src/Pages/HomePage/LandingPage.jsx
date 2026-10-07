@@ -14,7 +14,7 @@ const RevenueChart = () => {
     }, []);
 
     return (
-        <div ref={chartRef} className="bg-gradient-to-br from-[#131d2e]/90 to-[#0d1522]/90 backdrop-blur-md rounded-2xl p-4 sm:p-5 border border-blue-500/25 hover:border-blue-400/50 transition-all duration-300 shadow-lg relative overflow-hidden group">
+        <div ref={chartRef} className="bg-gradient-to-br from-surface-dark/90 to-bg-darker/90 backdrop-blur-md rounded-2xl p-4 sm:p-5 border border-accent/25 hover:border-blue-400/50 transition-all duration-300 shadow-lg relative overflow-hidden group">
             {/* Top ambient highlight */}
             <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-blue-500 via-cyan-400 to-indigo-500"></div>
 
@@ -43,7 +43,7 @@ const RevenueChart = () => {
                 <div>
                     <div className="text-gray-400 text-[11px] uppercase tracking-wider font-medium">Monthly Revenue</div>
                     <div className="text-white text-2xl sm:text-3xl font-bold tracking-tight mt-0.5">$956,400</div>
-                    <div className="text-blue-400/90 text-[11px] mt-0.5 flex items-center gap-1">
+                    <div className="text-accent-soft/90 text-[11px] mt-0.5 flex items-center gap-1">
                         <Sparkles className="w-3 h-3 text-cyan-400" />
                         AI Reconciled • On Target
                     </div>
@@ -81,20 +81,20 @@ const ContractsCard = () => {
     }, []);
 
     return (
-        <div ref={cardRef} className="h-full bg-gradient-to-br from-[#131d2e]/90 to-[#0d1522]/90 backdrop-blur-md rounded-2xl p-4 border border-gray-700/60 hover:border-blue-500/30 transition-all duration-300 shadow-lg flex flex-col justify-between">
+        <div ref={cardRef} className="h-full bg-gradient-to-br from-surface-dark/90 to-bg-darker/90 backdrop-blur-md rounded-2xl p-4 border border-border-dark/60 hover:border-accent/30 transition-all duration-300 shadow-lg flex flex-col justify-between">
             <div className="flex items-center justify-between mb-2.5">
                 <div className="flex items-center space-x-2">
                     <span className="w-2 h-2 rounded-full bg-blue-400"></span>
                     <span className="text-white font-medium text-xs sm:text-sm">Contracts</span>
                 </div>
-                <span className="text-blue-400 text-[11px] font-semibold bg-blue-500/15 border border-blue-500/30 px-2 py-0.5 rounded-full">
+                <span className="text-accent-soft text-[11px] font-semibold bg-accent/15 border border-accent/30 px-2 py-0.5 rounded-full">
                     + 20
                 </span>
             </div>
 
             <div className="space-y-1.5 my-1">
                 {contracts.map((contract, i) => (
-                    <div key={i} className="flex items-center justify-between text-xs py-1.5 px-2 rounded-lg bg-gray-800/60 border border-gray-700/30 hover:bg-gray-800 transition">
+                    <div key={i} className="flex items-center justify-between text-xs py-1.5 px-2 rounded-lg bg-gray-800/60 border border-border-dark/30 hover:bg-gray-800 transition">
                         <div>
                             <span className="text-white font-medium block truncate max-w-[90px] sm:max-w-[100px] text-[11px]">{contract.company}</span>
                             <span className="text-gray-400 text-[10px]">{contract.service}</span>
@@ -106,10 +106,10 @@ const ContractsCard = () => {
 
             <div className="text-[10px] text-gray-400 flex items-center justify-between pt-2 border-t border-gray-800/80 mt-1">
                 <span className="flex items-center gap-1">
-                    <CheckCircle2 className="w-3 h-3 text-blue-400" />
+                    <CheckCircle2 className="w-3 h-3 text-accent-soft" />
                     NetSuite Synced
                 </span>
-                <span className="text-blue-400 font-medium">100%</span>
+                <span className="text-accent-soft font-medium">100%</span>
             </div>
         </div>
     );
@@ -126,7 +126,7 @@ const CashFlowCard = () => {
     }, []);
 
     return (
-        <div ref={cashFlowRef} className="h-full bg-gradient-to-br from-[#131d2e]/90 to-[#0d1522]/90 backdrop-blur-md rounded-2xl p-4 border border-gray-700/60 hover:border-blue-500/30 transition-all duration-300 shadow-lg flex flex-col justify-between">
+        <div ref={cashFlowRef} className="h-full bg-gradient-to-br from-surface-dark/90 to-bg-darker/90 backdrop-blur-md rounded-2xl p-4 border border-border-dark/60 hover:border-accent/30 transition-all duration-300 shadow-lg flex flex-col justify-between">
             <div className="flex items-center justify-between mb-2">
                 <div className="flex items-center space-x-2">
                     <span className="w-2 h-2 rounded-full bg-cyan-400"></span>
@@ -182,7 +182,7 @@ const BentoCommandCockpit = () => {
             <div className="absolute -inset-2 bg-gradient-to-tr from-blue-600/20 via-cyan-500/15 to-indigo-600/20 rounded-3xl blur-2xl -z-10"></div>
 
             {/* Glass Cockpit Console */}
-            <div className="bg-[#0b1220]/80 backdrop-blur-xl border border-blue-500/20 rounded-3xl p-4 sm:p-5 shadow-2xl shadow-blue-950/70 relative">
+            <div className="bg-surface-dark/80 backdrop-blur-xl border border-accent/20 rounded-3xl p-4 sm:p-5 shadow-2xl shadow-accent/70 relative">
                 {/* Console Header */}
                 <div className="flex items-center justify-between pb-3 mb-3 border-b border-gray-800/80 text-xs">
                     <div className="flex items-center space-x-2">
@@ -214,7 +214,7 @@ const BentoCommandCockpit = () => {
                 {/* Floating Bottom Status Pill */}
                 <div className="mt-3 pt-2.5 border-t border-gray-800/60 flex items-center justify-between text-[11px] text-gray-400">
                     <span className="flex items-center gap-1.5">
-                        <ShieldCheck className="w-3.5 h-3.5 text-blue-400" />
+                        <ShieldCheck className="w-3.5 h-3.5 text-accent-soft" />
                         SOC-2 Type II Certified
                     </span>
                     <span className="text-cyan-400 font-medium flex items-center gap-1">
@@ -254,7 +254,7 @@ const HeroSection = ({ onOpenContact }) => {
     return (
         <div className="space-y-5 sm:space-y-6">
             {/* Pill Badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/25 text-blue-400 text-xs sm:text-sm font-medium">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-accent/10 border border-accent/25 text-accent-soft text-xs sm:text-sm font-medium">
                 <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
                 Next-Gen AI & NetSuite Solutions
             </div>
@@ -262,12 +262,12 @@ const HeroSection = ({ onOpenContact }) => {
             {/* Headline */}
             <h1 ref={titleRef} className="text-3xl sm:text-5xl md:text-6xl lg:text-6xl font-light text-white leading-[1.1] tracking-tight">
                 Close Fast.<br />
-                Scale <span className="text-[#60a5fa] font-medium">Faster.</span>
+                Scale <span className="text-accent-soft font-medium">Faster.</span>
             </h1>
 
             {/* Description */}
             <p ref={descriptionRef} className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed max-w-xl tracking-normal">
-                <span className="text-[#60a5fa] font-semibold">ALAQ Solutions</span> is the AI-first ERP powering next-gen finance & accounting teams. General ledger, revenue automation, close management, and so much more, all on one unified platform.
+                <span className="text-accent-soft font-semibold">ALAQ Solutions</span> is the AI-first ERP powering next-gen finance & accounting teams. General ledger, revenue automation, close management, and so much more, all on one unified platform.
             </p>
 
             {/* CTA Button Group */}
@@ -284,15 +284,15 @@ const HeroSection = ({ onOpenContact }) => {
             {/* Micro Benefits Checkpoints */}
             <div className="pt-2 flex flex-wrap items-center gap-y-2 gap-x-5 text-xs text-gray-400">
                 <span className="flex items-center gap-1.5">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-blue-400" />
+                    <CheckCircle2 className="w-3.5 h-3.5 text-accent-soft" />
                     Zero Manual Entry
                 </span>
                 <span className="flex items-center gap-1.5">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-blue-400" />
+                    <CheckCircle2 className="w-3.5 h-3.5 text-accent-soft" />
                     10x Faster Month Close
                 </span>
                 <span className="flex items-center gap-1.5">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-blue-400" />
+                    <CheckCircle2 className="w-3.5 h-3.5 text-accent-soft" />
                     Real-time Ledger Sync
                 </span>
             </div>
@@ -374,7 +374,7 @@ const TrustSection = () => {
 
 const LandingPage = () => {
     return (
-        <div className="min-h-screen w-full bg-[#121827] font-poppins relative overflow-hidden flex flex-col justify-between">
+        <div className="min-h-screen w-full bg-bg-dark font-poppins relative overflow-hidden flex flex-col justify-between">
             <Navbar />
 
             <main className="w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 py-6 sm:py-10 flex-1 flex flex-col justify-center">

@@ -18,7 +18,7 @@ const ProjectTile = ({ project, animationEnabled }) => {
     >
       <div
         ref={projectCard}
-        className="rounded-3xl relative p-6 sm:p-8 flex flex-col justify-between h-[21rem] sm:h-[23rem] w-full max-w-full shadow-xl border border-gray-700/60 hover:border-blue-400/60 transition-all duration-300 overflow-hidden group-hover:-translate-y-1 backdrop-blur-md"
+        className="rounded-3xl relative p-6 sm:p-8 flex flex-col justify-between h-[21rem] sm:h-[23rem] w-full max-w-full shadow-xl border border-border-dark/60 hover:border-blue-400/60 transition-all duration-300 overflow-hidden group-hover:-translate-y-1 backdrop-blur-md"
         style={{
           backgroundColor: color || '#161f30',
         }}
@@ -32,7 +32,7 @@ const ProjectTile = ({ project, animationEnabled }) => {
         <div>
           <div className="flex items-center justify-between mb-4">
             <span 
-              className="text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full border border-blue-400/30 text-blue-400 bg-blue-500/10"
+              className="text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full border border-blue-400/30 text-accent-soft bg-accent/10"
               style={{ color: accent || '#60a5fa', borderColor: `${accent || '#60a5fa'}40` }}
             >
               {tag || 'Enterprise Solution'}
@@ -40,7 +40,7 @@ const ProjectTile = ({ project, animationEnabled }) => {
             <DirectionPad bgColor="bg-white/90" />
           </div>
 
-          <h3 className="text-2xl sm:text-3xl font-semibold tracking-tight text-white mb-3 group-hover:text-blue-300 transition-colors">
+          <h3 className="text-2xl sm:text-3xl font-semibold tracking-tight text-white mb-3 group-hover:text-accent-soft transition-colors">
             {name}
           </h3>
         </div>
@@ -50,9 +50,9 @@ const ProjectTile = ({ project, animationEnabled }) => {
             {description}
           </p>
 
-          <div className="pt-3 border-t border-gray-700/50 flex items-center justify-between text-xs text-gray-400">
+          <div className="pt-3 border-t border-border-dark/50 flex items-center justify-between text-xs text-gray-400">
             <span>Production Ready</span>
-            <span className="text-blue-400 font-medium group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
+            <span className="text-accent-soft font-medium group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
               Explore Solution →
             </span>
           </div>

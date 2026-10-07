@@ -23,12 +23,12 @@ const CaseStudyTemplate = ({
   return (
     <div
       id={id}
-      className={`bg-gradient-to-b from-[#182334] to-[#101724] border border-slate-700/80 rounded-3xl p-6 sm:p-10 lg:p-12 shadow-2xl font-poppins space-y-10 ${className}`}
+      className={`bg-gradient-to-b from-surface-dark to-bg-darker border border-border-dark/80 rounded-3xl p-6 sm:p-10 lg:p-12 shadow-2xl font-poppins space-y-10 ${className}`}
     >
       {/* Header Profile */}
-      <div className="space-y-4 pb-8 border-b border-slate-800">
+      <div className="space-y-4 pb-8 border-b border-border-dark">
         <div className="flex flex-wrap items-center justify-between gap-3">
-          <span className="text-xs font-semibold text-blue-400 bg-blue-500/10 px-3.5 py-1.5 rounded-full border border-blue-500/25 uppercase tracking-wider">
+          <span className="text-xs font-semibold text-accent-soft bg-accent/10 px-3.5 py-1.5 rounded-full border border-accent/25 uppercase tracking-wider">
             {industry}
           </span>
           <span className="text-xs font-sans text-gray-400">
@@ -42,13 +42,13 @@ const CaseStudyTemplate = ({
 
         <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-300 font-sans">
           <span className="text-gray-400">Client Profile:</span>
-          <span className="text-blue-300 font-medium">{client}</span>
+          <span className="text-accent-soft font-medium">{client}</span>
         </div>
       </div>
 
       {/* Problem & What We Built */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <div className="bg-slate-900/80 p-6 sm:p-7 rounded-2xl border border-slate-800 space-y-3">
+        <div className="bg-slate-900/80 p-6 sm:p-7 rounded-2xl border border-border-dark space-y-3">
           <div className="flex items-center gap-2 text-rose-400 font-semibold text-sm">
             <span className="w-2 h-2 rounded-full bg-rose-400"></span>
             <span>The Operational Bottleneck</span>
@@ -58,8 +58,8 @@ const CaseStudyTemplate = ({
           </p>
         </div>
 
-        <div className="bg-blue-950/20 p-6 sm:p-7 rounded-2xl border border-blue-500/30 space-y-3">
-          <div className="flex items-center gap-2 text-blue-400 font-semibold text-sm">
+        <div className="bg-accent/20 p-6 sm:p-7 rounded-2xl border border-accent/30 space-y-3">
+          <div className="flex items-center gap-2 text-accent-soft font-semibold text-sm">
             <span className="w-2 h-2 rounded-full bg-blue-400"></span>
             <span>What We Built</span>
           </div>
@@ -70,10 +70,10 @@ const CaseStudyTemplate = ({
       </div>
 
       {/* Two-Column Comparison Box: What You Send / What You Get */}
-      <div className="rounded-2xl border border-slate-700/80 overflow-hidden bg-slate-900/60 shadow-xl">
-        <div className="p-4 sm:p-5 bg-slate-800/80 border-b border-slate-700 text-xs sm:text-sm font-semibold text-white tracking-wide flex items-center justify-between font-sans">
+      <div className="rounded-2xl border border-border-dark/80 overflow-hidden bg-slate-900/60 shadow-xl">
+        <div className="p-4 sm:p-5 bg-slate-800/80 border-b border-border-dark text-xs sm:text-sm font-semibold text-white tracking-wide flex items-center justify-between font-sans">
           <span>Workflow Transformation: Inputs to ERP Records</span>
-          <span className="text-blue-400 font-sans text-xs">Direct Integration</span>
+          <span className="text-accent-soft font-sans text-xs">Direct Integration</span>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-slate-800">
@@ -91,7 +91,7 @@ const CaseStudyTemplate = ({
             <ul className="space-y-2.5">
               {whatYouSend.map((item, idx) => (
                 <li key={idx} className="text-xs sm:text-sm text-gray-300 flex items-start gap-2.5">
-                  <FileText className="w-4 h-4 text-blue-400 flex-shrink-0 mt-0.5" />
+                  <FileText className="w-4 h-4 text-accent-soft flex-shrink-0 mt-0.5" />
                   <span className="leading-snug">{item}</span>
                 </li>
               ))}
@@ -129,9 +129,9 @@ const CaseStudyTemplate = ({
         </h4>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
-          <div className="p-5 rounded-2xl bg-blue-950/30 border border-blue-500/25 space-y-2">
-            <div className="flex items-center gap-1.5 text-blue-300 font-semibold">
-              <Cpu className="w-4 h-4 text-blue-400" />
+          <div className="p-5 rounded-2xl bg-accent/30 border border-accent/25 space-y-2">
+            <div className="flex items-center gap-1.5 text-accent-soft font-semibold">
+              <Cpu className="w-4 h-4 text-accent-soft" />
               <span>1. What AI Does</span>
             </div>
             <p className="text-gray-300 leading-relaxed">
@@ -173,7 +173,7 @@ const CaseStudyTemplate = ({
       )}
 
       {/* Result Metrics */}
-      <div className="p-6 sm:p-7 rounded-2xl bg-gradient-to-r from-blue-950/40 via-slate-900 to-slate-900 border border-blue-500/30 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+      <div className="p-6 sm:p-7 rounded-2xl bg-gradient-to-r from-blue-950/40 via-slate-900 to-slate-900 border border-accent/30 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div className="space-y-1">
           <div className="flex items-center gap-2 text-emerald-400 text-xs font-semibold uppercase tracking-wider">
             <TrendingUp className="w-4 h-4" />
@@ -183,7 +183,7 @@ const CaseStudyTemplate = ({
             {result}
           </p>
         </div>
-        <span className="px-3 py-1.5 rounded-full text-xs font-sans font-medium bg-blue-500/15 border border-blue-500/30 text-blue-300 flex-shrink-0">
+        <span className="px-3 py-1.5 rounded-full text-xs font-sans font-medium bg-accent/15 border border-accent/30 text-accent-soft flex-shrink-0">
           Verified Deployment
         </span>
       </div>

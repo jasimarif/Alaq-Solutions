@@ -17,3 +17,4 @@ export { default as IndustryCard } from './IndustryCard';
 export { default as CardDetailModal } from './CardDetailModal';
 export { default as SocialMediaCard } from './SocialMediaCard';
 export { default as SocialMediaSection } from './SocialMediaSection';
+export { default as BeyondAutomation } from './BeyondAutomation';

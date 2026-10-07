@@ -3,18 +3,18 @@ import { Star, Quote } from 'lucide-react';
 
 const TestimonialSection = () => {
   return (
-    <section className="py-10 sm:py-16 md:py-20 px-4 sm:px-8 md:px-12 bg-[#121827] font-poppins w-full overflow-hidden border-t border-gray-800/60">
+    <section className="py-10 sm:py-16 md:py-20 px-4 sm:px-8 md:px-12 bg-bg-dark font-poppins w-full overflow-hidden border-t border-gray-800/60">
       <div className="max-w-4xl w-full mx-auto">
         {/* Simple, decent testimonial card */}
-        <div className="bg-gradient-to-b from-[#162030] to-[#0f1724] border border-blue-500/20 rounded-2xl sm:rounded-3xl p-6 sm:p-10 shadow-2xl relative text-center">
+        <div className="bg-gradient-to-b from-[#162030] to-[#0f1724] border border-accent/20 rounded-2xl sm:rounded-3xl p-6 sm:p-10 shadow-2xl relative text-center">
           {/* Quote Icon Badge */}
-          <div className="inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-blue-500/15 border border-blue-500/30 text-blue-400 mb-5">
+          <div className="inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-accent/15 border border-accent/30 text-accent-soft mb-5">
             <Quote className="w-5 h-5 sm:w-6 sm:h-6 rotate-180" />
           </div>
 
           {/* Testimonial Quote Text - Always visible & readable */}
           <p className="text-base sm:text-xl md:text-2xl font-normal leading-relaxed text-gray-100 max-w-3xl mx-auto tracking-normal">
-            “We migrated our financial architecture to <span className="text-[#60a5fa] font-semibold">ALAQ Solutions</span> to accelerate our month-end close. It is modern, seamless, and gives our executive team total visibility across multiple legal entities and currencies.”
+            “We migrated our financial architecture to <span className="text-accent-soft font-semibold">ALAQ Solutions</span> to accelerate our month-end close. It is modern, seamless, and gives our executive team total visibility across multiple legal entities and currencies.”
           </p>
 
           {/* Star rating */}
@@ -38,7 +38,7 @@ const TestimonialSection = () => {
             <div className="text-center sm:text-left">
               <div className="flex items-center justify-center sm:justify-start gap-1.5 mb-0.5">
                 <span className="w-2 h-2 rounded-full bg-blue-400"></span>
-                <span className="text-xs text-blue-400 font-semibold tracking-wide uppercase">OaksVille</span>
+                <span className="text-xs text-accent-soft font-semibold tracking-wide uppercase">OaksVille</span>
               </div>
               <h3 className="text-base sm:text-lg font-bold text-white leading-tight">Jasim Arif Ali</h3>
               <p className="text-gray-400 text-xs">CEO & Founder</p>

@@ -9,7 +9,7 @@ const NotFoundPage = () => {
     <PageWrapper seo={PAGE_SEO.notFound} showCta={false}>
       <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-12 flex items-center justify-center min-h-[60vh]">
         <div className="max-w-xl mx-auto text-center space-y-6">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-semibold">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 border border-accent/30 text-accent-soft text-xs font-semibold">
             <span>Error 404</span>
           </div>
 
@@ -24,7 +24,7 @@ const NotFoundPage = () => {
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               to="/"
-              className="inline-flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white font-medium px-6 py-3 rounded-full transition-all link"
+              className="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-medium px-6 py-3 rounded-full transition-all link"
             >
               <Home className="w-4 h-4" />
               <span>Back to Home</span>

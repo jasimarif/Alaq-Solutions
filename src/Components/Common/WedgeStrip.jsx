@@ -38,7 +38,7 @@ const WedgeStrip = ({
             return (
               <div
                 key={idx}
-                className="bg-[#EEF0F3] border border-[#E2E5EA] rounded-[18px] sm:rounded-[24px] p-3.5 sm:p-6 flex flex-col justify-between space-y-2.5 sm:space-y-4 shadow-2xs hover:shadow-sm transition-all duration-200 font-sans h-full"
+                className="bg-surface-light-2 border border-border-light rounded-[18px] sm:rounded-[24px] p-3.5 sm:p-6 flex flex-col justify-between space-y-2.5 sm:space-y-4 shadow-2xs hover:shadow-sm transition-all duration-200 font-sans h-full"
               >
                 <div className="space-y-2 sm:space-y-3">
                   <div className="flex items-center justify-between">
@@ -46,15 +46,15 @@ const WedgeStrip = ({
                       Step {step.step}
                     </span>
                     <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-white border border-slate-200/80 text-slate-700 flex items-center justify-center flex-shrink-0">
-                      <Icon className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#2F6BFF]" />
+                      <Icon className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-accent" />
                     </div>
                   </div>
 
-                  <h3 className="text-xs sm:text-base lg:text-lg font-bold text-[#0F172A] leading-snug sm:leading-tight">
+                  <h3 className="text-xs sm:text-base lg:text-lg font-bold text-text-dark leading-snug sm:leading-tight">
                     {step.title}
                   </h3>
 
-                  <p className="text-[11px] sm:text-xs text-[#526071] leading-relaxed">
+                  <p className="text-[11px] sm:text-xs text-text-muted-dark leading-relaxed">
                     {step.description}
                   </p>
                 </div>
@@ -68,10 +68,10 @@ const WedgeStrip = ({
             <a
               href={link}
               onClick={handleLinkClick}
-              className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-[#0F172A] hover:text-[#2F6BFF] link group"
+              className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-text-dark hover:text-accent link group"
             >
               <span>Read the technical architecture breakdown or speak with our engineers</span>
-              <ArrowRight className="w-4 h-4 text-[#2F6BFF] group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-4 h-4 text-accent group-hover:translate-x-1 transition-transform" />
             </a>
           </div>
         )}

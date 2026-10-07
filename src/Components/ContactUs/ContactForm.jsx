@@ -102,7 +102,7 @@ const ContactForm = ({
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <label htmlFor="firstName" className="block text-xs font-medium text-slate-300 mb-1.5">
-            First Name <span className="text-[#8DB4FF]">*</span>
+            First Name <span className="text-accent-soft">*</span>
           </label>
           <input
             type="text"
@@ -112,12 +112,12 @@ const ContactForm = ({
             onChange={handleChange}
             placeholder="First name"
             required
-            className="w-full px-4 py-2.5 bg-[#182230] text-white rounded-xl border border-slate-700/70 focus:outline-none focus:ring-2 focus:ring-[#2F6BFF]/60 focus:border-[#2F6BFF] text-sm placeholder-slate-500 transition-colors min-h-[44px]"
+            className="w-full px-4 py-2.5 bg-[#182230] text-white rounded-xl border border-border-dark/70 focus:outline-none focus:ring-2 focus:ring-focus-ring/60 focus:border-[#2F6BFF] text-sm placeholder-slate-500 transition-colors min-h-[44px]"
           />
         </div>
         <div>
           <label htmlFor="lastName" className="block text-xs font-medium text-slate-300 mb-1.5">
-            Last Name <span className="text-[#8DB4FF]">*</span>
+            Last Name <span className="text-accent-soft">*</span>
           </label>
           <input
             type="text"
@@ -127,7 +127,7 @@ const ContactForm = ({
             onChange={handleChange}
             placeholder="Last name"
             required
-            className="w-full px-4 py-2.5 bg-[#182230] text-white rounded-xl border border-slate-700/70 focus:outline-none focus:ring-2 focus:ring-[#2F6BFF]/60 focus:border-[#2F6BFF] text-sm placeholder-slate-500 transition-colors min-h-[44px]"
+            className="w-full px-4 py-2.5 bg-[#182230] text-white rounded-xl border border-border-dark/70 focus:outline-none focus:ring-2 focus:ring-focus-ring/60 focus:border-[#2F6BFF] text-sm placeholder-slate-500 transition-colors min-h-[44px]"
           />
         </div>
       </div>
@@ -135,7 +135,7 @@ const ContactForm = ({
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <label htmlFor="email" className="block text-xs font-medium text-slate-300 mb-1.5">
-            Work Email <span className="text-[#8DB4FF]">*</span>
+            Work Email <span className="text-accent-soft">*</span>
           </label>
           <input
             type="email"
@@ -145,7 +145,7 @@ const ContactForm = ({
             onChange={handleChange}
             placeholder="name@company.com"
             required
-            className="w-full px-4 py-2.5 bg-[#182230] text-white rounded-xl border border-slate-700/70 focus:outline-none focus:ring-2 focus:ring-[#2F6BFF]/60 focus:border-[#2F6BFF] text-sm placeholder-slate-500 transition-colors min-h-[44px]"
+            className="w-full px-4 py-2.5 bg-[#182230] text-white rounded-xl border border-border-dark/70 focus:outline-none focus:ring-2 focus:ring-focus-ring/60 focus:border-[#2F6BFF] text-sm placeholder-slate-500 transition-colors min-h-[44px]"
           />
         </div>
         {includeCompanyField && (
@@ -160,7 +160,7 @@ const ContactForm = ({
               value={formData.company}
               onChange={handleChange}
               placeholder="e.g. Acme Fabrication"
-              className="w-full px-4 py-2.5 bg-[#182230] text-white rounded-xl border border-slate-700/70 focus:outline-none focus:ring-2 focus:ring-[#2F6BFF]/60 focus:border-[#2F6BFF] text-sm placeholder-slate-500 transition-colors min-h-[44px]"
+              className="w-full px-4 py-2.5 bg-[#182230] text-white rounded-xl border border-border-dark/70 focus:outline-none focus:ring-2 focus:ring-focus-ring/60 focus:border-[#2F6BFF] text-sm placeholder-slate-500 transition-colors min-h-[44px]"
             />
           </div>
         )}
@@ -168,7 +168,7 @@ const ContactForm = ({
 
       <div>
         <label htmlFor="message" className="block text-xs font-medium text-slate-300 mb-1.5">
-          Tell us about your current order or workflow bottleneck <span className="text-[#8DB4FF]">*</span>
+          Tell us about your current order or workflow bottleneck <span className="text-accent-soft">*</span>
         </label>
         <textarea
           id="message"
@@ -178,14 +178,14 @@ const ContactForm = ({
           rows={4}
           placeholder="For example: we receive dealer POs in PDF format and spend hours re-typing cut lists and line items into NetSuite..."
           required
-          className="w-full px-4 py-3 bg-[#182230] text-white rounded-xl border border-slate-700/70 focus:outline-none focus:ring-2 focus:ring-[#2F6BFF]/60 focus:border-[#2F6BFF] text-sm placeholder-slate-500 transition-colors resize-y min-h-[100px]"
+          className="w-full px-4 py-3 bg-[#182230] text-white rounded-xl border border-border-dark/70 focus:outline-none focus:ring-2 focus:ring-focus-ring/60 focus:border-[#2F6BFF] text-sm placeholder-slate-500 transition-colors resize-y min-h-[100px]"
         />
       </div>
 
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full py-3 px-6 rounded-xl font-medium text-sm text-white bg-[#2F6BFF] hover:bg-[#1D55E6] disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 flex items-center justify-center gap-2 shadow-md shadow-black/20 link min-h-[44px]"
+        className="w-full py-3 px-6 rounded-xl font-medium text-sm text-white bg-accent hover:bg-accent-hover disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 flex items-center justify-center gap-2 shadow-md shadow-black/20 link min-h-[44px]"
       >
         {isSubmitting ? (
           <>

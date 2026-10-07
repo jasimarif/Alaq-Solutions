@@ -81,7 +81,7 @@ const SocialMediaSection = () => {
       id="social-media"
       ref={sectionRef}
       aria-label="Social Media Marketing"
-      className="py-16 lg:py-24 px-4 sm:px-6 lg:px-8 bg-[#F6F7F9] border-t border-slate-200/80 font-sans scroll-mt-24 sm:scroll-mt-28 relative overflow-hidden"
+      className="py-16 lg:py-24 px-4 sm:px-6 lg:px-8 bg-bg-light border-t border-slate-200/80 font-sans scroll-mt-24 sm:scroll-mt-28 relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto">
         {/* Centered Section Header */}
@@ -94,7 +94,7 @@ const SocialMediaSection = () => {
         >
           {/* Eyebrow Chip */}
           <div className="mb-3.5">
-            <span className="inline-flex items-center text-xs font-bold text-[#2F6BFF] uppercase tracking-wider bg-blue-50/90 px-3.5 py-1.5 rounded-full border border-blue-200/70 shadow-2xs font-sans">
+            <span className="inline-flex items-center text-xs font-bold text-accent uppercase tracking-wider bg-blue-50/90 px-3.5 py-1.5 rounded-full border border-blue-200/70 shadow-2xs font-sans">
               SOCIAL MEDIA MARKETING
             </span>
           </div>
@@ -105,7 +105,7 @@ const SocialMediaSection = () => {
           </h2>
 
           {/* Subtext */}
-          <p className="mt-4 text-base sm:text-lg text-[#526071] leading-relaxed text-balance">
+          <p className="mt-4 text-base sm:text-lg text-text-muted-dark leading-relaxed text-balance">
             Practical social media marketing for construction, steel building and manufacturing companies. Real shop floor content, targeted ads and measurable leads. No vanity metrics, no fluff.
           </p>
         </div>
@@ -151,7 +151,7 @@ const SocialMediaSection = () => {
             <a
               href="#contact"
               onClick={handleConsultationClick}
-              className="inline-flex items-center justify-center gap-3 bg-[#2F6BFF] hover:bg-[#1D55E6] text-white font-semibold text-sm sm:text-base px-8 py-3.5 sm:py-4 rounded-full shadow-lg shadow-black/10 transition-all duration-200 link min-h-[48px] group"
+              className="inline-flex items-center justify-center gap-3 bg-accent hover:bg-accent-hover text-white font-semibold text-sm sm:text-base px-8 py-3.5 sm:py-4 rounded-full shadow-lg shadow-black/10 transition-all duration-200 link min-h-[48px] group"
             >
               <span>Book a free social media consultation</span>
               <span className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0 transition-transform group-hover:translate-x-0.5">

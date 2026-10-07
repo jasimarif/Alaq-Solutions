@@ -12,7 +12,7 @@ const CTABanner = ({
     <section
       id="contact"
       aria-label="Contact and Order Intake"
-      className={`w-full py-16 lg:py-24 px-4 sm:px-6 lg:px-8 bg-[#0D131C] font-sans relative overflow-hidden border-t border-slate-800/80 ${className}`}
+      className={`w-full py-16 lg:py-24 px-4 sm:px-6 lg:px-8 bg-surface-dark font-sans relative overflow-hidden border-t border-border-dark/80 ${className}`}
     >
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
@@ -40,7 +40,7 @@ const CTABanner = ({
                     }
                   }
                 }}
-                className="inline-flex items-center justify-center gap-3 bg-[#2F6BFF] hover:bg-[#1D55E6] text-white font-semibold text-sm sm:text-base px-8 py-3.5 sm:py-4 rounded-full shadow-lg shadow-black/40 transition-all duration-200 link min-h-[48px] group cursor-pointer"
+                className="inline-flex items-center justify-center gap-3 bg-accent hover:bg-accent-hover text-white font-semibold text-sm sm:text-base px-8 py-3.5 sm:py-4 rounded-full shadow-lg shadow-black/40 transition-all duration-200 link min-h-[48px] group cursor-pointer"
               >
                 <span>{BOOKING_CTA_LABEL}</span>
                 <span className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0 transition-transform group-hover:translate-x-0.5">
@@ -50,13 +50,13 @@ const CTABanner = ({
             </div>
 
             {/* Trust Badges */}
-            <div className="pt-6 border-t border-slate-800/80 space-y-2.5 text-xs text-slate-400 flex flex-col items-center lg:items-start text-center lg:text-left">
+            <div className="pt-6 border-t border-border-dark/80 space-y-2.5 text-xs text-slate-400 flex flex-col items-center lg:items-start text-center lg:text-left">
               <div className="flex items-center gap-2">
                 <ShieldCheck className="w-4 h-4 text-emerald-400 flex-shrink-0" />
                 <span>Deterministic ERP verification: AI never touches your general ledger.</span>
               </div>
               <div className="flex items-center gap-2">
-                <MapPin className="w-4 h-4 text-[#8DB4FF] flex-shrink-0" />
+                <MapPin className="w-4 h-4 text-accent-soft flex-shrink-0" />
                 <span>{COMPANY.location} • Serving Ontario & Michigan</span>
               </div>
             </div>
@@ -64,8 +64,8 @@ const CTABanner = ({
 
           {/* Right Column (Desktop): Embedded Contact Form in Dark Gray Card */}
           <div className="lg:col-span-7">
-            <div className="bg-[#131B26] border border-slate-700/60 rounded-[32px] p-6 sm:p-8 md:p-10 shadow-2xl backdrop-blur-sm">
-              <div className="pb-5 mb-5 border-b border-slate-800 text-left">
+            <div className="bg-surface-dark border border-border-dark/60 rounded-[32px] p-6 sm:p-8 md:p-10 shadow-2xl backdrop-blur-sm">
+              <div className="pb-5 mb-5 border-b border-border-dark text-left">
                 <h3 className="text-xl font-bold text-white tracking-tight">
                   Send us a message or messy order
                 </h3>

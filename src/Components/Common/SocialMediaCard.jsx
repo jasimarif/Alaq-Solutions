@@ -50,7 +50,7 @@ const SocialMediaCard = ({
         }`}
         onClick={handleToggleFlip}
         onKeyDown={handleKeyDown}
-        className={`flip-card-inner h-full w-full rounded-[24px] sm:rounded-[28px] focus:outline-none focus:ring-2 focus:ring-[#2F6BFF] cursor-pointer ${
+        className={`flip-card-inner h-full w-full rounded-[24px] sm:rounded-[28px] focus:outline-none focus:ring-2 focus:ring-focus-ring cursor-pointer ${
           isFlipped ? 'flip-card-flipped' : ''
         }`}
       >
@@ -95,17 +95,17 @@ const SocialMediaCard = ({
 
               {/* Monospace Pill Badge */}
               <span className="flex items-center gap-1.5 text-[11px] font-mono font-bold text-white bg-[#0B1F3A] px-3 py-1 rounded-full shadow-2xs">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#8DB4FF] animate-pulse" />
+                <span className="w-1.5 h-1.5 rounded-full bg-accent-soft animate-pulse" />
                 <span>Channel {channelNumber}</span>
               </span>
             </div>
 
             {/* Label & Title */}
             <div>
-              <span className="text-xs font-bold text-[#2F6BFF] uppercase tracking-wider font-sans block mb-1">
+              <span className="text-xs font-bold text-accent uppercase tracking-wider font-sans block mb-1">
                 {label}
               </span>
-              <h3 className="text-xl sm:text-2xl font-extrabold text-[#0B1F3A] tracking-tight leading-snug group-hover:text-[#2F6BFF] transition-colors duration-200">
+              <h3 className="text-xl sm:text-2xl font-extrabold text-[#0B1F3A] tracking-tight leading-snug group-hover:text-accent transition-colors duration-200">
                 {title}
               </h3>
             </div>
@@ -132,7 +132,7 @@ const SocialMediaCard = ({
                     {platform === 'facebook' ? 'Contractors & Dealers' : 'Reels & Finished Builds'}
                   </span>
                 </div>
-                <div className="flex items-center justify-center w-5 h-5 rounded-full bg-blue-50 text-[#2F6BFF] flex-shrink-0">
+                <div className="flex items-center justify-center w-5 h-5 rounded-full bg-blue-50 text-accent flex-shrink-0">
                   <ArrowRight className="w-3 h-3" />
                 </div>
                 <div className="flex items-center gap-1.5 font-bold text-emerald-900 bg-emerald-50/90 px-2.5 py-1 rounded-xl border border-emerald-200/80 shadow-2xs truncate flex-1">
@@ -161,12 +161,12 @@ const SocialMediaCard = ({
 
           {/* Bottom Flip Affordance Hint */}
           <div className="pt-3.5 mt-2 border-t border-slate-100 flex items-center justify-between">
-            <span className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0B1F3A] group-hover:text-[#2F6BFF] transition-colors">
-              <RotateCcw className="w-3.5 h-3.5 text-[#2F6BFF] transition-transform duration-300 group-hover:-rotate-45" />
+            <span className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0B1F3A] group-hover:text-accent transition-colors">
+              <RotateCcw className="w-3.5 h-3.5 text-accent transition-transform duration-300 group-hover:-rotate-45" />
               <span className="hidden sm:inline">Hover to see how it works</span>
               <span className="sm:hidden">Tap to see how it works</span>
             </span>
-            <span className="text-[11px] font-semibold text-slate-500 bg-slate-100 group-hover:bg-[#2F6BFF] group-hover:text-white px-3 py-1 rounded-full transition-colors shadow-2xs">
+            <span className="text-[11px] font-semibold text-slate-500 bg-slate-100 group-hover:bg-accent group-hover:text-white px-3 py-1 rounded-full transition-colors shadow-2xs">
               Flip to details ↻
             </span>
           </div>
@@ -175,16 +175,16 @@ const SocialMediaCard = ({
         {/* ================= BACK FACE (Details) ================= */}
         <div
           aria-hidden={!isFlipped}
-          className="absolute inset-0 w-full h-full rounded-[24px] sm:rounded-[28px] p-6 sm:p-7 bg-[#0B1F3A] text-white border border-blue-500/30 ring-1 ring-blue-500/20 shadow-2xl flex flex-col justify-between backface-hidden [transform:rotateY(180deg)] overflow-hidden"
+          className="absolute inset-0 w-full h-full rounded-[24px] sm:rounded-[28px] p-6 sm:p-7 bg-[#0B1F3A] text-white border border-accent/30 ring-1 ring-focus-ring/20 shadow-2xl flex flex-col justify-between backface-hidden [transform:rotateY(180deg)] overflow-hidden"
         >
           {/* Scrollable details container with thin scrollbar */}
           <div className="overflow-y-auto overscroll-contain thin-scrollbar pr-1.5 space-y-3 flex-grow min-h-0">
             {/* Header */}
-            <div className="flex items-center justify-between pb-2.5 border-b border-slate-700/60">
+            <div className="flex items-center justify-between pb-2.5 border-b border-border-dark/60">
               <h4 className="text-base sm:text-lg font-bold text-white tracking-tight">
                 {backTitle}
               </h4>
-              <span className="text-[10px] font-mono font-bold text-[#8DB4FF] bg-blue-500/15 border border-blue-400/25 px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+              <span className="text-[10px] font-mono font-bold text-accent-soft bg-accent/15 border border-blue-400/25 px-2.5 py-0.5 rounded-full uppercase tracking-wider">
                 Full Scope
               </span>
             </div>
@@ -193,8 +193,8 @@ const SocialMediaCard = ({
             <ul className="space-y-2">
               {items.map((item, idx) => (
                 <li key={idx} className="flex items-start gap-2.5 text-xs text-slate-200">
-                  <div className="w-4 h-4 rounded-full bg-blue-500/20 text-[#8DB4FF] border border-blue-400/30 flex items-center justify-center flex-shrink-0 mt-0.5 shadow-2xs">
-                    <Check className="w-2.5 h-2.5 text-[#8DB4FF]" />
+                  <div className="w-4 h-4 rounded-full bg-accent/20 text-accent-soft border border-blue-400/30 flex items-center justify-center flex-shrink-0 mt-0.5 shadow-2xs">
+                    <Check className="w-2.5 h-2.5 text-accent-soft" />
                   </div>
                   <div className="leading-snug">
                     <span className="font-semibold text-white">
@@ -210,9 +210,9 @@ const SocialMediaCard = ({
           </div>
 
           {/* Back Face Footer: Best For + Action CTA */}
-          <div className="pt-3 mt-2 border-t border-slate-700/60 space-y-2.5 flex-shrink-0">
+          <div className="pt-3 mt-2 border-t border-border-dark/60 space-y-2.5 flex-shrink-0">
             {footerText && (
-              <p className="text-xs text-[#8DB4FF] font-medium leading-relaxed">
+              <p className="text-xs text-accent-soft font-medium leading-relaxed">
                 {footerText}
               </p>
             )}
@@ -232,7 +232,7 @@ const SocialMediaCard = ({
                 href="#contact"
                 tabIndex={isFlipped ? 0 : -1}
                 onClick={handleCtaClick}
-                className="inline-flex items-center gap-1.5 bg-[#2F6BFF] hover:bg-[#1D55E6] text-white text-xs font-bold px-4 py-2 rounded-full shadow-md transition-all link"
+                className="inline-flex items-center gap-1.5 bg-accent hover:bg-accent-hover text-white text-xs font-bold px-4 py-2 rounded-full shadow-md transition-all link"
               >
                 <span>{ctaText}</span>
                 <ArrowRight className="w-3.5 h-3.5" />

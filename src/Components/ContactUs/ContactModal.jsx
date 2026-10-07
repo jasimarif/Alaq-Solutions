@@ -27,7 +27,7 @@ const ContactModal = ({ isOpen, onClose, defaultOffer = null }) => {
     >
       <div
         ref={modalRef}
-        className="bg-[#1a202c] rounded-3xl shadow-2xl w-full max-w-4xl relative max-h-[92vh] overflow-y-auto border border-gray-700/80"
+        className="bg-bg-dark rounded-3xl shadow-2xl w-full max-w-4xl relative max-h-[92vh] overflow-y-auto border border-border-dark/80"
       >
         <button
           onClick={onClose}
@@ -49,7 +49,7 @@ const ContactModal = ({ isOpen, onClose, defaultOffer = null }) => {
                 />
               </div>
 
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-semibold mb-4">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-accent/10 border border-accent/30 text-accent-soft text-xs font-semibold mb-4">
                 <Sparkles className="w-3.5 h-3.5" />
                 <span>Pragmatic Automation</span>
               </div>
@@ -58,7 +58,7 @@ const ContactModal = ({ isOpen, onClose, defaultOffer = null }) => {
                 id="contact-modal-title"
                 className="text-white text-2xl sm:text-3xl font-bold tracking-tight"
               >
-                Send Us a <span className="text-blue-400">Message</span>
+                Send Us a <span className="text-accent-soft">Message</span>
               </h2>
 
               <p className="pt-3 text-gray-300 text-sm leading-relaxed">

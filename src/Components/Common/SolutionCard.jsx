@@ -69,7 +69,7 @@ const SolutionCard = ({
         aria-label={`${title} - ${isFlipped ? 'Flipped. Click or press Enter to flip back' : 'Click or press Enter to view technical details'}`}
         onClick={onToggleFlip}
         onKeyDown={handleKeyDown}
-        className={`flip-card-inner h-full w-full rounded-[20px] sm:rounded-[28px] focus:outline-none focus:ring-2 focus:ring-[#2F6BFF] cursor-pointer ${
+        className={`flip-card-inner h-full w-full rounded-[20px] sm:rounded-[28px] focus:outline-none focus:ring-2 focus:ring-focus-ring cursor-pointer ${
           isFlipped ? 'flip-card-flipped' : ''
         }`}
       >
@@ -85,18 +85,18 @@ const SolutionCard = ({
             {/* Top row: Category Tagline and Workflow Badge */}
             <div className="flex items-center justify-between gap-2">
               {displayTagline && (
-                <span className="text-xs font-bold text-[#2F6BFF] uppercase tracking-wider font-sans truncate max-w-[60%]">
+                <span className="text-xs font-bold text-accent uppercase tracking-wider font-sans truncate max-w-[60%]">
                   {displayTagline}
                 </span>
               )}
               <span className="flex items-center gap-1.5 text-xs font-medium text-slate-600 bg-slate-100 border border-slate-200/80 px-2.5 py-0.5 rounded-full whitespace-nowrap ml-auto font-sans">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#2F6BFF]" />
+                <span className="w-1.5 h-1.5 rounded-full bg-accent" />
                 <span>Workflow 0{index + 1}</span>
               </span>
             </div>
 
             {/* Title */}
-            <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-[#0B1F3A] tracking-tight leading-snug group-hover:text-[#2F6BFF] transition-colors duration-200 line-clamp-2">
+            <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-[#0B1F3A] tracking-tight leading-snug group-hover:text-accent transition-colors duration-200 line-clamp-2">
               {title}
             </h3>
 
@@ -115,11 +115,11 @@ const SolutionCard = ({
               </div>
               <div className="flex items-center justify-between gap-1">
                 <div className="flex items-center gap-1 text-[10px] sm:text-xs font-semibold text-slate-700 bg-white px-2 py-1 rounded-lg border border-slate-200 shadow-2xs truncate flex-1 min-w-0">
-                  <FileText className="w-3 h-3 text-[#2F6BFF] flex-shrink-0" />
+                  <FileText className="w-3 h-3 text-accent flex-shrink-0" />
                   <span className="truncate sm:hidden">{inputLabel ? inputLabel.split(' ')[0] + ' ' + (inputLabel.split(' ')[1] || '') : 'Shop Docs'}</span>
                   <span className="hidden sm:inline truncate">{inputLabel || 'Shop Documents'}</span>
                 </div>
-                <div className="flex items-center justify-center w-4 h-4 text-[#2F6BFF] flex-shrink-0 font-bold text-xs">
+                <div className="flex items-center justify-center w-4 h-4 text-accent flex-shrink-0 font-bold text-xs">
                   →
                 </div>
                 <div className="flex items-center gap-1 text-[10px] sm:text-xs font-bold text-emerald-900 bg-emerald-50/90 px-2 py-1 rounded-lg border border-emerald-200/80 shadow-2xs truncate flex-1 min-w-0">
@@ -134,7 +134,7 @@ const SolutionCard = ({
             {displayMetrics && (
               <div className="hidden lg:block overflow-hidden">
                 <span className="inline-flex items-center gap-1.5 text-[10px] sm:text-xs font-semibold text-[#1E3A8A] bg-blue-50/80 border border-blue-200/70 px-2.5 py-1 sm:px-3 sm:py-1 rounded-lg shadow-2xs truncate max-w-full">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#2F6BFF] flex-shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0" />
                   <span className="truncate">{displayMetrics}</span>
                 </span>
               </div>
@@ -143,12 +143,12 @@ const SolutionCard = ({
 
           {/* Bottom Flip Affordance Button: min 44px tap target */}
           <div className="pt-3 border-t border-slate-100 flex items-center justify-between gap-2 min-h-[44px]">
-            <span className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-slate-500 group-hover:text-[#2F6BFF] transition-colors">
-              <RotateCcw className="w-3.5 h-3.5 text-[#2F6BFF] transition-transform duration-300 group-hover:-rotate-45 flex-shrink-0" />
+            <span className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-slate-500 group-hover:text-accent transition-colors">
+              <RotateCcw className="w-3.5 h-3.5 text-accent transition-transform duration-300 group-hover:-rotate-45 flex-shrink-0" />
               <span className="hidden sm:inline">Inspect technical setup</span>
               <span className="sm:hidden">Inspect setup</span>
             </span>
-            <span className="h-[44px] min-h-[44px] px-4 rounded-xl bg-[#2F6BFF] group-hover:bg-[#1D55E6] text-white text-xs sm:text-sm font-semibold inline-flex items-center gap-2 shadow-sm transition-colors whitespace-nowrap">
+            <span className="h-[44px] min-h-[44px] px-4 rounded-xl bg-accent group-hover:bg-accent-hover text-white text-xs sm:text-sm font-semibold inline-flex items-center gap-2 shadow-sm transition-colors whitespace-nowrap">
               <span>Explore Workflow</span>
               <span aria-hidden="true">↻</span>
             </span>
@@ -163,14 +163,14 @@ const SolutionCard = ({
           {/* Top bar with 44px Back button */}
           <div className="flex items-center justify-between pb-3 border-b border-slate-100 flex-shrink-0 min-h-[44px]">
             <span className="text-xs sm:text-sm font-bold text-[#0B1F3A] uppercase tracking-wider flex items-center gap-1.5">
-              <Layers className="w-4 h-4 text-[#2F6BFF]" />
+              <Layers className="w-4 h-4 text-accent" />
               <span>Technical Specs</span>
             </span>
             <button
               type="button"
               tabIndex={isFlipped ? 0 : -1}
               onClick={handleFlipBackClick}
-              className="h-[44px] min-h-[44px] px-4 rounded-xl text-xs sm:text-sm text-slate-700 hover:text-[#0B1F3A] bg-slate-100 hover:bg-slate-200 transition-colors font-bold shadow-2xs flex items-center gap-1.5 focus:outline-none focus:ring-2 focus:ring-[#2F6BFF]"
+              className="h-[44px] min-h-[44px] px-4 rounded-xl text-xs sm:text-sm text-slate-700 hover:text-[#0B1F3A] bg-slate-100 hover:bg-slate-200 transition-colors font-bold shadow-2xs flex items-center gap-1.5 focus:outline-none focus:ring-2 focus:ring-focus-ring"
             >
               <span>← Back</span>
             </button>
@@ -217,13 +217,13 @@ const SolutionCard = ({
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                   <span className="text-white font-medium">NetSuite RESTlet Pipeline</span>
                 </div>
-                <span className="text-[#8DB4FF] font-semibold">100% Deterministic</span>
+                <span className="text-accent-soft font-semibold">100% Deterministic</span>
               </div>
 
               <div className="bg-slate-50/90 p-3 space-y-2">
                 {inputLabel && (
                   <div className="flex items-center gap-2 p-2.5 rounded-xl bg-white border border-slate-200 shadow-2xs">
-                    <FileText className="w-3.5 h-3.5 text-[#2F6BFF] flex-shrink-0" />
+                    <FileText className="w-3.5 h-3.5 text-accent flex-shrink-0" />
                     <div className="min-w-0 flex-1">
                       <span className="text-[10px] text-slate-400 block font-mono">Source Ingestion</span>
                       <span className="text-[#0B1F3A] truncate font-semibold text-xs block">
@@ -255,7 +255,7 @@ const SolutionCard = ({
               onClick={handleFlipBackClick}
               className="min-h-[44px] inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-slate-600 hover:text-[#0B1F3A] link py-1"
             >
-              <RotateCcw className="w-3.5 h-3.5 text-[#2F6BFF] flex-shrink-0" />
+              <RotateCcw className="w-3.5 h-3.5 text-accent flex-shrink-0" />
               <span className="hidden sm:inline">Back to overview</span>
               <span className="sm:hidden">Back</span>
             </button>
@@ -264,7 +264,7 @@ const SolutionCard = ({
               href="#contact"
               tabIndex={isFlipped ? 0 : -1}
               onClick={handleAuditClick}
-              className="min-h-[44px] inline-flex items-center gap-1 text-xs sm:text-sm font-bold text-[#2F6BFF] hover:text-[#1D55E6] link py-1"
+              className="min-h-[44px] inline-flex items-center gap-1 text-xs sm:text-sm font-bold text-accent hover:text-[#1D55E6] link py-1"
             >
               <span>Explore setup</span>
               <ArrowRight className="w-3.5 h-3.5 flex-shrink-0" />

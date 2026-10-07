@@ -24,19 +24,19 @@ const SectionHeading = ({
 
       <h2
         className={`text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-[1.15] text-balance ${
-          isDark ? 'text-white' : 'text-[#0F172A]'
+          isDark ? 'text-white' : 'text-text-dark'
         }`}
       >
         {title}{' '}
         {highlightTitle && (
-          <span className="text-[#2F6BFF] font-extrabold">{highlightTitle}</span>
+          <span className="text-accent font-extrabold">{highlightTitle}</span>
         )}
       </h2>
 
       {subtitle && (
         <p
           className={`mt-4 text-base sm:text-lg leading-relaxed text-balance ${
-            isDark ? 'text-slate-300' : 'text-[#526071]'
+            isDark ? 'text-slate-300' : 'text-text-muted-dark'
           }`}
         >
           {subtitle}

@@ -157,7 +157,7 @@ const BlogDetailPage = () => {
             <p className="text-gray-300 mb-8">The blog post you're looking for doesn't exist.</p>
             <button 
               onClick={() => navigate('/blogs')}
-              className="px-6 py-3 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition-colors duration-300 cursor-none"
+              className="px-6 py-3 bg-accent text-white rounded-full hover:bg-accent-hover transition-colors duration-300 cursor-none"
             >
               Back to Blogs
             </button>
@@ -181,7 +181,7 @@ const BlogDetailPage = () => {
         <div className="max-w-4xl mx-auto">
           <button
             onClick={() => navigate('/blogs')}
-            className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors duration-300 mb-6 font-medium text-sm sm:text-base"
+            className="inline-flex items-center text-accent-soft hover:text-accent-soft transition-colors duration-300 mb-6 font-medium text-sm sm:text-base"
           >
             ← Back to Blogs
           </button>

@@ -13,7 +13,7 @@ const PageWrapper = ({
   className = '',
 }) => {
   return (
-    <div className="bg-[#F6F7F9] min-h-screen flex flex-col font-sans text-[#0F172A] selection:bg-[#2F6BFF] selection:text-white">
+    <div className="bg-bg-light min-h-screen flex flex-col font-sans text-text-dark selection:bg-accent selection:text-white">
       {/* React 19 Document Metadata */}
       <SEO
         title={seo.title}

@@ -155,7 +155,7 @@ const CardDetailModal = ({
               )}
               <div className="flex flex-wrap items-center gap-2">
                 {data.tagline && (
-                  <span className="text-xs font-bold text-[#2F6BFF] uppercase tracking-wider">
+                  <span className="text-xs font-bold text-accent uppercase tracking-wider">
                     {data.tagline}
                   </span>
                 )}
@@ -173,7 +173,7 @@ const CardDetailModal = ({
               type="button"
               onClick={onClose}
               aria-label="Close dialog"
-              className="w-10 h-10 sm:w-9 sm:h-9 rounded-full bg-white border border-slate-200 text-slate-600 hover:text-[#0B1F3A] hover:bg-slate-100 flex items-center justify-center transition-colors link shadow-2xs focus:outline-none focus:ring-2 focus:ring-[#2F6BFF]"
+              className="w-10 h-10 sm:w-9 sm:h-9 rounded-full bg-white border border-slate-200 text-slate-600 hover:text-[#0B1F3A] hover:bg-slate-100 flex items-center justify-center transition-colors link shadow-2xs focus:outline-none focus:ring-2 focus:ring-focus-ring"
             >
               <X className="w-4 h-4" />
             </button>
@@ -201,14 +201,14 @@ const CardDetailModal = ({
 
           {/* High-Contrast Operational Outcome / Impact Banner */}
           {(data.impact || data.resultMetric) && (
-            <div className="p-3.5 sm:p-4 rounded-2xl bg-gradient-to-r from-[#0B1F3A] to-[#122A4E] text-white border border-slate-700/40 shadow-sm flex items-center justify-between gap-3">
+            <div className="p-3.5 sm:p-4 rounded-2xl bg-gradient-to-r from-[#0B1F3A] to-[#122A4E] text-white border border-border-dark/40 shadow-sm flex items-center justify-between gap-3">
               <div className="flex items-center gap-2.5">
-                <ShieldCheck className="w-5 h-5 text-[#8DB4FF] flex-shrink-0" />
+                <ShieldCheck className="w-5 h-5 text-accent-soft flex-shrink-0" />
                 <span className="text-xs sm:text-sm font-bold tracking-tight text-white">
                   {data.impact || data.resultMetric}
                 </span>
               </div>
-              <span className="bg-blue-500/20 text-[#8DB4FF] border border-blue-400/30 text-[10px] font-bold tracking-widest uppercase px-2.5 py-1 rounded-full shrink-0 hidden sm:inline-flex">
+              <span className="bg-accent/20 text-accent-soft border border-blue-400/30 text-[10px] font-bold tracking-widest uppercase px-2.5 py-1 rounded-full shrink-0 hidden sm:inline-flex">
                 Verified Outcome
               </span>
             </div>
@@ -219,7 +219,7 @@ const CardDetailModal = ({
         <div
           ref={scrollContainerRef}
           data-lenis-prevent="true"
-          className="flex-1 min-h-0 overflow-y-auto overscroll-contain thin-scrollbar p-6 sm:p-8 space-y-6 text-[#0F172A]"
+          className="flex-1 min-h-0 overflow-y-auto overscroll-contain thin-scrollbar p-6 sm:p-8 space-y-6 text-text-dark"
         >
           {/* Section: The Operational Bottleneck */}
           {data.problem && (
@@ -268,7 +268,7 @@ const CardDetailModal = ({
                 {data.aiVsCodeSplit.aiRole && (
                   <div className="p-4 rounded-xl bg-white border border-slate-200/90 shadow-2xs space-y-1.5">
                     <div className="flex items-center gap-1.5 font-bold text-[#0B1F3A]">
-                      <Cpu className="w-3.5 h-3.5 text-[#2F6BFF]" />
+                      <Cpu className="w-3.5 h-3.5 text-accent" />
                       <span>AI Role:</span>
                     </div>
                     <p className="text-slate-600 leading-relaxed text-xs">
@@ -359,7 +359,7 @@ const CardDetailModal = ({
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs text-slate-700">
                 {data.workflows.map((wf, idx) => (
                   <li key={idx} className="flex items-start gap-2 p-2 rounded-xl bg-slate-50/80 border border-slate-200/60">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#2F6BFF] mt-1.5 flex-shrink-0" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 flex-shrink-0" />
                     <span className="leading-snug font-medium">{wf}</span>
                   </li>
                 ))}

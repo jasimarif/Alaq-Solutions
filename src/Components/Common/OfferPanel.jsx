@@ -12,12 +12,12 @@ const OfferPanel = ({
 }) => {
   return (
     <section className={`py-12 sm:py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto font-sans ${className}`}>
-      <div className="bg-[#E8EDF5] border border-[#D5DEE8] rounded-[32px] p-8 sm:p-14 text-center space-y-6 relative overflow-hidden shadow-2xs">
+      <div className="bg-panel-tint border border-border-light rounded-[32px] p-8 sm:p-14 text-center space-y-6 relative overflow-hidden shadow-2xs">
         <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-[#0B1F3A] tracking-tight leading-tight max-w-3xl mx-auto text-balance">
           {title}
         </h2>
 
-        <p className="text-base sm:text-lg text-[#526071] max-w-2xl mx-auto leading-relaxed text-balance">
+        <p className="text-base sm:text-lg text-text-muted-dark max-w-2xl mx-auto leading-relaxed text-balance">
           {subtitle}
         </p>
 

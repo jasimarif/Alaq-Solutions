@@ -18,7 +18,7 @@ const HowItWorksPage = () => {
       {/* Hero Header */}
       <section className="pt-12 sm:pt-20 pb-12 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto font-poppins">
         <div className="max-w-3xl space-y-4">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-semibold uppercase tracking-wider">
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-accent/10 border border-accent/30 text-accent-soft text-xs font-semibold uppercase tracking-wider">
             <ShieldCheck className="w-3.5 h-3.5" />
             <span>{HOW_IT_WORKS_CONTENT.hero.badge}</span>
           </div>
@@ -35,7 +35,7 @@ const HowItWorksPage = () => {
                 e.preventDefault();
                 scrollToTarget('#contact', -80);
               }}
-              className="inline-flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white font-medium text-sm py-3 px-6 rounded-full transition shadow-lg shadow-blue-500/25 link cursor-pointer"
+              className="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-medium text-sm py-3 px-6 rounded-full transition shadow-lg shadow-accent/25 link cursor-pointer"
             >
               <span>{BOOKING_CTA_LABEL}</span>
               <ArrowRight className="w-4 h-4" />
@@ -45,14 +45,14 @@ const HowItWorksPage = () => {
       </section>
 
       {/* 3 Core Architecture Principles */}
-      <section className="py-10 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto font-poppins border-t border-slate-800">
+      <section className="py-10 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto font-poppins border-t border-border-dark">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {HOW_IT_WORKS_CONTENT.principles.map((pr, idx) => (
             <div
               key={idx}
-              className="bg-slate-900/80 p-6 rounded-2xl border border-slate-800 space-y-2.5"
+              className="bg-slate-900/80 p-6 rounded-2xl border border-border-dark space-y-2.5"
             >
-              <div className="w-8 h-8 rounded-full bg-blue-500/15 text-blue-400 flex items-center justify-center font-sans font-bold text-xs">
+              <div className="w-8 h-8 rounded-full bg-accent/15 text-accent-soft flex items-center justify-center font-sans font-bold text-xs">
                 0{idx + 1}
               </div>
               <h3 className="text-base font-bold text-white">{pr.title}</h3>
@@ -75,13 +75,13 @@ const HowItWorksPage = () => {
       {/* 4 Deep-Dive Sections */}
       <section className="py-12 sm:py-20 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto font-poppins space-y-16">
         {/* 1. What AI Does */}
-        <div className="bg-gradient-to-b from-[#182334] to-[#101724] border border-blue-500/30 rounded-3xl p-6 sm:p-10 lg:p-12 shadow-xl space-y-6">
-          <div className="flex items-center gap-3 pb-4 border-b border-slate-800">
-            <div className="w-10 h-10 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center">
+        <div className="bg-gradient-to-b from-surface-dark to-bg-darker border border-accent/30 rounded-3xl p-6 sm:p-10 lg:p-12 shadow-xl space-y-6">
+          <div className="flex items-center gap-3 pb-4 border-b border-border-dark">
+            <div className="w-10 h-10 rounded-xl bg-accent/20 text-accent-soft flex items-center justify-center">
               <Cpu className="w-5 h-5" />
             </div>
             <div>
-              <span className="text-xs font-semibold text-blue-400 uppercase tracking-wider block">
+              <span className="text-xs font-semibold text-accent-soft uppercase tracking-wider block">
                 {whatAiDoes.badge}
               </span>
               <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
@@ -92,8 +92,8 @@ const HowItWorksPage = () => {
           <p className="text-sm text-gray-300">{whatAiDoes.subtitle}</p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {whatAiDoes.points.map((pt, i) => (
-              <div key={i} className="p-4 rounded-xl bg-slate-900/60 border border-slate-800 flex items-start gap-3 text-xs sm:text-sm text-gray-300">
-                <Check className="w-4 h-4 text-blue-400 flex-shrink-0 mt-0.5" />
+              <div key={i} className="p-4 rounded-xl bg-slate-900/60 border border-border-dark flex items-start gap-3 text-xs sm:text-sm text-gray-300">
+                <Check className="w-4 h-4 text-accent-soft flex-shrink-0 mt-0.5" />
                 <span className="leading-relaxed">{pt}</span>
               </div>
             ))}
@@ -101,8 +101,8 @@ const HowItWorksPage = () => {
         </div>
 
         {/* 2. What Code Does */}
-        <div className="bg-gradient-to-b from-[#182334] to-[#101724] border border-emerald-500/30 rounded-3xl p-6 sm:p-10 lg:p-12 shadow-xl space-y-6">
-          <div className="flex items-center gap-3 pb-4 border-b border-slate-800">
+        <div className="bg-gradient-to-b from-surface-dark to-bg-darker border border-emerald-500/30 rounded-3xl p-6 sm:p-10 lg:p-12 shadow-xl space-y-6">
+          <div className="flex items-center gap-3 pb-4 border-b border-border-dark">
             <div className="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
               <Code2 className="w-5 h-5" />
             </div>
@@ -118,7 +118,7 @@ const HowItWorksPage = () => {
           <p className="text-sm text-gray-300">{whatCodeDoes.subtitle}</p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {whatCodeDoes.points.map((pt, i) => (
-              <div key={i} className="p-4 rounded-xl bg-slate-900/60 border border-slate-800 flex items-start gap-3 text-xs sm:text-sm text-gray-300">
+              <div key={i} className="p-4 rounded-xl bg-slate-900/60 border border-border-dark flex items-start gap-3 text-xs sm:text-sm text-gray-300">
                 <Check className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
                 <span className="leading-relaxed">{pt}</span>
               </div>
@@ -127,8 +127,8 @@ const HowItWorksPage = () => {
         </div>
 
         {/* 3. Where Humans Approve */}
-        <div className="bg-gradient-to-b from-[#182334] to-[#101724] border border-purple-500/30 rounded-3xl p-6 sm:p-10 lg:p-12 shadow-xl space-y-6">
-          <div className="flex items-center gap-3 pb-4 border-b border-slate-800">
+        <div className="bg-gradient-to-b from-surface-dark to-bg-darker border border-purple-500/30 rounded-3xl p-6 sm:p-10 lg:p-12 shadow-xl space-y-6">
+          <div className="flex items-center gap-3 pb-4 border-b border-border-dark">
             <div className="w-10 h-10 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center">
               <UserCheck className="w-5 h-5" />
             </div>
@@ -144,7 +144,7 @@ const HowItWorksPage = () => {
           <p className="text-sm text-gray-300">{whereHumansApprove.subtitle}</p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {whereHumansApprove.points.map((pt, i) => (
-              <div key={i} className="p-4 rounded-xl bg-slate-900/60 border border-slate-800 flex items-start gap-3 text-xs sm:text-sm text-gray-300">
+              <div key={i} className="p-4 rounded-xl bg-slate-900/60 border border-border-dark flex items-start gap-3 text-xs sm:text-sm text-gray-300">
                 <Check className="w-4 h-4 text-purple-400 flex-shrink-0 mt-0.5" />
                 <span className="leading-relaxed">{pt}</span>
               </div>
@@ -153,8 +153,8 @@ const HowItWorksPage = () => {
         </div>
 
         {/* 4. What Happens When Input Is Bad */}
-        <div className="bg-gradient-to-b from-[#182334] to-[#101724] border border-rose-500/30 rounded-3xl p-6 sm:p-10 lg:p-12 shadow-xl space-y-6">
-          <div className="flex items-center gap-3 pb-4 border-b border-slate-800">
+        <div className="bg-gradient-to-b from-surface-dark to-bg-darker border border-rose-500/30 rounded-3xl p-6 sm:p-10 lg:p-12 shadow-xl space-y-6">
+          <div className="flex items-center gap-3 pb-4 border-b border-border-dark">
             <div className="w-10 h-10 rounded-xl bg-rose-500/20 text-rose-400 flex items-center justify-center">
               <AlertTriangle className="w-5 h-5" />
             </div>
@@ -170,7 +170,7 @@ const HowItWorksPage = () => {
           <p className="text-sm text-gray-300">{badInputHandling.subtitle}</p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {badInputHandling.points.map((pt, i) => (
-              <div key={i} className="p-4 rounded-xl bg-slate-900/60 border border-slate-800 flex items-start gap-3 text-xs sm:text-sm text-gray-300">
+              <div key={i} className="p-4 rounded-xl bg-slate-900/60 border border-border-dark flex items-start gap-3 text-xs sm:text-sm text-gray-300">
                 <AlertTriangle className="w-4 h-4 text-rose-400 flex-shrink-0 mt-0.5" />
                 <span className="leading-relaxed">{pt}</span>
               </div>

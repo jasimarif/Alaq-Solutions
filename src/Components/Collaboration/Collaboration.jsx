@@ -9,7 +9,7 @@ const COLLABORATION_STYLE = {
   SLIDING_TEXT:
     "opacity-20 text-3xl sm:text-5xl md:text-7xl font-semibold whitespace-nowrap text-gray-500 font-poppins tracking-tighter",
   SECTION:
-    "w-full overflow-hidden relative select-none py-12 sm:py-20 md:py-32 flex flex-col bg-[#121827] border-t border-gray-800/60",
+    "w-full overflow-hidden relative select-none py-12 sm:py-20 md:py-32 flex flex-col bg-bg-dark border-t border-gray-800/60",
   TITLE:
     "my-6 sm:my-8 font-medium text-3xl sm:text-4xl md:text-5xl text-center text-white font-poppins tracking-tight px-4",
 };
@@ -93,7 +93,7 @@ const CollaborationSection = () => {
       {/* Main Content Area */}
       <div className="max-w-4xl mx-auto text-center px-4 z-10 my-4 sm:my-6">
         {/* Mobile Decent Badge */}
-        <div className="inline-flex md:hidden items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/25 text-blue-400 text-xs font-medium mb-3">
+        <div className="inline-flex md:hidden items-center gap-2 px-3.5 py-1.5 rounded-full bg-accent/10 border border-accent/25 text-accent-soft text-xs font-medium mb-3">
           <Handshake className="w-3.5 h-3.5" />
           Partner With Us
         </div>
@@ -106,7 +106,7 @@ const CollaborationSection = () => {
           }`}
         >
           Interested in{" "}
-          <span className="text-[#60a5fa] font-bold text-strong">Collaboration</span>?
+          <span className="text-accent-soft font-bold text-strong">Collaboration</span>?
         </h2>
 
         {/* Subtitle */}
@@ -118,7 +118,7 @@ const CollaborationSection = () => {
         <div className="flex justify-center">
           <button
             onClick={handleOpenContact}
-            className="px-6 sm:px-8 py-3.5 rounded-full bg-blue-500 hover:bg-blue-600 text-white font-semibold text-sm sm:text-base transition-all duration-300 shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 flex items-center gap-2 cursor-pointer"
+            className="px-6 sm:px-8 py-3.5 rounded-full bg-accent hover:bg-accent-hover text-white font-semibold text-sm sm:text-base transition-all duration-300 shadow-lg shadow-accent/25 hover:shadow-accent/40 flex items-center gap-2 cursor-pointer"
           >
             <span>Start a Conversation</span>
             <ArrowRight className="w-4 h-4" />

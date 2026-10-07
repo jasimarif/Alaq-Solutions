@@ -157,7 +157,7 @@ const WhyChooseUs = () => {
   const currentTab = tabData[activeTab];
 
   return (
-    <div className="bg-[#1a202c]">
+    <div className="bg-bg-dark">
       {/* Main component */}
       <div 
         ref={containerRef}
@@ -165,7 +165,7 @@ const WhyChooseUs = () => {
       >
         <div 
           ref={mainBgRef}
-          className="w-full max-w-7xl rounded-3xl sm:rounded-4xl lg:rounded-[3.5rem] p-6 sm:p-10 lg:p-14 mx-auto transition-colors duration-500 shadow-2xl border border-gray-700/40"
+          className="w-full max-w-7xl rounded-3xl sm:rounded-4xl lg:rounded-[3.5rem] p-6 sm:p-10 lg:p-14 mx-auto transition-colors duration-500 shadow-2xl border border-border-dark/40"
           style={{ backgroundColor: currentTab.colors.main }}
         >
           <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-between gap-10 lg:gap-12">

@@ -37,7 +37,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-[#090E15] text-slate-300 w-full pt-16 sm:pt-20 pb-12 px-4 sm:px-6 lg:px-8 border-t border-slate-800/80 font-sans">
+    <footer className="bg-[#090E15] text-slate-300 w-full pt-16 sm:pt-20 pb-12 px-4 sm:px-6 lg:px-8 border-t border-border-dark/80 font-sans">
       <div className="max-w-7xl mx-auto space-y-12">
         {/* Main Grid:
             - Mobile (<768px): Single column, 32px vertical gap, left-aligned
@@ -62,7 +62,7 @@ const Footer = () => {
                 />
               </div>
               <span className="text-white text-lg font-extrabold tracking-tight">
-                ALAQ <span className="text-[#8DB4FF] font-medium">Solutions</span>
+                ALAQ <span className="text-accent-soft font-medium">Solutions</span>
               </span>
             </Link>
 
@@ -72,11 +72,11 @@ const Footer = () => {
 
             <div className="space-y-2.5 pt-1 text-xs text-slate-400 text-left">
               <div className="flex items-center gap-2">
-                <MapPin className="w-4 h-4 text-[#8DB4FF] flex-shrink-0" />
+                <MapPin className="w-4 h-4 text-accent-soft flex-shrink-0" />
                 <span>{COMPANY.location} • Serving Ontario & Michigan</span>
               </div>
               <div className="flex items-center gap-2">
-                <Mail className="w-4 h-4 text-[#8DB4FF] flex-shrink-0" />
+                <Mail className="w-4 h-4 text-accent-soft flex-shrink-0" />
                 <a href={`mailto:${COMPANY.email}`} className="hover:text-white transition-colors">
                   {COMPANY.email}
                 </a>
@@ -150,7 +150,7 @@ const Footer = () => {
                 <a
                   href="/#contact"
                   onClick={(e) => handleLinkClick(e, '/#contact')}
-                  className="inline-flex items-center justify-center gap-2 w-full text-sm font-semibold py-3 px-4 rounded-xl bg-[#2F6BFF] hover:bg-[#1D55E6] text-white transition-all shadow-sm link min-h-[44px] cursor-pointer whitespace-nowrap"
+                  className="inline-flex items-center justify-center gap-2 w-full text-sm font-semibold py-3 px-4 rounded-xl bg-accent hover:bg-accent-hover text-white transition-all shadow-sm link min-h-[44px] cursor-pointer whitespace-nowrap"
                 >
                   <span>{BOOKING_CTA_LABEL}</span>
                   <ArrowUpRight className="w-4 h-4 flex-shrink-0 text-white" />
@@ -161,7 +161,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-slate-800/80 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-xs text-slate-400 text-left">
+        <div className="pt-8 border-t border-border-dark/80 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-xs text-slate-400 text-left">
           <p>&copy; {new Date().getFullYear()} {COMPANY.name}. All rights reserved.</p>
           <p className="text-left md:text-right text-slate-400 max-w-md">
             Pragmatic shop-floor automation for construction, steel building, and manufacturing operations.

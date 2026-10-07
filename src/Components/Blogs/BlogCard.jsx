@@ -21,7 +21,7 @@ const BlogCard = ({ blog }) => {
           <span className="text-gray-400 text-sm">{blog.date}</span>
         </div>
 
-        <h2 className="text-xl font-bold text-white mb-3 line-clamp-1 group-hover:text-blue-400 transition-colors duration-300">
+        <h2 className="text-xl font-bold text-white mb-3 line-clamp-1 group-hover:text-accent-soft transition-colors duration-300">
           {blog.title}
         </h2>
 
@@ -31,7 +31,7 @@ const BlogCard = ({ blog }) => {
 
         <div className="flex items-center justify-between">
           <span className="text-gray-400 text-sm">By {blog.author}</span>
-          <span className="text-blue-400 hover:text-blue-300 transition-colors duration-300 font-medium cursor-none">
+          <span className="text-accent-soft hover:text-accent-soft transition-colors duration-300 font-medium cursor-none">
             Read More →
           </span>
         </div>

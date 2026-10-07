@@ -14,7 +14,7 @@ const VideoPlaceholder = ({
 
   return (
     <div className={`font-sans space-y-2.5 ${className}`}>
-      <div className="relative aspect-video w-full rounded-2xl bg-gradient-to-br from-[#1b263b] via-[#101927] to-[#0a101a] border border-blue-500/30 overflow-hidden shadow-2xl flex flex-col items-center justify-center p-6 text-center group">
+      <div className="relative aspect-video w-full rounded-2xl bg-gradient-to-br from-[#1b263b] via-[#101927] to-[#0a101a] border border-accent/30 overflow-hidden shadow-2xl flex flex-col items-center justify-center p-6 text-center group">
         {/* Subtle grid pattern background */}
         <div
           className="absolute inset-0 opacity-15 pointer-events-none"
@@ -26,21 +26,21 @@ const VideoPlaceholder = ({
         ></div>
 
         {/* Ambient glow on hover */}
-        <div className="absolute w-40 h-40 bg-blue-500/20 blur-3xl rounded-full pointer-events-none group-hover:scale-125 transition-transform duration-500"></div>
+        <div className="absolute w-40 h-40 bg-accent/20 blur-3xl rounded-full pointer-events-none group-hover:scale-125 transition-transform duration-500"></div>
 
         {/* Play badge */}
-        <div className="relative z-10 w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-blue-500/20 border-2 border-blue-400/80 flex items-center justify-center text-blue-400 group-hover:scale-110 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300 shadow-xl shadow-blue-500/20">
+        <div className="relative z-10 w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-accent/20 border-2 border-blue-400/80 flex items-center justify-center text-accent-soft group-hover:scale-110 group-hover:bg-accent group-hover:text-white transition-all duration-300 shadow-xl shadow-accent/20">
           <Play className="w-6 h-6 sm:w-7 sm:h-7 fill-current ml-1" />
         </div>
 
         {/* Duration badge */}
-        <div className="absolute top-4 right-4 z-10 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-900/90 border border-slate-700 text-gray-300 text-xs font-sans">
-          <Clock className="w-3 h-3 text-blue-400" />
+        <div className="absolute top-4 right-4 z-10 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-900/90 border border-border-dark text-gray-300 text-xs font-sans">
+          <Clock className="w-3 h-3 text-accent-soft" />
           <span>{displayDuration}</span>
         </div>
 
         {/* Video type tag */}
-        <div className="absolute top-4 left-4 z-10 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/25 text-blue-400 text-xs font-semibold font-sans">
+        <div className="absolute top-4 left-4 z-10 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-accent/10 border border-accent/25 text-accent-soft text-xs font-semibold font-sans">
           <Video className="w-3 h-3" />
           <span>Screen Recording</span>
         </div>

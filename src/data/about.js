@@ -69,11 +69,6 @@ export const ABOUT_CONTENT = {
     ],
   },
 
-  beyondAutomation: {
-    title: "Beyond automation",
-    text: "ALAQ also operates in automotive trading, including car trading. It is a separate line of work from our automation services, and it extends what we do as a business.",
-  },
-
   closingCta: {
     heading: "Ready to automate the work that slows you down?",
     text: "Book a 20-minute workflow audit and we will look at one of your workflows together.",

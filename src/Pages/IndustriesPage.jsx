@@ -40,7 +40,7 @@ const IndustriesPage = () => {
   return (
     <PageWrapper seo={PAGE_SEO.industries}>
       {/* Industries We Serve Section (Exact same as was on Home Page) */}
-      <section id="industries" className="pt-28 sm:pt-36 pb-16 lg:pb-24 px-4 sm:px-6 lg:px-8 bg-[#F6F7F9] font-sans">
+      <section id="industries" className="pt-28 sm:pt-36 pb-16 lg:pb-24 px-4 sm:px-6 lg:px-8 bg-bg-light font-sans">
         <div className="max-w-7xl mx-auto">
           <SectionHeading
             badge={INDUSTRIES_CONTENT.hero.badge}

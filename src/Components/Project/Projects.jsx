@@ -136,7 +136,7 @@ const Projects = () => {
   return (
     <section
       ref={targetSectionRef}
-      className="w-full relative select-none py-14 sm:py-20 flex flex-col justify-center min-h-screen font-poppins z-10 overflow-hidden bg-[#121827]"
+      className="w-full relative select-none py-14 sm:py-20 flex flex-col justify-center min-h-screen font-poppins z-10 overflow-hidden bg-bg-dark"
       id="projects"
     >
       {/* Section Header */}
@@ -145,11 +145,11 @@ const Projects = () => {
         className="w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 sm:mb-12"
       >
         <div>
-          <p className="text-xs sm:text-sm font-semibold text-blue-400 tracking-widest uppercase">
+          <p className="text-xs sm:text-sm font-semibold text-accent-soft tracking-widest uppercase">
             OUR WORKS
           </p>
           <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold text-white mt-2 tracking-tight">
-            Core <span className="text-blue-400">ERP</span> Excellence
+            Core <span className="text-accent-soft">ERP</span> Excellence
           </h2>
           <p className="text-sm sm:text-base md:text-lg text-gray-300 max-w-2xl mt-3 tracking-normal leading-relaxed">
             We have contributed to 20+ enterprise deployments spanning revenue automation, NetSuite integrations, custom SuiteApps, and AI financial workflows.
@@ -157,10 +157,10 @@ const Projects = () => {
         </div>
 
         {/* Counter Badge */}
-        <div className="hidden lg:flex items-center space-x-3 bg-slate-900/70 border border-slate-700/60 rounded-full px-4 py-2 text-xs text-gray-300">
+        <div className="hidden lg:flex items-center space-x-3 bg-slate-900/70 border border-border-dark/60 rounded-full px-4 py-2 text-xs text-gray-300">
           <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
           <span>Enterprise Portfolio</span>
-          <span className="text-blue-400 font-mono font-semibold">6 Deployments</span>
+          <span className="text-accent-soft font-mono font-semibold">6 Deployments</span>
         </div>
       </div>
 

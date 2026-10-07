@@ -12,20 +12,20 @@ const MediaPlaceholder = ({
   const getIcon = () => {
     switch (type) {
       case 'photo':
-        return <User className="w-8 h-8 text-blue-400" />;
+        return <User className="w-8 h-8 text-accent-soft" />;
       case 'screenshot':
-        return <Layers className="w-8 h-8 text-blue-400" />;
+        return <Layers className="w-8 h-8 text-accent-soft" />;
       case 'architecture':
-        return <Network className="w-8 h-8 text-blue-400" />;
+        return <Network className="w-8 h-8 text-accent-soft" />;
       default:
-        return <Image className="w-8 h-8 text-blue-400" />;
+        return <Image className="w-8 h-8 text-accent-soft" />;
     }
   };
 
   return (
     <div className={`font-sans space-y-2 ${className}`}>
       <div
-        className={`relative w-full ${height} rounded-2xl bg-gradient-to-br from-[#182335] via-[#111926] to-[#0c131f] border border-dashed border-slate-700 hover:border-blue-500/50 transition-colors flex flex-col items-center justify-center p-6 text-center shadow-lg group overflow-hidden`}
+        className={`relative w-full ${height} rounded-2xl bg-gradient-to-br from-[#182335] via-[#111926] to-[#0c131f] border border-dashed border-border-dark hover:border-accent/50 transition-colors flex flex-col items-center justify-center p-6 text-center shadow-lg group overflow-hidden`}
       >
         {/* Subtle grid background */}
         <div
@@ -37,7 +37,7 @@ const MediaPlaceholder = ({
           }}
         ></div>
 
-        <div className="relative z-10 w-14 h-14 rounded-2xl bg-slate-800/80 border border-slate-700 flex items-center justify-center mb-3 group-hover:scale-105 transition-transform">
+        <div className="relative z-10 w-14 h-14 rounded-2xl bg-slate-800/80 border border-border-dark flex items-center justify-center mb-3 group-hover:scale-105 transition-transform">
           {getIcon()}
         </div>
 

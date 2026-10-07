@@ -671,7 +671,7 @@ const HeroAutomationVisual = ({ isPaused = false, prefersReducedMotion = false }
   return (
     <div
       ref={cardRef}
-      className="relative w-full lg:max-w-[693px] aspect-[4/3] rounded-[28px] overflow-hidden border border-white/10 bg-[#0B0F17] shadow-[0_30px_80px_-24px_rgba(0,0,0,0.85)] select-none isolate"
+      className="relative w-full lg:max-w-[693px] aspect-[4/3] rounded-[28px] overflow-hidden border border-white/10 bg-bg-darker shadow-[0_30px_80px_-24px_rgba(0,0,0,0.85)] select-none isolate"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >

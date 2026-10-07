@@ -13,7 +13,7 @@ const ContactPage = () => {
       <div className="py-14 sm:py-20 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto font-poppins">
         {/* Header */}
         <div className="max-w-3xl mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-semibold mb-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 border border-accent/30 text-accent-soft text-xs font-semibold mb-4">
             <Mail className="w-3.5 h-3.5" />
             <span>{hero.badge}</span>
           </div>
@@ -27,7 +27,7 @@ const ContactPage = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
           {/* Left Column: Direct Shared ContactForm */}
-          <div className="lg:col-span-7 bg-[#162030]/90 rounded-3xl p-6 sm:p-10 border border-slate-700/80 shadow-2xl">
+          <div className="lg:col-span-7 bg-surface-dark/90 rounded-3xl p-6 sm:p-10 border border-border-dark/80 shadow-2xl">
             <div className="mb-6">
               <h2 className="text-xl sm:text-2xl font-bold text-white">
                 Send Us a Note or an Order Sample
@@ -45,8 +45,8 @@ const ContactPage = () => {
           {/* Right Column: Fast Booking & Offers */}
           <div className="lg:col-span-5 space-y-6">
             {/* Quick 20-min Audit Box */}
-            <div className="bg-gradient-to-br from-blue-900/30 to-slate-900/80 rounded-3xl p-6 sm:p-8 border border-blue-500/30 shadow-xl space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/20 text-blue-300 text-xs font-semibold">
+            <div className="bg-gradient-to-br from-blue-900/30 to-slate-900/80 rounded-3xl p-6 sm:p-8 border border-accent/30 shadow-xl space-y-4">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/20 text-accent-soft text-xs font-semibold">
                 <Clock className="w-3.5 h-3.5" />
                 <span>{bookingSection.badge}</span>
               </div>
@@ -62,7 +62,7 @@ const ContactPage = () => {
                   const firstInput = document.getElementById('firstName');
                   if (firstInput) firstInput.focus();
                 }}
-                className="w-full inline-flex items-center justify-center gap-2 bg-blue-500 hover:bg-blue-600 text-white font-medium text-sm py-3 px-6 rounded-xl transition shadow-md shadow-blue-500/20 link cursor-pointer"
+                className="w-full inline-flex items-center justify-center gap-2 bg-accent hover:bg-accent-hover text-white font-medium text-sm py-3 px-6 rounded-xl transition shadow-md shadow-accent/20 link cursor-pointer"
               >
                 <span>{bookingSection.ctaLabel}</span>
                 <ArrowRight className="w-4 h-4" />
@@ -70,7 +70,7 @@ const ContactPage = () => {
             </div>
 
             {/* "Send Us One Messy Order" Box */}
-            <div className="bg-[#162030]/70 rounded-3xl p-6 sm:p-8 border border-slate-700/60 shadow-lg space-y-4">
+            <div className="bg-surface-dark/70 rounded-3xl p-6 sm:p-8 border border-border-dark/60 shadow-lg space-y-4">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/15 text-emerald-400 text-xs font-semibold">
                 <FileText className="w-3.5 h-3.5" />
                 <span>{messyOrderOffer.badge}</span>
@@ -81,7 +81,7 @@ const ContactPage = () => {
               <p className="text-xs sm:text-sm text-gray-300 leading-relaxed">
                 {messyOrderOffer.description}
               </p>
-              <ul className="space-y-2 pt-1 border-t border-slate-800">
+              <ul className="space-y-2 pt-1 border-t border-border-dark">
                 {messyOrderOffer.points.map((pt, i) => (
                   <li key={i} className="text-xs text-gray-400 flex items-start gap-2">
                     <Check className="w-3.5 h-3.5 text-emerald-400 flex-shrink-0 mt-0.5" />
@@ -92,9 +92,9 @@ const ContactPage = () => {
             </div>
 
             {/* Location & Coverage */}
-            <div className="bg-[#121824] rounded-2xl p-6 border border-slate-800 text-xs text-gray-400 space-y-2.5">
+            <div className="bg-[#121824] rounded-2xl p-6 border border-border-dark text-xs text-gray-400 space-y-2.5">
               <div className="flex items-center gap-2 text-gray-300 font-semibold">
-                <MapPin className="w-4 h-4 text-blue-400" />
+                <MapPin className="w-4 h-4 text-accent-soft" />
                 <span>{contactInfo.location}</span>
               </div>
               <p>{contactInfo.note}</p>
@@ -102,7 +102,7 @@ const ContactPage = () => {
                 Direct email:{' '}
                 <a
                   href={`mailto:${contactInfo.email}`}
-                  className="text-blue-400 hover:underline link"
+                  className="text-accent-soft hover:underline link"
                 >
                   {contactInfo.email}
                 </a>

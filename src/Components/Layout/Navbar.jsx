@@ -91,7 +91,7 @@ const Navbar = () => {
           className={`flex items-center justify-between py-2.5 px-4 sm:px-6 rounded-full transition-all duration-300 ${
             isScrolled
               ? 'bg-white/95 backdrop-blur-md border border-slate-200/90 shadow-[0_4px_24px_rgba(0,0,0,0.07)]'
-              : 'bg-[#0D1117]/85 backdrop-blur-md border border-slate-700/60 shadow-[0_4px_24px_rgba(0,0,0,0.35)]'
+              : 'bg-[#0D1117]/85 backdrop-blur-md border border-border-dark/60 shadow-[0_4px_24px_rgba(0,0,0,0.35)]'
           }`}
         >
           {/* Logo */}
@@ -100,7 +100,7 @@ const Navbar = () => {
             onClick={() => {
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
-            className="flex items-center space-x-3 group link focus:outline-none focus:ring-2 focus:ring-[#2F6BFF] rounded-full pr-2"
+            className="flex items-center space-x-3 group link focus:outline-none focus:ring-2 focus:ring-focus-ring rounded-full pr-2"
           >
             <div className="relative w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white flex items-center justify-center p-1 shadow-sm ring-1 ring-slate-200/80 overflow-hidden flex-shrink-0">
               <img
@@ -112,10 +112,10 @@ const Navbar = () => {
             <div className="flex flex-col">
               <span
                 className={`text-base sm:text-lg font-bold tracking-tight leading-tight transition-colors ${
-                  isScrolled ? 'text-[#0F172A]' : 'text-white'
+                  isScrolled ? 'text-text-dark' : 'text-white'
                 }`}
               >
-                ALAQ <span className="text-[#8DB4FF] font-normal">Solutions</span>
+                ALAQ <span className="text-accent-soft font-normal">Solutions</span>
               </span>
               <span
                 className={`text-[10px] tracking-wider uppercase font-semibold hidden md:inline transition-colors ${
@@ -139,10 +139,10 @@ const Navbar = () => {
                   className={`px-2.5 xl:px-3 py-1.5 rounded-full text-xs xl:text-sm font-medium transition-all duration-200 link whitespace-nowrap ${
                     active
                       ? isScrolled
-                        ? 'text-[#2F6BFF] bg-blue-50 font-semibold'
+                        ? 'text-accent bg-blue-50 font-semibold'
                         : 'text-white bg-white/20 font-semibold'
                       : isScrolled
-                      ? 'text-slate-600 hover:text-[#0F172A] hover:bg-slate-100'
+                      ? 'text-slate-600 hover:text-text-dark hover:bg-slate-100'
                       : 'text-slate-200 hover:text-white hover:bg-white/10'
                   }`}
                 >
@@ -155,10 +155,10 @@ const Navbar = () => {
                   className={`px-2.5 xl:px-3 py-1.5 rounded-full text-xs xl:text-sm font-medium transition-all duration-200 link whitespace-nowrap ${
                     active
                       ? isScrolled
-                        ? 'text-[#2F6BFF] bg-blue-50 font-semibold'
+                        ? 'text-accent bg-blue-50 font-semibold'
                         : 'text-white bg-white/20 font-semibold'
                       : isScrolled
-                      ? 'text-slate-600 hover:text-[#0F172A] hover:bg-slate-100'
+                      ? 'text-slate-600 hover:text-text-dark hover:bg-slate-100'
                       : 'text-slate-200 hover:text-white hover:bg-white/10'
                   }`}
                 >
@@ -184,7 +184,7 @@ const Navbar = () => {
               aria-label={BOOKING_CTA_LABEL}
               className={`inline-flex items-center gap-2 font-medium text-xs xl:text-sm px-4 xl:px-5 py-2.5 rounded-full transition-all duration-200 shadow-sm link min-h-[44px] whitespace-nowrap cursor-pointer ${
                 isScrolled
-                  ? 'bg-[#2F6BFF] hover:bg-[#1D55E6] text-white border border-transparent'
+                  ? 'bg-accent hover:bg-accent-hover text-white border border-transparent'
                   : 'bg-transparent hover:bg-white/10 text-white border border-white/80'
               }`}
             >
@@ -207,8 +207,8 @@ const Navbar = () => {
               aria-expanded={isMobileMenuOpen}
               className={`p-2.5 rounded-full transition-colors link min-h-[44px] min-w-[44px] flex items-center justify-center ${
                 isScrolled
-                  ? 'text-[#0F172A] bg-slate-100 hover:bg-slate-200'
-                  : 'text-white bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700/60'
+                  ? 'text-text-dark bg-slate-100 hover:bg-slate-200'
+                  : 'text-white bg-slate-800/80 hover:bg-slate-700/80 border border-border-dark/60'
               }`}
             >
               {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
@@ -218,7 +218,7 @@ const Navbar = () => {
 
         {/* Mobile Dropdown Drawer */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden mt-2 bg-[#0D1117] rounded-3xl p-5 border border-slate-700/80 shadow-2xl space-y-4 animate-fadeIn">
+          <div className="lg:hidden mt-2 bg-[#0D1117] rounded-3xl p-5 border border-border-dark/80 shadow-2xl space-y-4 animate-fadeIn">
             <div className="space-y-1">
               <Link
                 to="/"
@@ -239,7 +239,7 @@ const Navbar = () => {
                     onClick={(e) => handleNavClick(e, link.target)}
                     className={`block px-4 py-3 rounded-2xl text-base font-medium link min-h-[44px] flex items-center ${
                       active
-                        ? 'text-white bg-[#2F6BFF]/25 font-semibold'
+                        ? 'text-white bg-accent/25 font-semibold'
                         : 'text-slate-200 hover:text-white hover:bg-white/10'
                     }`}
                   >
@@ -252,7 +252,7 @@ const Navbar = () => {
                     onClick={() => setIsMobileMenuOpen(false)}
                     className={`block px-4 py-3 rounded-2xl text-base font-medium link min-h-[44px] flex items-center ${
                       active
-                        ? 'text-white bg-[#2F6BFF]/25 font-semibold'
+                        ? 'text-white bg-accent/25 font-semibold'
                         : 'text-slate-200 hover:text-white hover:bg-white/10'
                     }`}
                   >
@@ -263,7 +263,7 @@ const Navbar = () => {
             </div>
 
             {/* Mobile Drawer CTA Button */}
-            <div className="pt-3 border-t border-slate-800">
+            <div className="pt-3 border-t border-border-dark">
               <a
                 href="#contact"
                 onClick={(e) => {
@@ -278,7 +278,7 @@ const Navbar = () => {
                 }}
                 className={`w-full inline-flex items-center justify-center gap-2 font-medium text-base py-3.5 px-5 rounded-full transition shadow-md link min-h-[48px] cursor-pointer ${
                   isScrolled
-                    ? 'bg-[#2F6BFF] hover:bg-[#1D55E6] text-white'
+                    ? 'bg-accent hover:bg-accent-hover text-white'
                     : 'bg-transparent hover:bg-white/10 text-white border border-white/80'
                 }`}
               >
